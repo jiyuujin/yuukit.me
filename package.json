@@ -16,5 +16,10 @@
     "react-helmet": "^5.2.1",
     "typescript": "^3.5.3",
     "webpack": "^4.36.1"
+  },
+  "devDependencies": {
+    "@nekohack/eslint-config-react": "^0.1.1",
+    "@typescript-eslint/eslint-plugin": "^2.24.0",
+    "@typescript-eslint/parser": "^2.24.0"
   }
 }
