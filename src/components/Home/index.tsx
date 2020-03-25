@@ -17,7 +17,7 @@ export const Home: FC = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            blog
+                            Blog
                         </a>
                     </div>
                     <div className={SC.item}>
@@ -26,7 +26,7 @@ export const Home: FC = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            twitter
+                            Twitter
                         </a>
                     </div>
                 </div>
@@ -36,7 +36,7 @@ export const Home: FC = () => {
                         ネット上では 自由人、jiyuujin と名乗って生息しています。誕生日は1988年11月04日。大阪府豊中市生まれ。性別は男性。現在は関西圏（京都や大阪）を中心に活動しています。
                     </div>
                     <div className={SC.subtitle}>
-                        職業一覧
+                        職業
                     </div>
                     <div className={SC.description}>
                         <ul>
@@ -52,7 +52,7 @@ export const Home: FC = () => {
                         自分のキャリアのスタートはiOSネイティブアプリのエンジニアとして。これまでのキャリアの中でiOSネイティブアプリエンジニアとして業務を通じ基礎的なコーディングを取得、Webを扱うサーバサイドで足りていないと言った環境も相まってjQueryを始めとしたCSS設計、フレームワークの使用など徐々にフロントエンドエンジニアという領域にも踏み込んでいきました。
                     </div>
                     <div className={SC.subtitle}>
-                        関連リンク一覧
+                        関連リンク
                     </div>
                     <div className={SC.description}>
                         <ul>
