@@ -8,7 +8,7 @@ export const Home: FC = () => {
                 <div className={SC.title}>
                     Web Developer
                     <div className={SC.name}>Yuma Kitamura</div>
-                    <div className={SC.locale}>Osaka, Kyoto (Japan)</div>
+                    <div className={SC.locale}>Osaka, Kyoto in Japan</div>
                 </div>
                 <div className={SC.social}>
                     <div className={SC.item}>
