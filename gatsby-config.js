@@ -8,7 +8,14 @@ module.exports = {
     twitterUsername: '@jiyuujin'
   },
   plugins: [
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-typescript`
+    'gatsby-plugin-sass',
+    'gatsby-plugin-typescript',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/images`,
+      }
+    }
   ]
 }
