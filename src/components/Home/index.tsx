@@ -63,7 +63,7 @@ export const Home: FC = () => {
                             </li>
                             <li>
                                 <a href="https://scrapbox.io/nekohack/skillset">
-                                    スキルセット
+                                    スキルセット (公開予定)
                                 </a>
                             </li>
                         </ul>
