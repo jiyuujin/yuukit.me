@@ -28,4 +28,3 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm install gatsby-cli
-    - run: npm run build
