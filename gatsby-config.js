@@ -4,10 +4,11 @@ module.exports = {
     titleTemplate: "%s | Portfolio",
     description: 'This is the Web Developer \'Yuma Kitamura\' Portfolio.',
     url: 'https://yuukit.me/',
-    image: '/images/bakeneko2.png',
+    image: 'src/images/bakeneko2.png',
     twitterUsername: '@jiyuujin'
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-typescript',
     {

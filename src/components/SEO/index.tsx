@@ -3,39 +3,42 @@ import { StaticQuery, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 type SEOPropTypes = {
-    title: string,
-    description: string,
-    image: string,
-    pathname: string,
+    title: string
+    description: string
+    image: string
+    pathname: string
     article: boolean
 }
 
-const SEO = ({ title, description, image, pathname, article }: SEOPropTypes) => (
+const SEO = ({
+    title,
+    description,
+    image,
+    pathname,
+    article
+}: SEOPropTypes) => (
     <StaticQuery
         query={query}
         render={({
-             site: {
-                 siteMetadata: {
-                     defaultTitle,
-                     titleTemplate,
-                     defaultDescription,
-                     siteUrl,
-                     defaultImage,
-                     twitterUsername
-                 }
-             }
+            site: {
+                siteMetadata: {
+                    title,
+                    titleTemplate,
+                    description,
+                    url,
+                    image,
+                    twitterUsername
+                }
+            }
         }) => {
             const seo = {
-                title: title || defaultTitle,
-                description: description || defaultDescription,
-                image: `${siteUrl}${image || defaultImage}`,
-                url: `${siteUrl}${pathname || '/'}`
+                title: title,
+                description: description,
+                image: image,
+                url: `${url}${pathname || '/'}`
             }
             return (
-                <Helmet
-                    title={seo.title}
-                    titleTemplate={titleTemplate}
-                >
+                <Helmet title={seo.title} titleTemplate={titleTemplate}>
                     <meta name="image" content={seo.image} />
                     <meta name="description" content={seo.description} />
                     <meta property="og:url" content={seo.url} />
@@ -47,7 +50,10 @@ const SEO = ({ title, description, image, pathname, article }: SEOPropTypes) => 
                     <meta name="twitter:image" content={seo.image} />
                     <meta name="twitter:creator" content={twitterUsername} />
                     <meta name="twitter:title" content={seo.title} />
-                    <meta name="twitter:description" content={seo.description} />
+                    <meta
+                        name="twitter:description"
+                        content={seo.description}
+                    />
                 </Helmet>
             )
         }}
@@ -68,11 +74,11 @@ const query = graphql`
     query SEO {
         site {
             siteMetadata {
-                defaultTitle: title
+                title
                 titleTemplate
-                defaultDescription: description
-                siteUrl: url
-                defaultImage: image
+                description
+                url
+                image
                 twitterUsername
             }
         }
