@@ -6,7 +6,7 @@
     "build": "gatsby build"
   },
   "dependencies": {
-    "@babel/core": "7.9.0",
+    "@babel/core": "7.9.6",
     "gatsby": "2.20.3",
     "gatsby-plugin-react-helmet": "3.2.5",
     "gatsby-plugin-sass": "2.2.1",
