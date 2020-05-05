@@ -5,7 +5,11 @@ export const Footer: FC = () => {
     return (
         <footer className={SC.footer}>
             <p className={SC.contact}>
-                <a href="https://webneko.dev/contact" target="_blank" rel="noopener">
+                <a
+                    href="https://webneko.dev/contact"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     CONTACT
                 </a>
             </p>

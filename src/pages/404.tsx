@@ -3,10 +3,6 @@ import Layout from '../components/Layout'
 
 export default class extends React.Component<{}> {
     public render() {
-        return (
-            <Layout>
-                Page not found.
-            </Layout>
-        )
+        return <Layout>Page not found.</Layout>
     }
 }
