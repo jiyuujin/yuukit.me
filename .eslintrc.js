@@ -9,6 +9,7 @@ module.exports = {
     env: { node: true, es6: true },
     parser: '@typescript-eslint/parser',
     rules: {
+        'react/display-name': 'off',
         'prettier/prettier': [
             'error',
             {

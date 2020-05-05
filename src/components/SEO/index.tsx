@@ -15,7 +15,7 @@ const SEO = ({
     description,
     image,
     pathname,
-    article
+    article,
 }: SEOPropTypes) => (
     <StaticQuery
         query={query}
@@ -27,15 +27,15 @@ const SEO = ({
                     description,
                     url,
                     image,
-                    twitterUsername
-                }
-            }
+                    twitterUsername,
+                },
+            },
         }) => {
             const seo = {
                 title: title,
                 description: description,
                 image: image,
-                url: `${url}${pathname || '/'}`
+                url: `${url}${pathname || '/'}`,
             }
             return (
                 <Helmet title={seo.title} titleTemplate={titleTemplate}>
@@ -67,7 +67,7 @@ SEO.defaultProps = {
     description: null,
     image: null,
     pathname: null,
-    article: false
+    article: false,
 }
 
 const query = graphql`
