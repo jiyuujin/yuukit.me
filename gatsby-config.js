@@ -8,7 +8,7 @@ module.exports = {
     twitterUsername: '@jiyuujin'
   },
   plugins: [
-    `gatsby-plugin-typescript`
+    'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-sass',
