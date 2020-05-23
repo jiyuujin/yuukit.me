@@ -146,7 +146,8 @@ export const Home: FC = () => {
                     </div>
                 </div>
                 <div className={SC.basic}>
-                    登壇一覧
+                    スライド一覧
+                    <div className={SC.subtitle}>登壇</div>
                     <div className={SC.description}>
                         <ul>
                             {talkProductLinks.map(
