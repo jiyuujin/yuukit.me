@@ -5,23 +5,23 @@ export const productLinks: Array<{}> = [
     {
         value: 0,
         text: 'Web猫ブログに型安全を',
-        url: 'https://master.d1kgb4480wljkh.amplifyapp.com/'
+        url: 'https://master.d1kgb4480wljkh.amplifyapp.com/',
     },
     {
         value: 1,
         text: 'Web猫ブログにGraphQLを導入してみた話',
-        url: 'https://master.d1k81nysz2qoq8.amplifyapp.com/'
+        url: 'https://master.d1k81nysz2qoq8.amplifyapp.com/',
     },
     {
         value: 2,
         text: 'Web猫ブログで問い合わせにFirestoreを採用した話',
-        url: 'https://master.d1k6flsnxj32sh.amplifyapp.com/'
+        url: 'https://master.d1k6flsnxj32sh.amplifyapp.com/',
     },
     {
         value: 3,
         text: 'Contentful製ブログでGoogle Adsenseが使えるようになるまで',
-        url: 'https://master.d1k61oei78g67d.amplifyapp.com/'
-    }
+        url: 'https://master.d1k61oei78g67d.amplifyapp.com/',
+    },
 ]
 
 export const usedSkills: string[] = [

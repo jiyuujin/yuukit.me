@@ -111,21 +111,29 @@ export const Home: FC = () => {
                     <div className={SC.subtitle}>関連リンク</div>
                     <div className={SC.description}>
                         <ul>
-                            {blogProductLinks.map((link: {
-                                value: number
-                                text: string
-                                url: string
-                            } | any) => {
-                                return (<li key={link.value}>
-                                    <a
-                                        href={link.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        {link.text}
-                                    </a>
-                                </li>)
-                            })}
+                            {blogProductLinks.map(
+                                (
+                                    link:
+                                        | {
+                                              value: number
+                                              text: string
+                                              url: string
+                                          }
+                                        | any
+                                ) => {
+                                    return (
+                                        <li key={link.value}>
+                                            <a
+                                                href={link.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                {link.text}
+                                            </a>
+                                        </li>
+                                    )
+                                }
+                            )}
                         </ul>
                     </div>
                     <div className={SC.subtitle}>利用技術</div>
@@ -141,17 +149,25 @@ export const Home: FC = () => {
                     登壇一覧
                     <div className={SC.description}>
                         <ul>
-                            {talkProductLinks.map((product: {
-                                value: number
-                                text: string
-                                url: string
-                            } | any) => {
-                                return <li key={product.value}>
-                                    <a href={product.url}>
-                                        {product.text}
-                                    </a>
-                                </li>
-                            })}
+                            {talkProductLinks.map(
+                                (
+                                    product:
+                                        | {
+                                              value: number
+                                              text: string
+                                              url: string
+                                          }
+                                        | any
+                                ) => {
+                                    return (
+                                        <li key={product.value}>
+                                            <a href={product.url}>
+                                                {product.text}
+                                            </a>
+                                        </li>
+                                    )
+                                }
+                            )}
                         </ul>
                     </div>
                 </div>
