@@ -2,13 +2,14 @@ import React, { FC } from 'react'
 import * as SC from './index.module.scss'
 import {
     product as profileProduct,
-    usedSkills as profileUsedSkills
+    usedSkills as profileUsedSkills,
 } from '../../utils/profile'
 import {
     product as blogProduct,
     productLinks as blogProductLinks,
-    usedSkills as blogUsedSkills
+    usedSkills as blogUsedSkills,
 } from '../../utils/blog'
+import { productLinks as talkProductLinks } from '../../utils/talk'
 
 export const Home: FC = () => {
     return (
@@ -85,7 +86,9 @@ export const Home: FC = () => {
                 </div>
                 <div className={SC.basic}>
                     プロダクト一覧
-                    <div className={SC.subtitle}>Web Developer - Yuma Kitamura</div>
+                    <div className={SC.subtitle}>
+                        Web Developer - Yuma Kitamura
+                    </div>
                     <div
                         className={SC.description}
                         dangerouslySetInnerHTML={{ __html: profileProduct }}
@@ -130,6 +133,24 @@ export const Home: FC = () => {
                         <ul>
                             {blogUsedSkills.map((skill) => {
                                 return <li key={skill}>{skill}</li>
+                            })}
+                        </ul>
+                    </div>
+                </div>
+                <div className={SC.basic}>
+                    登壇一覧
+                    <div className={SC.description}>
+                        <ul>
+                            {talkProductLinks.map((product: {
+                                value: number
+                                text: string
+                                url: string
+                            } | any) => {
+                                return <li key={product.value}>
+                                    <a href={product.url}>
+                                        {product.text}
+                                    </a>
+                                </li>
                             })}
                         </ul>
                     </div>
