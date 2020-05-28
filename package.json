@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@babel/core": "7.10.1",
-    "gatsby": "2.22.11",
+    "gatsby": "2.22.12",
     "gatsby-plugin-react-helmet": "3.3.2",
     "gatsby-plugin-sass": "2.3.2",
     "gatsby-plugin-typescript": "2.4.3",
