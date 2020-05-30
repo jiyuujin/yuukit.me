@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import { Home } from '../components/Home'
 import { Footer } from '../components/Footer'
+import { CookieFooter } from '../components/CookieFooter'
 import * as SC from './index.module.scss'
 
 export default class IndexPage extends React.Component<{}> {
@@ -13,6 +14,7 @@ export default class IndexPage extends React.Component<{}> {
                 <div className={SC.container}>
                     <Home />
                     <Footer />
+                    <CookieFooter />
                 </div>
             </Layout>
         )

@@ -1,0 +1,37 @@
+.cookie-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background-color: #dfdbdd;
+    color: #272927;
+    padding: 1.25em;
+    z-index: 9999;
+
+    .content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        vertical-align: middle;
+
+        .title {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #5cb85c;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 4px;
+            cursor: pointer;
+            line-height: 1;
+            white-space: nowrap;
+        }
+    }
+}
