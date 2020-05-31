@@ -6,8 +6,8 @@
     "build": "gatsby build"
   },
   "dependencies": {
-    "@babel/core": "7.9.6",
-    "gatsby": "2.22.9",
+    "@babel/core": "7.10.1",
+    "gatsby": "2.22.12",
     "gatsby-plugin-google-analytics": "^2.3.2",
     "gatsby-plugin-react-helmet": "3.3.2",
     "gatsby-plugin-sass": "2.3.2",
@@ -20,10 +20,10 @@
     "webpack": "4.43.0"
   },
   "devDependencies": {
-    "@nekohack/eslint-config-react": "0.2.0",
+    "@nekohack/eslint-config-react": "0.2.1",
     "@types/react-helmet": "5.0.16",
     "@typescript-eslint/eslint-plugin": "2.34.0",
     "@typescript-eslint/parser": "2.34.0",
-    "sass": "1.26.5"
+    "sass": "1.26.7"
   }
 }
