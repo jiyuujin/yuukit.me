@@ -35,3 +35,10 @@
         }
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    .cookie-footer {
+        background-color: #424851;
+        color: #fff;
+    }
+}
