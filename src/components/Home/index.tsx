@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import dayjs from 'dayjs'
 import * as SC from './index.module.scss'
 import {
     product as profileProduct,
@@ -12,6 +13,10 @@ import {
 import { productLinks as talkProductLinks } from '../../utils/talk'
 
 export const Home: FC = () => {
+    const dateFormat = (d: string) => {
+        return dayjs(d).format('YYYY年MM月DD日')
+    }
+
     return (
         <div className={SC.top}>
             <div className={SC.wrapper}>
@@ -157,11 +162,15 @@ export const Home: FC = () => {
                                               value: number
                                               text: string
                                               url: string
+                                              date: string
                                           }
                                         | any
                                 ) => {
                                     return (
                                         <li key={product.value}>
+                                            <div>
+                                                {dateFormat(product.date)}
+                                            </div>
                                             <a href={product.url}>
                                                 {product.text}
                                             </a>
