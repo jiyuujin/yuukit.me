@@ -36,7 +36,8 @@ module.exports = {
         name: 'Web Developer - Yuma Kitamura',
         short_name: 'Portfolio',
         lang: 'en',
-        start_url: 'https://yuukit.me/',
+        start_url: '/',
+        icon: 'src/static/icons/bakeneko2.png',
         icons: [
           {
             src: 'icons/bakeneko2-72.png',
