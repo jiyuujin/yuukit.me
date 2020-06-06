@@ -35,10 +35,8 @@ module.exports = {
       options: {
         name: 'Web Developer - Yuma Kitamura',
         short_name: 'Portfolio',
-        background_color: '#ffbb33',
-        theme_color: '#ffbb33',
-        display: 'standalone',
-        start_url: 'https://webneko.dev/',
+        lang: 'en',
+        start_url: 'https://yuukit.me/',
         icons: [
           {
             src: 'icons/bakeneko2-72.png',
@@ -81,9 +79,9 @@ module.exports = {
             type: 'image/png'
           }
         ],
-        splash_pages: null,
-        include_favicon: false,
-        cache_busting_mode: 'none'
+        theme_color: '#ffbb33',
+        background_color: '#ffbb33',
+        display: 'standalone',
       }
     }
   ]
