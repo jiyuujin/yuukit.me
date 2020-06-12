@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import * as SC from '../Work/index.module.scss'
+import * as SC from './index.module.scss'
 
 export const Work: FC = () => {
     return (
