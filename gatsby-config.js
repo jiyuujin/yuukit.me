@@ -1,11 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: 'Web Developer - Yuma Kitamura',
+    title: 'Web Developer',
     titleTemplate: "%s | Portfolio",
     description: 'This is the Web Developer \'Yuma Kitamura\' Portfolio.',
+    biography: 'ネット上では 自由人、jiyuujinと名乗って生息しています。誕生日は1988年11月04日。大阪府豊中市生まれ。性別は男性。現在は関西圏（京都や大阪）を中心に活動しています。',
+    position: 'フロントエンドエンジニア,Webエンジニア,HRアドバイザー',
+    author: 'Yuma Kitamura',
+    locale: 'Osaka, Kyoto in Japan',
     url: 'https://yuukit.me/',
     image: 'src/images/bakeneko2.png',
-    twitterUsername: '@jiyuujin'
+    blogName: 'Web猫ブログ',
+    blogUrl: 'https://webneko.dev/',
+    twitterUsername: '@jiyuujin',
+    twitterUrl: 'https://twitter.com/jiyuujinlab'
   },
   plugins: [
     'gatsby-plugin-typescript',
@@ -36,7 +43,8 @@ module.exports = {
         name: 'Web Developer - Yuma Kitamura',
         short_name: 'Portfolio',
         lang: 'en',
-        start_url: 'https://yuukit.me/',
+        start_url: '/',
+        icon: 'src/static/icons/bakeneko2.png',
         icons: [
           {
             src: 'icons/bakeneko2-72.png',
