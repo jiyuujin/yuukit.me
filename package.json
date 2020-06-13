@@ -23,8 +23,8 @@
   "devDependencies": {
     "@nekohack/eslint-config-react": "0.2.1",
     "@types/react-helmet": "5.0.16",
-    "@typescript-eslint/eslint-plugin": "2.34.0",
-    "@typescript-eslint/parser": "2.34.0",
+    "@typescript-eslint/eslint-plugin": "3.2.0",
+    "@typescript-eslint/parser": "3.2.0",
     "sass": "1.26.8"
   }
 }
