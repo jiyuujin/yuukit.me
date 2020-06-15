@@ -14,9 +14,7 @@ export const ProductList: FC = () => {
     return (
         <div className={SC.basic}>
             プロダクト一覧
-            <div className={SC.subtitle}>
-                Web Developer - Yuma Kitamura
-            </div>
+            <div className={SC.subtitle}>Web Developer - Yuma Kitamura</div>
             <div
                 className={SC.description}
                 dangerouslySetInnerHTML={{ __html: profileProduct }}
@@ -48,10 +46,10 @@ export const ProductDescription: FC = () => {
                         (
                             link:
                                 | {
-                                value: number
-                                text: string
-                                url: string
-                            }
+                                      value: number
+                                      text: string
+                                      url: string
+                                  }
                                 | any
                         ) => {
                             return (

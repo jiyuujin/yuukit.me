@@ -10,23 +10,23 @@ export const CookieFooter: FC = () => {
 
     return (
         <>
-            {!getCookie() ? <footer className={SC.cookieFooter}>
-                <p className={SC.content}>
-                    <div className={SC.title}>
-                        あなたがこのサイト上でベストな体験ができるようCookieを使用しています
-                    </div>
-                    <a
-                        href="https://nekohack-privacy-policy.netlify.app"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        プライバシーポリシー
-                    </a>
-                    <button onClick={accept}>
-                        確認しました
-                    </button>
-                </p>
-            </footer> : null}
+            {!getCookie() ? (
+                <footer className={SC.cookieFooter}>
+                    <p className={SC.content}>
+                        <div className={SC.title}>
+                            あなたがこのサイト上でベストな体験ができるようCookieを使用しています
+                        </div>
+                        <a
+                            href="https://nekohack-privacy-policy.netlify.app"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            プライバシーポリシー
+                        </a>
+                        <button onClick={accept}>確認しました</button>
+                    </p>
+                </footer>
+            ) : null}
         </>
     )
 }

@@ -13,17 +13,15 @@ export const SlideList: FC = () => {
                         (
                             product:
                                 | {
-                                value: number
-                                text: string
-                                url: string
-                            }
+                                      value: number
+                                      text: string
+                                      url: string
+                                  }
                                 | any
                         ) => {
                             return (
                                 <li key={product.value}>
-                                    <a href={product.url}>
-                                        {product.text}
-                                    </a>
+                                    <a href={product.url}>{product.text}</a>
                                 </li>
                             )
                         }
