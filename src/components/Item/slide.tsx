@@ -18,10 +18,10 @@ export const SlideList: FC = () => {
                         (
                             product:
                                 | {
-                                value: number
-                                text: string
-                                url: string
-                            }
+                                      value: number
+                                      text: string
+                                      url: string
+                                  }
                                 | any
                         ) => {
                             return (
