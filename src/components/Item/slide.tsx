@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import dayjs from 'dayjs'
 import * as SC from './index.module.scss'
+import { Play } from '../Play'
 import { productLinks as talkProductLinks } from '../../utils/talk'
 
 export const SlideList: FC = () => {
@@ -29,9 +30,16 @@ export const SlideList: FC = () => {
                                     <div>
                                         {dateFormat(product.date)}
                                     </div>
-                                    <a href={product.url}>
-                                        {product.text}
-                                    </a>
+                                    <div className={SC.link}>
+                                        <a href={product.url}>
+                                            {product.text}
+                                        </a>
+                                        {product.youtubeUrl && (
+                                            <a href={product.youtubeUrl}>
+                                                <Play />
+                                            </a>
+                                        )}
+                                    </div>
                                 </li>
                             )
                         }
