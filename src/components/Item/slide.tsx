@@ -1,8 +1,14 @@
 import React, { FC } from 'react'
+import dayjs from 'dayjs'
 import * as SC from './index.module.scss'
+import { Play } from '../Play'
 import { productLinks as talkProductLinks } from '../../utils/talk'
 
 export const SlideList: FC = () => {
+    const dateFormat = (d: string) => {
+        return dayjs(d).format('YYYY年MM月DD日')
+    }
+
     return (
         <div className={SC.basic}>
             スライド一覧
@@ -21,7 +27,19 @@ export const SlideList: FC = () => {
                         ) => {
                             return (
                                 <li key={product.value}>
-                                    <a href={product.url}>{product.text}</a>
+                                    <div>
+                                        {dateFormat(product.date)}
+                                    </div>
+                                    <div className={SC.link}>
+                                        <a href={product.url}>
+                                            {product.text}
+                                        </a>
+                                        {product.youtubeUrl && (
+                                            <a href={product.youtubeUrl}>
+                                                <Play />
+                                            </a>
+                                        )}
+                                    </div>
                                 </li>
                             )
                         }

@@ -23,3 +23,15 @@
         }
     }
 }
+
+.link {
+    display: flex;
+    justify-content: flex-start;
+
+    a {
+        margin: 0 8px;
+    }
+    a:first-child {
+        width: 240px;
+    }
+}
