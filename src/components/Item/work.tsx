@@ -1,7 +1,13 @@
 import React, { FC } from 'react'
+import { Skill } from '../Skill'
 import * as SC from './index.module.scss'
+import { skills } from '../../utils/profile'
 
-export const Work: FC = () => {
+type WorkType = {
+    data :any
+}
+
+export const Work: FC<WorkType> = () => {
     return (
         <div className={SC.basic}>
             職歴
@@ -30,6 +36,19 @@ export const Work: FC = () => {
                         </a>
                     </li>
                 </ul>
+            </div>
+            <div className={SC.subtitle}>スキル</div>
+            <div className={SC.skills}>
+                {skills.map((skill: any, index: number) => {
+                    return (
+                        <Skill
+                            key={index}
+                            title={skill.title}
+                            rating={skill.rating}
+                            items={skill.items}
+                        />
+                    )
+                })}
             </div>
         </div>
     )
