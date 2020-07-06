@@ -34,7 +34,6 @@ export const Home: FC = () => {
         <div className={SC.top}>
             <div className={SC.wrapper}>
                 <Header
-                    title={data.site?.siteMetadata?.title}
                     author={data.site?.siteMetadata?.author}
                     locale={data.site?.siteMetadata?.locale}
                 />
