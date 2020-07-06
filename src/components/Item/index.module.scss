@@ -35,3 +35,12 @@
         width: 240px;
     }
 }
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex: 0 1 auto;
+    font-size: 0.8rem;
+    line-height: 24px;
+}
