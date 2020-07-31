@@ -20,7 +20,7 @@
     "react-helmet": "6.1.0",
     "react-text-loop": "2.3.0",
     "typescript": "3.9.7",
-    "webpack": "4.44.0"
+    "webpack": "4.44.1"
   },
   "devDependencies": {
     "@nekohack/eslint-config-react": "0.3.0",
