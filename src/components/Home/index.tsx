@@ -17,6 +17,7 @@ export const Home: FC = () => {
                     description
                     biography
                     position
+                    workExperience
                     author
                     locale
                     url
@@ -33,21 +34,10 @@ export const Home: FC = () => {
     return (
         <div className={SC.top}>
             <div className={SC.wrapper}>
-                <Header
-                    author={data.site?.siteMetadata?.author}
-                    locale={data.site?.siteMetadata?.locale}
-                />
-                <Social
-                    blogUrl={data.site?.siteMetadata?.blogUrl}
-                    blogName={data.site?.siteMetadata?.blogName}
-                    twitterUrl={data.site?.siteMetadata?.twitterUrl}
-                    twitterUsername={data.site?.siteMetadata?.twitterUsername}
-                />
-                <Introduction
-                    biography={data.site?.siteMetadata?.biography}
-                    position={data.site?.siteMetadata?.position}
-                />
-                <Work />
+                <Header data={data.site?.siteMetadata} />
+                <Social data={data.site?.siteMetadata} />
+                <Introduction data={data.site?.siteMetadata} />
+                <Work data={data.site?.siteMetadata} />
                 <ProductList />
                 <ProductDescription />
                 <SlideList />

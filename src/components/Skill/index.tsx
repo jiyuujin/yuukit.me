@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import PropTypes from 'prop-types'
 import * as SC from './index.module.scss'
 
 type SkillType = {
@@ -16,11 +17,20 @@ export const Skill: FC<SkillType> = ({ title, rating, items }) => {
             <h2>{title}</h2>
             {items.map((item: any) => {
                 return (
-                    <div className={item.strong ? SC.strong : ''}>
+                    <div
+                        key={item.text}
+                        className={item.strong ? SC.strong : ''}
+                    >
                         {item.text}
                     </div>
                 )
             })}
         </div>
     )
+}
+
+Skill.propTypes = {
+    title: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+    items: PropTypes.array.isRequired,
 }

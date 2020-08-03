@@ -27,13 +27,9 @@ export const SlideList: FC = () => {
                         ) => {
                             return (
                                 <li key={product.value}>
-                                    <div>
-                                        {dateFormat(product.date)}
-                                    </div>
+                                    <div>{dateFormat(product.date)}</div>
                                     <div className={SC.link}>
-                                        <a href={product.url}>
-                                            {product.text}
-                                        </a>
+                                        <a href={product.url}>{product.text}</a>
                                         {product.youtubeUrl && (
                                             <a href={product.youtubeUrl}>
                                                 <Play />

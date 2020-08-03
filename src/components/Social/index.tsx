@@ -3,28 +3,43 @@ import PropTypes from 'prop-types'
 import * as SC from './index.module.scss'
 
 type ProfileSocial = {
-    blogUrl: string
-    blogName: string
-    twitterUrl: string
-    twitterUsername: string
+    data: {
+        title: string
+        titleTemplate: string
+        description: string
+        biography: string
+        position: string
+        workExperience: string
+        author: string
+        locale: string
+        url: string
+        image: string
+        blogName: string
+        blogUrl: string
+        twitterUsername: string
+        twitterUrl: string
+    }
 }
 
-export const Social: FC<ProfileSocial> = ({
-    blogUrl,
-    blogName,
-    twitterUrl,
-    twitterUsername,
-}) => {
+export const Social: FC<ProfileSocial> = ({ data }) => {
     return (
         <div className={SC.social}>
             <div className={SC.item}>
-                <a href={blogUrl} target="_blank" rel="noopener noreferrer">
-                    {blogName}
+                <a
+                    href={data.blogUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {data.blogName}
                 </a>
             </div>
             <div className={SC.item}>
-                <a href={twitterUrl} target="_blank" rel="noopener noreferrer">
-                    {twitterUsername}
+                <a
+                    href={data.twitterUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {data.twitterUsername}
                 </a>
             </div>
         </div>
@@ -32,8 +47,5 @@ export const Social: FC<ProfileSocial> = ({
 }
 
 Social.propTypes = {
-    blogUrl: PropTypes.string.isRequired,
-    blogName: PropTypes.string.isRequired,
-    twitterUrl: PropTypes.string.isRequired,
-    twitterUsername: PropTypes.string.isRequired,
+    data: PropTypes.any.isRequired,
 }
