@@ -21,7 +21,9 @@ export const Product: FC<ProductProps> = ({ data }) => {
                         <div className={SC.subtitle}>{node.title}</div>
                         <div
                             className={SC.description}
-                            dangerouslySetInnerHTML={{ __html: node.description }}
+                            dangerouslySetInnerHTML={{
+                                __html: node.description,
+                            }}
                         />
                         <div className={SC.subtitle}>利用技術</div>
                         <div className={SC.description}>
