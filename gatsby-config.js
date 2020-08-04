@@ -32,6 +32,14 @@ module.exports = {
         path: `${__dirname}/src/images`,
       }
     },
+    'gatsby-transformer-yaml',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'content',
+        path: `${__dirname}/src/contents`,
+      },
+    },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
