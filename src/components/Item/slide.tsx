@@ -15,7 +15,7 @@ type SlideProps = {
 
 export const Slide: FC<SlideProps> = ({ data }) => {
     const dateFormat = (d: string) => {
-        return dayjs(d).format('YYYY年MM月DD日')
+        return dayjs(new Date(d)).format('YYYY年MM月DD日')
     }
 
     return (
@@ -24,18 +24,20 @@ export const Slide: FC<SlideProps> = ({ data }) => {
             <div className={SC.subtitle}>登壇</div>
             <div className={SC.description}>
                 <ul>
-                    {data.map(({ node, index }: any) => {
+                    {data.map(({ node }: any) => {
                         return (
-                            <li key={index}>
+                            <li key={node.value}>
                                 <div>{dateFormat(node.date)}</div>
                                 <div className={SC.link}>
                                     <a href={node.url}>{node.text}</a>
-                                    {node.youtubeUrl && (
-                                        <a href={node.youtubeUrl}>
-                                            <Play />
-                                        </a>
-                                    )}
                                 </div>
+                                {node.youtubeUrl && (
+                                    <div className={SC.link}>
+                                        <a href={node.youtubeUrl}>
+                                            {node.youtubeUrl}
+                                        </a>
+                                    </div>
+                                )}
                             </li>
                         )
                     })}

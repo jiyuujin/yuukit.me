@@ -31,16 +31,17 @@ export const Home: FC = () => {
             allProductsYaml {
                 edges {
                     node {
+                        id
                         title
                         description
                         skills
-                        links
                     }
                 }
             }
             allTalksYaml {
                 edges {
                     node {
+                        value
                         text
                         url
                         youtubeUrl
