@@ -1,12 +1,21 @@
 import React, { FC } from 'react'
+import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
 import * as SC from './index.module.scss'
 import { Play } from '../Play'
-import { productLinks as talkProductLinks } from '../../utils/talk'
 
-export const SlideList: FC = () => {
+type SlideProps = {
+    data: Array<{
+        text: string
+        url: string
+        youtubeUrl: string
+        date: string
+    }>
+}
+
+export const Slide: FC<SlideProps> = ({ data }) => {
     const dateFormat = (d: string) => {
-        return dayjs(d).format('YYYY年MM月DD日')
+        return dayjs(new Date(d)).format('YYYY年MM月DD日')
     }
 
     return (
@@ -15,37 +24,29 @@ export const SlideList: FC = () => {
             <div className={SC.subtitle}>登壇</div>
             <div className={SC.description}>
                 <ul>
-                    {talkProductLinks.map(
-                        (
-                            product:
-                                | {
-                                      value: number
-                                      text: string
-                                      url: string
-                                  }
-                                | any
-                        ) => {
-                            return (
-                                <li key={product.value}>
-                                    <div>
-                                        {dateFormat(product.date)}
-                                    </div>
+                    {data.map(({ node }: any) => {
+                        return (
+                            <li key={node.value}>
+                                <div>{dateFormat(node.date)}</div>
+                                <div className={SC.link}>
+                                    <a href={node.url}>{node.text}</a>
+                                </div>
+                                {node.youtubeUrl && (
                                     <div className={SC.link}>
-                                        <a href={product.url}>
-                                            {product.text}
+                                        <a href={node.youtubeUrl}>
+                                            {node.youtubeUrl}
                                         </a>
-                                        {product.youtubeUrl && (
-                                            <a href={product.youtubeUrl}>
-                                                <Play />
-                                            </a>
-                                        )}
                                     </div>
-                                </li>
-                            )
-                        }
-                    )}
+                                )}
+                            </li>
+                        )
+                    })}
                 </ul>
             </div>
         </div>
     )
+}
+
+Slide.propTypes = {
+    data: PropTypes.any.isRequired,
 }

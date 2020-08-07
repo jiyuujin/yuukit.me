@@ -1,19 +1,33 @@
 import React, { FC } from 'react'
+import PropTypes from 'prop-types'
 import { Skill } from '../Skill'
 import * as SC from './index.module.scss'
 import { skills } from '../../utils/profile'
 
 type WorkType = {
-    data :any
+    data: {
+        title: string
+        titleTemplate: string
+        description: string
+        biography: string
+        position: string
+        workExperience: string
+        author: string
+        locale: string
+        url: string
+        image: string
+        blogName: string
+        blogUrl: string
+        twitterUsername: string
+        twitterUrl: string
+    }
 }
 
-export const Work: FC<WorkType> = () => {
+export const Work: FC<WorkType> = ({ data }) => {
     return (
         <div className={SC.basic}>
             職歴
-            <div className={SC.description}>
-                自分のキャリアのスタートはiOSネイティブアプリのエンジニアとして。これまでのキャリアの中でiOSネイティブアプリエンジニアとして業務を通じ基礎的なコーディングを取得、Webを扱うサーバサイドで足りていないと言った環境も相まってjQueryを始めとしたCSS設計、フレームワークの使用など徐々にフロントエンドエンジニアという領域にも踏み込んでいきました。
-            </div>
+            <div className={SC.description}>{data.workExperience}</div>
             <div className={SC.subtitle}>関連リンク</div>
             <div className={SC.description}>
                 <ul>
@@ -52,4 +66,8 @@ export const Work: FC<WorkType> = () => {
             </div>
         </div>
     )
+}
+
+Work.propTypes = {
+    data: PropTypes.any.isRequired,
 }

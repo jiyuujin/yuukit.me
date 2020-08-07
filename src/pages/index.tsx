@@ -5,6 +5,7 @@ import { Home } from '../components/Home'
 import { Footer } from '../components/Footer'
 import { CookieFooter } from '../components/CookieFooter'
 import * as SC from './index.module.scss'
+// import { Helmet } from 'react-helmet'
 
 export default class IndexPage extends React.Component<{}> {
     public render() {

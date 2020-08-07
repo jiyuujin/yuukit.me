@@ -1,19 +1,7 @@
 export const positions: string[] = [
     'Web Developer 🔨',
     'Vue.js Advocator 😎',
-    'React Enthusiast 😀'
-]
-
-export const product: string =
-    '技術ブログと切り分けて自身を紹介するため、2020年03月に開設した当プロフィールサイト。これまで自身を紹介する入り口として登壇・LTの掴みにしていたWeb猫ブログの位置付けが当プロフィールサイトにとって変わる。'
-
-export const usedSkills: string[] = [
-    'Gatsby.js',
-    'Gatsby.js PWA',
-    'AWS CDK',
-    'AWS S3',
-    'AWS Cloudfront',
-    'Github Actions',
+    'React Enthusiast 😀',
 ]
 
 export const skills: Array<{
@@ -30,12 +18,12 @@ export const skills: Array<{
         items: [
             {
                 text: 'v-kansai team member ♥️️',
-                strong: true
+                strong: true,
             },
             {
-                text: 'Vue.js Advocator 😎'
-            }
-        ]
+                text: 'Vue.js Advocator 😎',
+            },
+        ],
     },
     {
         title: 'Node.js & JavaScript',
@@ -43,19 +31,19 @@ export const skills: Array<{
         items: [
             {
                 text: 'ES6',
-                strong: true
+                strong: true,
             },
             {
                 text: 'Plugin Creation',
-                strong: true
+                strong: true,
             },
             {
-                text: 'Babel'
+                text: 'Babel',
             },
             {
-                text: 'Webpack'
-            }
-        ]
+                text: 'Webpack',
+            },
+        ],
     },
     {
         title: 'React',
@@ -63,15 +51,15 @@ export const skills: Array<{
         items: [
             {
                 text: 'React Enthusiast 😀',
-                strong: true
+                strong: true,
             },
             {
-                text: 'Next.js'
+                text: 'Next.js',
             },
             {
-                text: 'Gatsby.js'
-            }
-        ]
+                text: 'Gatsby.js',
+            },
+        ],
     },
     {
         title: 'VC & CI',
@@ -79,18 +67,18 @@ export const skills: Array<{
         items: [
             {
                 text: 'Git',
-                strong: true
+                strong: true,
             },
             {
-                text: 'Github Actions'
+                text: 'Github Actions',
             },
             {
-                text: 'Gitlab CI'
+                text: 'Gitlab CI',
             },
             {
-                text: 'Travis CI'
-            }
-        ]
+                text: 'Travis CI',
+            },
+        ],
     },
     {
         title: 'Infrastructure',
@@ -98,19 +86,19 @@ export const skills: Array<{
         items: [
             {
                 text: 'Serverless ✍️',
-                strong: true
+                strong: true,
             },
             {
                 text: 'AWS',
-                strong: true
+                strong: true,
             },
             {
-                text: 'GCP / Firebase'
+                text: 'GCP / Firebase',
             },
             {
-                text: 'Netlify'
-            }
-        ]
+                text: 'Netlify',
+            },
+        ],
     },
     {
         title: 'Scala',
@@ -118,11 +106,11 @@ export const skills: Array<{
         items: [
             {
                 text: 'Playframework',
-                strong: true
+                strong: true,
             },
             {
-                text: 'Akka HTTP'
-            }
-        ]
-    }
+                text: 'Akka HTTP',
+            },
+        ],
+    },
 ]

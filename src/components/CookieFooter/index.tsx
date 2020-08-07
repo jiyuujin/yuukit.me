@@ -12,7 +12,7 @@ export const CookieFooter: FC = () => {
         <>
             {!getCookie() ? (
                 <footer className={SC.cookieFooter}>
-                    <p className={SC.content}>
+                    <div className={SC.content}>
                         <div className={SC.title}>
                             あなたがこのサイト上でベストな体験ができるようCookieを使用しています
                         </div>
@@ -24,7 +24,7 @@ export const CookieFooter: FC = () => {
                             プライバシーポリシー
                         </a>
                         <button onClick={accept}>確認しました</button>
-                    </p>
+                    </div>
                 </footer>
             ) : null}
         </>

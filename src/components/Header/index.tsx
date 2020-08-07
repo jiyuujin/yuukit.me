@@ -5,11 +5,25 @@ import * as SC from './index.module.scss'
 import { positions } from '../../utils/profile'
 
 type ProfileHeader = {
-    author: string
-    locale: string
+    data: {
+        title: string
+        titleTemplate: string
+        description: string
+        biography: string
+        position: string
+        workExperience: string
+        author: string
+        locale: string
+        url: string
+        image: string
+        blogName: string
+        blogUrl: string
+        twitterUsername: string
+        twitterUrl: string
+    }
 }
 
-export const Header: FC<ProfileHeader> = ({ author, locale }) => {
+export const Header: FC<ProfileHeader> = ({ data }) => {
     return (
         <div className={SC.title}>
             <TextLoop interval={5000}>
@@ -17,13 +31,12 @@ export const Header: FC<ProfileHeader> = ({ author, locale }) => {
                     <div key={position}>{position}</div>
                 ))}
             </TextLoop>
-            <div className={SC.name}>{author}</div>
-            <div className={SC.locale}>{locale}</div>
+            <div className={SC.name}>{data.author}</div>
+            <div className={SC.locale}>{data.locale}</div>
         </div>
     )
 }
 
 Header.propTypes = {
-    author: PropTypes.string.isRequired,
-    locale: PropTypes.string.isRequired,
+    data: PropTypes.any.isRequired,
 }

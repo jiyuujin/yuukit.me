@@ -5,8 +5,8 @@ import { Header } from '../Header'
 import { Social } from '../Social'
 import { Introduction } from '../Item/introduction'
 import { Work } from '../Item/work'
-import { ProductList, ProductDescription } from '../Item/product'
-import { SlideList } from '../Item/slide'
+import { Product } from '../Item/product'
+import { Slide } from '../Item/slide'
 
 export const Home: FC = () => {
     const data = useStaticQuery(graphql`
@@ -17,6 +17,7 @@ export const Home: FC = () => {
                     description
                     biography
                     position
+                    workExperience
                     author
                     locale
                     url
@@ -27,30 +28,39 @@ export const Home: FC = () => {
                     twitterUrl
                 }
             }
+            allProductsYaml {
+                edges {
+                    node {
+                        id
+                        title
+                        description
+                        skills
+                    }
+                }
+            }
+            allTalksYaml {
+                edges {
+                    node {
+                        value
+                        text
+                        url
+                        youtubeUrl
+                        date
+                    }
+                }
+            }
         }
     `)
 
     return (
         <div className={SC.top}>
             <div className={SC.wrapper}>
-                <Header
-                    author={data.site?.siteMetadata?.author}
-                    locale={data.site?.siteMetadata?.locale}
-                />
-                <Social
-                    blogUrl={data.site?.siteMetadata?.blogUrl}
-                    blogName={data.site?.siteMetadata?.blogName}
-                    twitterUrl={data.site?.siteMetadata?.twitterUrl}
-                    twitterUsername={data.site?.siteMetadata?.twitterUsername}
-                />
-                <Introduction
-                    biography={data.site?.siteMetadata?.biography}
-                    position={data.site?.siteMetadata?.position}
-                />
-                <Work />
-                <ProductList />
-                <ProductDescription />
-                <SlideList />
+                <Header data={data.site?.siteMetadata} />
+                <Social data={data.site?.siteMetadata} />
+                <Introduction data={data.site?.siteMetadata} />
+                <Work data={data.site?.siteMetadata} />
+                <Product data={data.allProductsYaml?.edges} />
+                <Slide data={data.allTalksYaml?.edges} />
             </div>
         </div>
     )
