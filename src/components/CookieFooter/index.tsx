@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { Button as NekoButton } from 'nekohack-ui'
 import * as SC from './index.module.scss'
 import { getCookie, setCookie } from '../../services/cookie'
 
@@ -23,7 +24,7 @@ export const CookieFooter: FC = () => {
                         >
                             プライバシーポリシー
                         </a>
-                        <button onClick={accept}>確認しました</button>
+                        <NekoButton onClick={accept}>確認しました</NekoButton>
                     </div>
                 </footer>
             ) : null}
