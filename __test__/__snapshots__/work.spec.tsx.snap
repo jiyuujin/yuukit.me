@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Work render correctly 1`] = `
+<div>
+  職歴
+  <div>
+    自分のキャリアのスタートはiOSネイティブアプリのエンジニアとして。これまでのキャリアの中でiOSネイティブアプリエンジニアとして業務を通じ基礎的なコーディングを取得、Webを扱うサーバサイドで足りていないと言った環境も相まってjQueryを始めとしたCSS設計、フレームワークの使用など徐々にフロントエンドエンジニアという領域にも踏み込んでいきました。
+  </div>
+  <div>
+    関連リンク
+  </div>
+  <div>
+    <ul>
+      <li>
+        <a
+          href="https://github.com/jiyuujin/Curriculum-Vitae"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          職務経歴書
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://scrapbox.io/nekohack/skillset"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          スキルセット (公開予定)
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    スキル
+  </div>
+  <div>
+    <div>
+      <h2>
+        Vue.js & Nuxt.js
+      </h2>
+      <div>
+        v-kansai team member ♥️️
+      </div>
+      <div
+        className=""
+      >
+        Vue.js Advocator 😎
+      </div>
+    </div>
+    <div>
+      <h2>
+        Node.js & JavaScript
+      </h2>
+      <div>
+        ES6
+      </div>
+      <div>
+        Plugin Creation
+      </div>
+      <div
+        className=""
+      >
+        Babel
+      </div>
+      <div
+        className=""
+      >
+        Webpack
+      </div>
+    </div>
+    <div>
+      <h2>
+        React
+      </h2>
+      <div>
+        React Enthusiast 😀
+      </div>
+      <div
+        className=""
+      >
+        Next.js
+      </div>
+      <div
+        className=""
+      >
+        Gatsby.js
+      </div>
+    </div>
+    <div>
+      <h2>
+        VC & CI
+      </h2>
+      <div>
+        Git
+      </div>
+      <div
+        className=""
+      >
+        Github Actions
+      </div>
+      <div
+        className=""
+      >
+        Gitlab CI
+      </div>
+      <div
+        className=""
+      >
+        Travis CI
+      </div>
+    </div>
+    <div>
+      <h2>
+        Infrastructure
+      </h2>
+      <div>
+        Serverless ✍️
+      </div>
+      <div>
+        AWS
+      </div>
+      <div
+        className=""
+      >
+        GCP / Firebase
+      </div>
+      <div
+        className=""
+      >
+        Netlify
+      </div>
+    </div>
+    <div>
+      <h2>
+        Scala
+      </h2>
+      <div>
+        Playframework
+      </div>
+      <div
+        className=""
+      >
+        Akka HTTP
+      </div>
+    </div>
+  </div>
+</div>
+`;

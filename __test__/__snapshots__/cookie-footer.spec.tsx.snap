@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cookie Footer render correctly 1`] = `
+<footer>
+  <div>
+    <div>
+      あなたがこのサイト上でベストな体験ができるようCookieを使用しています
+    </div>
+    <a
+      href="https://nekohack-privacy-policy.netlify.app"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      プライバシーポリシー
+    </a>
+    <button
+      className="sc-AxjAm ebOrRB"
+      onClick={[Function]}
+    >
+      確認しました
+    </button>
+  </div>
+</footer>
+`;
