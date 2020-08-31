@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer render correctly 1`] = `
+<footer>
+  <p>
+    <a
+      href="https://webneko.dev/contact"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      CONTACT
+    </a>
+  </p>
+  <p>
+    Created © 2020 jiyuujin LAB. All Rights Reserved.
+  </p>
+</footer>
+`;

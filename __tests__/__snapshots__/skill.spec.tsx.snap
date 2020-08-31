@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skill render correctly 1`] = `
+<div>
+  <h2>
+    Vue.js & Nuxt.js
+  </h2>
+  <div>
+    v-kansai team member ♥️️
+  </div>
+  <div
+    className=""
+  >
+    Vue.js Advocator 😎
+  </div>
+</div>
+`;

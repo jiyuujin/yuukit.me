@@ -41,7 +41,7 @@ export const Home: FC = () => {
             allTalksYaml {
                 edges {
                     node {
-                        value
+                        id
                         text
                         url
                         youtubeUrl

@@ -26,5 +26,30 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm install gatsby-cli
+
+    - name: Cache node modules
+      uses: actions/cache@v1
+      env:
+        cache-name: _cache_npm_node12
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
+
+    - name: Transpile
+      run: |
+        npm install
+        npm install gatsby-cli
+        npm run build --if-present
+      env:
+        CI: true
+
+    - name: Unit Test
+      run: |
+        npm install
+        npm run test
+      env:
+        CI: true

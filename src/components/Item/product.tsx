@@ -5,10 +5,9 @@ import * as SC from './index.module.scss'
 type ProductProps = {
     data: Array<{
         id: string
-        text: string
-        url: string
-        youtubeUrl: string
-        date: string
+        title: string
+        description: string
+        skills: string[]
     }>
 }
 

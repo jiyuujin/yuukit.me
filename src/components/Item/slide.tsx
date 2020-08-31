@@ -25,7 +25,7 @@ export const Slide: FC<SlideProps> = ({ data }) => {
                 <ul>
                     {data.map(({ node }: any) => {
                         return (
-                            <li key={node.value}>
+                            <li key={node.id}>
                                 <div>{dateFormat(node.date)}</div>
                                 <div className={SC.link}>
                                     <a href={node.url}>{node.text}</a>
