@@ -9,7 +9,7 @@
     "test:w": "npm run test-cover -- --watch"
   },
   "dependencies": {
-    "@babel/core": "7.11.4",
+    "@babel/core": "7.11.5",
     "dayjs": "1.8.34",
     "gatsby": "2.24.52",
     "gatsby-plugin-google-analytics": "2.3.13",
