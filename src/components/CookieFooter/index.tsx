@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Button as NekoButton } from 'nekohack-ui'
+import { NekoButton } from 'nekohack-ui'
 import * as SC from './index.module.scss'
 import { getCookie, setCookie } from '../../services/cookie'
 
