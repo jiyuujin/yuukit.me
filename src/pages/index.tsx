@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import { Home } from '../components/Home'
 import { Footer } from '../components/Footer'
-import { CookieFooter } from '../components/CookieFooter'
+import { CookieFooterWrapper } from '../components/CookieFooterWrapper'
 import * as SC from './index.module.scss'
 // import { Helmet } from 'react-helmet'
 
@@ -15,7 +15,7 @@ export default class IndexPage extends React.Component<{}> {
                 <div className={SC.container}>
                     <Home />
                     <Footer />
-                    <CookieFooter />
+                    <CookieFooterWrapper />
                 </div>
             </Layout>
         )

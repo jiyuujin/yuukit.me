@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { CookieFooter } from '../src/components/CookieFooter'
+import { CookieFooter } from '../src/components/CookieFooterWrapper'
 
 describe('Cookie Footer', () => {
     it('render correctly', () => {
