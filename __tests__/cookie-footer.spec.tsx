@@ -1,11 +1,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { CookieFooter } from '../src/components/CookieFooter'
+import { CookieFooterWrapper } from '../src/components/CookieFooterWrapper'
 
-describe('Cookie Footer', () => {
+describe('Cookie Footer Wrapper', () => {
     it('render correctly', () => {
         const tree = renderer
-            .create(<CookieFooter />)
+            .create(<CookieFooterWrapper />)
             .toJSON()
         expect(tree).toMatchSnapshot()
     })
