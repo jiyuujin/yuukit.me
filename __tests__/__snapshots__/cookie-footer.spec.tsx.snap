@@ -1,24 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Cookie Footer render correctly 1`] = `
-<footer>
-  <div>
-    <div>
-      あなたがこのサイト上でベストな体験ができるようCookieを使用しています
-    </div>
-    <a
-      href="https://nekohack-privacy-policy.netlify.app"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      プライバシーポリシー
-    </a>
-    <button
-      className="sc-bdnylx cUBoak"
-      onClick={[Function]}
-    >
-      確認しました
-    </button>
-  </div>
-</footer>
+exports[`Cookie Footer Wrapper render correctly 1`] = `
+<cookie-footer
+  name="yuukit-me-profile-site"
+  title="あなたがこのサイト上でベストな体験ができるようCookieを使用しています"
+  url="https://nekohack-privacy-policy.netlify.app"
+/>
 `;
