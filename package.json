@@ -20,7 +20,7 @@
     "gatsby-plugin-typescript": "2.4.20",
     "gatsby-source-filesystem": "2.3.30",
     "gatsby-transformer-yaml": "2.4.12",
-    "nekohack-ui": "1.0.0-rc.0",
+    "nekohack-ui": "1.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-helmet": "6.1.0",
