@@ -1,9 +1,10 @@
-# yuukit.me
+<p align="center">
+  <img src='https://github.com/jiyuujin/yuukit.me/blob/master/icon/bakeneko.svg?sanitize=true' alt="Me" title="Me" width="108px" height='108px'/>
+</p>
 
-```bash
-# gatsby
-yarn dev
-```
+<div align="center">
+  <h2>Web Developer | Yuma Kitamura</h2>
+</div>
 
 ## Skills
 
