@@ -1,5 +1,5 @@
 <p align="center">
-  <img src='https://github.com/jiyuujin/yuukit.me/blob/master/bakeneko.svg?sanitize=true' alt="Me" title="Me" width="108px" height='108px'/>
+  <img src='https://github.com/jiyuujin/yuukit.me/blob/master/bakeneko.svg?sanitize=true' alt="Me" title="Me" width="256px" height='256px'/>
 </p>
 
 <div align="center">
