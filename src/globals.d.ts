@@ -14,7 +14,10 @@ declare let process: Process
 declare global {
     namespace JSX {
         interface IntrinsicElements {
-            'cookie-footer': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+            'cookie-footer': React.DetailedHTMLProps<
+                React.HTMLAttributes<HTMLElement>,
+                HTMLElement
+            >
         }
     }
 }
