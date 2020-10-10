@@ -1,5 +1,8 @@
 import React, { FC } from 'react'
-import { applyPolyfills, defineCustomElements } from '@nekohack/tiny-components/loader'
+import {
+    applyPolyfills,
+    defineCustomElements,
+} from '@nekohack/tiny-components/loader'
 
 export const CookieFooterWrapper: FC = () => {
     applyPolyfills().then(() => {
