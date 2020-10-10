@@ -39,7 +39,3 @@ export const Product: FC<ProductProps> = ({ data }) => {
         </div>
     )
 }
-
-Product.propTypes = {
-    data: PropTypes.any.isRequired,
-}

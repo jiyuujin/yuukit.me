@@ -45,7 +45,3 @@ export const Slide: FC<SlideProps> = ({ data }) => {
         </div>
     )
 }
-
-Slide.propTypes = {
-    data: PropTypes.any.isRequired,
-}

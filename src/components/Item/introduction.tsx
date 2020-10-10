@@ -1,27 +1,9 @@
 import React, { FC } from 'react'
 import PropTypes from 'prop-types'
 import * as SC from './index.module.scss'
+import { SiteMetadataTypes } from '../../types'
 
-type BasicType = {
-    data: {
-        title: string
-        titleTemplate: string
-        description: string
-        biography: string
-        position: string
-        workExperience: string
-        author: string
-        locale: string
-        url: string
-        image: string
-        blogName: string
-        blogUrl: string
-        twitterUsername: string
-        twitterUrl: string
-    }
-}
-
-export const Introduction: FC<BasicType> = ({ data }) => {
+export const Introduction: FC<SiteMetadataTypes> = ({ data }) => {
     const positionList: string[] = data.position.split(',')
 
     return (
@@ -38,8 +20,4 @@ export const Introduction: FC<BasicType> = ({ data }) => {
             </div>
         </div>
     )
-}
-
-Introduction.propTypes = {
-    data: PropTypes.any.isRequired,
 }
