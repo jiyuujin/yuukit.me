@@ -3,27 +3,9 @@ import PropTypes from 'prop-types'
 import { Skill } from '../Skill'
 import * as SC from './index.module.scss'
 import { skills } from '../../utils/profile'
+import { SiteMetadataTypes } from '../../types'
 
-type WorkType = {
-    data: {
-        title: string
-        titleTemplate: string
-        description: string
-        biography: string
-        position: string
-        workExperience: string
-        author: string
-        locale: string
-        url: string
-        image: string
-        blogName: string
-        blogUrl: string
-        twitterUsername: string
-        twitterUrl: string
-    }
-}
-
-export const Work: FC<WorkType> = ({ data }) => {
+export const Work: FC<SiteMetadataTypes> = ({ data }) => {
     return (
         <div className={SC.basic}>
             職歴
@@ -66,8 +48,4 @@ export const Work: FC<WorkType> = ({ data }) => {
             </div>
         </div>
     )
-}
-
-Work.propTypes = {
-    data: PropTypes.any.isRequired,
 }
