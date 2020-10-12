@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import PropTypes from 'prop-types'
 import { Skill } from '../Skill'
 import * as SC from './index.module.scss'
 import { skills } from '../../utils/profile'

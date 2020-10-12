@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
 import * as SC from './index.module.scss'
 

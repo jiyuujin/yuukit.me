@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import PropTypes from 'prop-types'
 import * as SC from './index.module.scss'
 import { SiteMetadataTypes } from '../../types'
 
