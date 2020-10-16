@@ -9,7 +9,7 @@
     "test:w": "npm run test-cover -- --watch"
   },
   "dependencies": {
-    "@babel/core": "7.12.1",
+    "@babel/core": "7.12.3",
     "@nekohack/tiny-components": "1.0.2",
     "dayjs": "1.9.3",
     "gatsby": "2.24.78",
