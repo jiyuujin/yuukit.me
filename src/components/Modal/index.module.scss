@@ -1,0 +1,27 @@
+.modal-mask {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal-container {
+  position: relative;
+  z-index: 101;
+  background-color: #fff;
+  color: #000;
+  height: auto;
+  min-height: 330px;
+  min-width: 546px;
+  //padding-bottom: 64px;
+  display: flex;
+  background-image: url(../../images/avatar.png);
+  background-size: cover;
+  background-position: center;
+}

@@ -8,6 +8,7 @@ module.exports = {
     workExperience: `自分のキャリアのスタートはiOSネイティブアプリのエンジニアとして。これまでのキャリアの中でiOSネイティブアプリエンジニアとして業務を通じ基礎的なコーディングを取得、Webを扱うサーバサイドで足りていないと言った環境も相まってjQueryを始めとしたCSS設計、フレームワークの使用など徐々にフロントエンドエンジニアという領域にも踏み込んでいきました。`,
     author: `Yuma Kitamura`,
     locale: `Osaka, Kyoto in Japan`,
+    lonlat: `35.003238° N, 135.750389° E`,
     url: `https://yuukit.me/`,
     image: `src/images/bakeneko2.png`,
     blogName: `Web猫ブログ`,
