@@ -6,9 +6,7 @@ const children: React.ReactChild = ''
 
 describe('Layout', () => {
     it('render correctly', () => {
-        const tree = renderer
-            .create(<Layout>{children}</Layout>)
-            .toJSON()
+        const tree = renderer.create(<Layout>{children}</Layout>).toJSON()
         expect(tree).toMatchSnapshot()
     })
 })

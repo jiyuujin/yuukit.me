@@ -14,7 +14,7 @@ module.exports = {
     blogName: `Web猫ブログ`,
     blogUrl: `https://webneko.dev/`,
     twitterUsername: `@jiyuujin`,
-    twitterUrl: `https://twitter.com/jiyuujinlab`
+    twitterUrl: `https://twitter.com/jiyuujinlab`,
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -23,7 +23,7 @@ module.exports = {
       resolve: `gatsby-plugin-sass`,
       options: {
         implementation: require(`sass`),
-      }
+      },
     },
     `gatsby-plugin-typescript`,
     {
@@ -31,7 +31,7 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-      }
+      },
     },
     {
       resolve: `gatsby-plugin-react-svg`,
@@ -52,8 +52,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-167986295-1`
-      }
+        trackingId: `UA-167986295-1`,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -67,48 +67,48 @@ module.exports = {
           {
             src: `icons/bakeneko2-72.png`,
             sizes: `72x72`,
-            type: `image/png`
+            type: `image/png`,
           },
           {
             src: `icons/bakeneko2-96.png`,
             sizes: `96x96`,
-            type: `image/png`
+            type: `image/png`,
           },
           {
             src: `icons/bakeneko2-128.png`,
             sizes: `128x128`,
-            type: `image/png`
+            type: `image/png`,
           },
           {
             src: `icons/bakeneko2-144.png`,
             sizes: `144x144`,
-            type: `image/png`
+            type: `image/png`,
           },
           {
             src: `icons/bakeneko2-152.png`,
             sizes: `152x152`,
-            type: `image/png`
+            type: `image/png`,
           },
           {
             src: `icons/bakeneko2-192.png`,
             sizes: `192x192`,
-            type: `image/png`
+            type: `image/png`,
           },
           {
             src: `icons/bakeneko2-384.png`,
             sizes: `384x384`,
-            type: `image/png`
+            type: `image/png`,
           },
           {
             src: `icons/bakeneko2-512.png`,
             sizes: `512x512`,
-            type: `image/png`
+            type: `image/png`,
           }
         ],
         theme_color: `#ffbb33`,
         background_color: `#ffbb33`,
         display: `standalone`,
-      }
-    }
-  ]
+      },
+    },
+  ],
 }
