@@ -13,15 +13,17 @@
 
 .modal-container {
   position: relative;
-  z-index: 101;
+  z-index: 10001;
   background-color: #fff;
   color: #000;
   height: auto;
   min-height: 330px;
-  min-width: 546px;
-  //padding-bottom: 64px;
+  min-width: 0px;
   display: flex;
-  background-image: url(../../images/avatar.png);
-  background-size: cover;
-  background-position: center;
+}
+
+@media (min-width: 481px) {
+  .modal-container {
+    min-width: 546px;
+  }
 }

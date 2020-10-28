@@ -1,24 +1,9 @@
-.avatar-pc {
-  width: 60%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  vertical-align: middle;
-
-  img {
-    height: 600px;
-  }
-}
-
 .content {
   max-width: 56rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   height: auto;
-  //padding: 0 1.2rem;
-  //margin-top: 8rem;
-  //margin-bottom: 8rem;
   margin-left: auto;
   margin-right: auto;
   background-color: #fff;
@@ -28,23 +13,47 @@
     position: relative;
     background-color: #fff;
     padding: 0 0.8rem;
-    //margin-left: 1.5rem;
-    //margin-right: 1.5rem;
-    //width: 100%;
     border-radius: 0.5rem;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     opacity: 0.75;
 
+    .me {
+      display: block;
+      height: 12rem;
+      width: 12rem;
+      margin-top: 4rem;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 9999px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      background-image: url(../../images/me.png);
+      background-size: cover;
+      background-position: center;
+    }
+
     .name {
       font-size: 1.875rem;
       font-weight: bold;
-      padding-top: 2rem;
+      padding-top: 1.6rem;
+    }
+
+    .position {
+      font-size: 1.2rem;
+      font-weight: normal;
+
+      ul {
+        padding: 0;
+
+        li {
+          list-style: none;
+        }
+      }
     }
 
     .description {
-      padding-top: 0.5rem;
+      padding-top: 0.4rem;
       color: #718096;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: bold;
       display: flex;
       align-items: center;
@@ -52,9 +61,9 @@
     }
 
     .location {
-      padding-top: 0.5rem;
+      padding-top: 0.4rem;
       color: #718096;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -68,7 +77,6 @@
   }
 
   .social-menu {
-    //padding: 4rem;
     margin-top: 1.5rem;
     width: 80%;
     display: flex;
@@ -100,70 +108,5 @@
     width: 96%;
     margin-left: auto;
     margin-right: auto;
-
-    .avatar-sp {
-      display: block;
-      height: 12rem;
-      width: 12rem;
-      margin-top: 4rem;
-      margin-left: auto;
-      margin-right: auto;
-      border-radius: 9999px;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      background-image: url(../../images/me.png);
-      background-size: cover;
-      background-position: center;
-    }
   }
 }
-
-/*@media screen and (max-width: 1025px) {
-  .modal-container {
-    max-height: 600px;
-    max-width: 420px;
-
-    .avatar-pc {
-      width: 40%;
-    }
-
-    .content {
-      max-height: 80vh;
-      margin-top: 0;
-      margin-bottom: 0;
-
-      .info {
-        width: 96%;
-        margin-left: auto;
-        margin-right: auto;
-        border-top-left-radius: 0.5rem;
-        border-bottom-left-radius: 0.5rem;
-
-        .avatar-sp {
-          display: block;
-          border-radius: 9999px;
-        }
-
-        .name {
-          padding-top: 0;
-        }
-
-        .description {
-          font-size: 0.875rem;
-          justify-content: flex-start;
-        }
-
-        .location {
-          font-size: 0.875rem;
-          justify-content: flex-start;
-        }
-      }
-
-      .social-menu {
-        padding-bottom: 0;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-      }
-    }
-  }
-}*/
