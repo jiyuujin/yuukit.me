@@ -8,6 +8,7 @@ export type SiteMetadataTypes = {
         workExperience: string
         author: string
         locale: string
+        lonlat: string
         url: string
         image: string
         blogName: string

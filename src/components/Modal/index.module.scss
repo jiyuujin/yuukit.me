@@ -1,0 +1,29 @@
+.modal-mask {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal-container {
+  position: relative;
+  z-index: 10001;
+  background-color: #fff;
+  color: #000;
+  height: auto;
+  min-height: 330px;
+  min-width: 0px;
+  display: flex;
+}
+
+@media (min-width: 481px) {
+  .modal-container {
+    min-width: 546px;
+  }
+}

@@ -1,0 +1,112 @@
+.content {
+  max-width: 56rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  opacity: 0.92;
+
+  .info {
+    position: relative;
+    background-color: #fff;
+    padding: 0 0.8rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    opacity: 0.75;
+
+    .me {
+      display: block;
+      height: 12rem;
+      width: 12rem;
+      margin-top: 4rem;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 9999px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      background-image: url(../../images/me.png);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .name {
+      font-size: 1.875rem;
+      font-weight: bold;
+      padding-top: 1.6rem;
+    }
+
+    .position {
+      font-size: 1.2rem;
+      font-weight: normal;
+
+      ul {
+        padding: 0;
+
+        li {
+          list-style: none;
+        }
+      }
+    }
+
+    .description {
+      padding-top: 0.4rem;
+      color: #718096;
+      font-size: 0.8rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .location {
+      padding-top: 0.4rem;
+      color: #718096;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .work-experience {
+      padding-top: 0.5rem;
+      color: #303030;
+      font-size: 0.75rem;
+    }
+  }
+
+  .social-menu {
+    margin-top: 1.5rem;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.footer-area {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 4px 0;
+  width: 100%;
+  border-top: 1px #ccc solid;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  vertical-align: middle;
+
+  button {
+    margin: 0 4px;
+  }
+}
+
+@media (min-width: 481px) {
+  .info {
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
