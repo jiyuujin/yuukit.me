@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { graphql, StaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
 import * as SC from './index.module.scss'
 import {
     Elements,
@@ -101,12 +101,12 @@ const CheckoutForm = ({ isTest }: CheckoutFormType) => {
                                 className={SC.checkoutForm}
                                 onSubmit={handleSubmit}
                             >
-                                <Img
+                                {/*<Img
                                     fixed={
                                         data.contribute.childImageSharp.fixed
                                     }
                                     alt="contribute"
-                                />
+                                />*/}
                                 <label
                                     style={{
                                         width: '100%',
