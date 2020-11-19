@@ -14,7 +14,7 @@ import { Modal } from '../Modal'
 import { NekoButton } from 'nekohack-ui'
 
 export const Payment = () => {
-    const isTest = true
+    const isTest = false
 
     const stripeApiKey = isTest
         ? process.env.GATSBY_TEST_STRIPE_PUBLIC_KEY
@@ -48,7 +48,7 @@ const CheckoutForm = ({ isTest }: CheckoutFormType) => {
     const handleSubmit = async (event: any) => {
         event.preventDefault()
 
-        const res = await fetch(process.env.GATSBY_TEST_LAMBDA_ENDPOINT, {
+        const res = await fetch(process.env.GATSBY_LIVE_LAMBDA_ENDPOINT, {
             method: 'post',
             body: JSON.stringify({}),
             headers: {
