@@ -13,6 +13,8 @@
   "dependencies": {
     "@babel/core": "7.12.3",
     "@nekohack/tiny-components": "1.0.2",
+    "@stripe/react-stripe-js": "^1.1.2",
+    "@stripe/stripe-js": "^1.11.0",
     "dayjs": "1.9.6",
     "gatsby": "2.26.1",
     "gatsby-image": "2.5.0",
@@ -44,6 +46,7 @@
     "@typescript-eslint/parser": "4.8.1",
     "babel-jest": "26.6.3",
     "babel-preset-gatsby": "0.6.0",
+    "dotenv": "^8.2.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "26.6.3",
     "react-test-renderer": "16.14.0",
