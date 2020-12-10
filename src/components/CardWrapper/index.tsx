@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { NekoButton } from 'nekohack-ui'
-import { Modal } from '../Modal'
-import { Card } from '../Card'
+import Modal from '../Modal'
+import Card from '../Card'
 import { SiteMetadataTypes } from '../../types'
 import IdCardSvg from '../../static/icons/id-card.svg'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { Introduction } from '../src/components/Item/introduction'
+import Introduction from '../src/components/Introduction'
 
 const siteMetadata = {
     title: 'Web Developer',

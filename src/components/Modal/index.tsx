@@ -6,7 +6,7 @@ type ModalProps = {
     onClose: any
 }
 
-export const Modal: FC<ModalProps> = ({ children, onClose }: ModalProps) => {
+const Modal: FC<ModalProps> = ({ children, onClose }: ModalProps) => {
     const ref = useRef(null)
 
     const escapeListener = useCallback((e: KeyboardEvent) => {
@@ -41,3 +41,5 @@ export const Modal: FC<ModalProps> = ({ children, onClose }: ModalProps) => {
         </div>
     )
 }
+
+export default Modal

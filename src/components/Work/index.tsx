@@ -1,10 +1,18 @@
 import React, { FC } from 'react'
-import { Skill } from '../Skill'
 import * as SC from './index.module.scss'
 import { skills } from '../../utils/profile'
 import { SiteMetadataTypes } from '../../types'
 
-export const Work: FC<SiteMetadataTypes> = ({ data }) => {
+type SkillType = {
+    title: string
+    rating: number
+    items: Array<{
+        text: string
+        strong?: boolean
+    }>
+}
+
+const Work: FC<SiteMetadataTypes> = ({ data }) => {
     return (
         <div className={SC.basic}>
             職歴
@@ -34,17 +42,30 @@ export const Work: FC<SiteMetadataTypes> = ({ data }) => {
             </div>
             <div className={SC.subtitle}>スキル</div>
             <div className={SC.skills}>
-                {skills.map((skill: any, index: number) => {
+                {skills.map((skill: SkillType, index: number) => {
                     return (
-                        <Skill
-                            key={index}
-                            title={skill.title}
-                            rating={skill.rating}
-                            items={skill.items}
-                        />
+                        <div key={index} className={SC.skill}>
+                            <h2>{skill.title}</h2>
+                            {skill.items.map(
+                                (item: { text: string; strong?: boolean }) => {
+                                    return (
+                                        <div
+                                            key={item.text}
+                                            className={
+                                                item.strong ? SC.strong : ''
+                                            }
+                                        >
+                                            {item.text}
+                                        </div>
+                                    )
+                                }
+                            )}
+                        </div>
                     )
                 })}
             </div>
         </div>
     )
 }
+
+export default Work

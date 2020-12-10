@@ -1,16 +1,15 @@
 import React, { FC } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import * as SC from './index.module.scss'
-import { Header } from '../Header'
-import { Social } from '../Social'
+import Header from '../Header'
 import { Payment } from '../Payment'
 import { CardWrapper } from '../CardWrapper'
-import { Introduction } from '../Item/introduction'
-import { Work } from '../Item/work'
-import { Product } from '../Item/product'
-import { Slide } from '../Item/slide'
+import Introduction from '../Introduction'
+import Work from '../Work'
+import Product from '../Product'
+import Slide from '../Slide'
 
-export const Home: FC = () => {
+const Home: FC = () => {
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {
             site {
@@ -59,7 +58,6 @@ export const Home: FC = () => {
         <div className={SC.top}>
             <div className={SC.wrapper}>
                 <Header data={data.site?.siteMetadata} />
-                <Social data={data.site?.siteMetadata} />
                 <Payment />
                 <CardWrapper data={data.site?.siteMetadata} />
                 <Introduction data={data.site?.siteMetadata} />
@@ -70,3 +68,5 @@ export const Home: FC = () => {
         </div>
     )
 }
+
+export default Home

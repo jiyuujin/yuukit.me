@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import * as SC from './index.module.scss'
 
-export const Footer: FC = () => {
+const Footer: FC = () => {
     return (
         <footer className={SC.footer}>
             <p className={SC.contact}>
@@ -19,3 +19,5 @@ export const Footer: FC = () => {
         </footer>
     )
 }
+
+export default Footer

@@ -10,7 +10,7 @@ import {
 } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import ContributeSvg from '../../static/icons/contribute.svg'
-import { Modal } from '../Modal'
+import Modal from '../Modal'
 import { NekoButton } from 'nekohack-ui'
 
 export const Payment = () => {

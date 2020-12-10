@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import * as SC from './index.module.scss'
 import { SiteMetadataTypes } from '../../types'
 
-export const Introduction: FC<SiteMetadataTypes> = ({ data }) => {
+const Introduction: FC<SiteMetadataTypes> = ({ data }) => {
     const positionList: string[] = data.position.split(',')
 
     return (
@@ -20,3 +20,5 @@ export const Introduction: FC<SiteMetadataTypes> = ({ data }) => {
         </div>
     )
 }
+
+export default Introduction

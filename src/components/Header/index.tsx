@@ -1,11 +1,10 @@
 import React, { FC } from 'react'
 import TextLoop from 'react-text-loop'
-import PropTypes from 'prop-types'
 import * as SC from './index.module.scss'
 import { positions } from '../../utils/profile'
 import { SiteMetadataTypes } from '../../types'
 
-export const Header: FC<SiteMetadataTypes> = ({ data }) => {
+const Header: FC<SiteMetadataTypes> = ({ data }) => {
     return (
         <div className={SC.title}>
             <TextLoop interval={5000}>
@@ -19,6 +18,4 @@ export const Header: FC<SiteMetadataTypes> = ({ data }) => {
     )
 }
 
-Header.propTypes = {
-    data: PropTypes.any.isRequired,
-}
+export default Header
