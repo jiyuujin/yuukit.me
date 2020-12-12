@@ -10,13 +10,10 @@ export const CookieFooterWrapper: FC = () => {
     })
 
     return (
-        <>
-            {/*@ts-ignore*/}
-            <cookie-footer
-                name="yuukit-me-profile-site"
-                title="あなたがこのサイト上でベストな体験ができるようCookieを使用しています"
-                url="https://nekohack-privacy-policy.netlify.app"
-            />
-        </>
+        <cookie-footer
+            name="yuukit-me-profile-site"
+            title="あなたがこのサイト上でベストな体験ができるようCookieを使用しています"
+            url="https://nekohack-privacy-policy.netlify.app"
+        />
     )
 }
