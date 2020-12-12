@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { Work } from '../src/components/Item/work'
+import Work from '../src/components/Work'
 
 const siteMetadata = {
     title: 'Web Developer',

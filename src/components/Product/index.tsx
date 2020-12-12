@@ -10,7 +10,7 @@ type ProductProps = {
     }>
 }
 
-export const Product: FC<ProductProps> = ({ data }) => {
+const Product: FC<ProductProps> = ({ data }) => {
     return (
         <div className={SC.basic}>
             プロダクト一覧
@@ -38,3 +38,5 @@ export const Product: FC<ProductProps> = ({ data }) => {
         </div>
     )
 }
+
+export default Product

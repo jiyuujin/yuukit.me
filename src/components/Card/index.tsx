@@ -4,7 +4,7 @@ import { SiteMetadataTypes } from '../../types'
 import { NekoButton } from 'nekohack-ui'
 import PaperPlaneSvg from '../../static/icons/paper-plane.svg'
 
-export const Card: FC<any> = ({ data }: SiteMetadataTypes) => {
+const Card: FC<any> = ({ data }: SiteMetadataTypes) => {
     const positionList: string[] = data.position.split(',')
 
     return (
@@ -46,3 +46,5 @@ export const Card: FC<any> = ({ data }: SiteMetadataTypes) => {
         </Fragment>
     )
 }
+
+export default Card

@@ -11,7 +11,7 @@ type SlideProps = {
     }>
 }
 
-export const Slide: FC<SlideProps> = ({ data }) => {
+const Slide: FC<SlideProps> = ({ data }) => {
     const dateFormat = (d: string) => {
         return dayjs(new Date(d)).format('YYYY年MM月DD日')
     }
@@ -44,3 +44,5 @@ export const Slide: FC<SlideProps> = ({ data }) => {
         </div>
     )
 }
+
+export default Slide
