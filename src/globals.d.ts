@@ -28,14 +28,20 @@ declare namespace NodeJS {
     }
 }
 
-// @ts-ignore
-declare global {
-    namespace JSX {
-        interface IntrinsicElements {
-            'cookie-footer': React.DetailedHTMLProps<
-                React.HTMLAttributes<HTMLElement>,
-                HTMLElement
+declare namespace JSX {
+    interface ElementChildrenAttribute {
+        children: any
+        'cookie-footer': React.DetailedHTMLProps<
+            React.HTMLAttributes<HTMLElement>,
+            HTMLElement
             >
+    }
+
+    interface IntrinsicElements {
+        'cookie-footer': {
+            name: string
+            title: string
+            url: string
         }
     }
 }
