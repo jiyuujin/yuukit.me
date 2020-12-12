@@ -34,7 +34,7 @@ declare namespace JSX {
         'cookie-footer': React.DetailedHTMLProps<
             React.HTMLAttributes<HTMLElement>,
             HTMLElement
-            >
+        >
     }
 
     interface IntrinsicElements {
