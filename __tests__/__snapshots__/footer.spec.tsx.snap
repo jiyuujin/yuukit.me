@@ -8,7 +8,7 @@ exports[`Footer render correctly 1`] = `
       rel="noopener noreferrer"
       target="_blank"
     >
-      CONTACT
+      contact
     </a>
   </p>
   <p>

@@ -1,10 +1,13 @@
 import React, { FC, Fragment } from 'react'
+import { useIntl } from 'gatsby-plugin-intl'
 import * as SC from './index.module.scss'
 import { SiteMetadataTypes } from '../../types'
 import { NekoButton } from 'nekohack-ui'
 import PaperPlaneSvg from '../../static/icons/paper-plane.svg'
 
 const Card: FC<any> = ({ data }: SiteMetadataTypes) => {
+    const intl = useIntl()
+
     const positionList: string[] = data.position.split(',')
 
     return (
@@ -21,7 +24,9 @@ const Card: FC<any> = ({ data }: SiteMetadataTypes) => {
                         </ul>
                     </div>
                     <p className={SC.location}>
-                        {`普段 ${data.lonlat} 近辺に居ます`}
+                        {`${intl.formatMessage({ id: 'locale_is' })} ${
+                            data.lonlat
+                        }`}
                     </p>
                     <p className={SC.description}>{data.description}</p>
                     <p>
@@ -31,7 +36,7 @@ const Card: FC<any> = ({ data }: SiteMetadataTypes) => {
                                 window.open(url, '_blank')
                             }}
                         >
-                            Contact In Touch
+                            {intl.formatMessage({ id: 'contact' })}
                             <PaperPlaneSvg
                                 style={{
                                     width: '20px',

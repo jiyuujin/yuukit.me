@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { useIntl } from 'gatsby-plugin-intl'
 import * as SC from './index.module.scss'
 
 type ProductProps = {
@@ -11,9 +12,13 @@ type ProductProps = {
 }
 
 const Product: FC<ProductProps> = ({ data }) => {
+    const intl = useIntl()
+
     return (
         <div className={SC.basic}>
-            プロダクト一覧
+            <div className={SC.subtitle}>
+                {intl.formatMessage({ id: 'product' })}
+            </div>
             {data.map(({ node }: any) => {
                 return (
                     <div key={node.id}>
@@ -21,10 +26,16 @@ const Product: FC<ProductProps> = ({ data }) => {
                         <div
                             className={SC.description}
                             dangerouslySetInnerHTML={{
-                                __html: node.description,
+                                __html: intl.formatMessage({
+                                    id: node.description,
+                                }),
                             }}
                         />
-                        <div className={SC.subtitle}>利用技術</div>
+                        <div className={SC.subtitle}>
+                            {intl.formatMessage({
+                                id: 'technology_used',
+                            })}
+                        </div>
                         <div className={SC.description}>
                             <ul>
                                 {node.skills.map((skill: string) => {

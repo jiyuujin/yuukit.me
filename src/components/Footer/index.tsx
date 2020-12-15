@@ -1,7 +1,10 @@
 import React, { FC } from 'react'
+import { useIntl } from 'gatsby-plugin-intl'
 import * as SC from './index.module.scss'
 
 const Footer: FC = () => {
+    const intl = useIntl()
+
     return (
         <footer className={SC.footer}>
             <p className={SC.contact}>
@@ -10,7 +13,7 @@ const Footer: FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    CONTACT
+                    {intl.formatMessage({ id: 'contact' })}
                 </a>
             </p>
             <p className={SC.copyright}>
