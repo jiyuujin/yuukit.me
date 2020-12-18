@@ -41,7 +41,7 @@
     "@nekohack/eslint-config-react": "0.3.0",
     "@types/react-helmet": "6.1.0",
     "@types/react-test-renderer": "16.9.4",
-    "@types/styled-components": "5.1.6",
+    "@types/styled-components": "5.1.7",
     "@typescript-eslint/eslint-plugin": "4.10.0",
     "@typescript-eslint/parser": "4.10.0",
     "babel-jest": "26.6.3",
