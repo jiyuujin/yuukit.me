@@ -29,6 +29,16 @@ module.exports = {
     },
     `gatsby-plugin-typescript`,
     {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        path: `${__dirname}/src/intl`,
+        languages: [`en`, `ja`],
+        defaultLanguage: `ja`,
+        redirect: true,
+        redirectComponent: require.resolve(`./src/components/Redirect/index.tsx`),
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

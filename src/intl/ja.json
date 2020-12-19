@@ -1,0 +1,32 @@
+{
+  "title": "Web Developer",
+  "online_business_card": "オンライン名刺",
+  "locale_is": "場所: ",
+  "contribute": "寄付",
+  "test_pay": "支払う（テスト）",
+  "pay": "支払う",
+  "basic_info": "基本情報",
+  "biography": "ネット上では 自由人、JIYUUJIN と名乗って生息しています。誕生日は1988年11月04日。大阪府豊中市生まれ。性別は男性。現在は関西圏（京都や大阪）を中心に活動しています。",
+  "curriculum_vitae": "職務経歴書",
+  "position": "職業",
+  "work": "職歴",
+  "work_experience": "自分のキャリアのスタートはIOSネイティブアプリのエンジニアとして。これまでのキャリアの中でIOSネイティブアプリエンジニアとして業務を通じ基礎的なコーディングを取得、WEBを扱うサーバサイドで足りていないと言った環境も相まってJQUERYを始めとしたCSS設計、フレームワークの使用など徐々にフロントエンドエンジニアという領域にも踏み込んでいきました。",
+  "related_links": "関連リンク",
+  "skill": "スキル",
+  "skill_set": "スキルセット",
+  "skill_set_coming_soon": "スキルセット（公開予定）",
+  "product": "プロダクト",
+  "technology_used": "利用技術",
+  "yuukit_me": "技術ブログと切り分けて自身を紹介するため、2020年03月に開設した当プロフィールサイト。これまで自身を紹介する入り口として登壇・LTの掴みにしていたWeb猫ブログの位置付けが当プロフィールサイトにとって変わる。",
+  "webneko_blog": "知見を発信するため、2018年10月に開設した個人ブログ。命名は自身の特徴である猫好きから、また一個人Webデベロッパとしてフロントエンドに長けていること、インフラにも大変興味があるところから来ている。<br/>当時Headless CMSの一つであるContentfulが走りを見せていたこと。おしごとの場面でも永続的なプロダクトに出会えず途中でおじゃんに終わってしまったことなど、外部の影響を一切受けない個人としてのプロダクトを持つことが急務となっていた背景があり、新たにNuxt.js (当時 v1.0.0-beta.13) をベースに製作を始めている。",
+  "slide": "登壇スライド",
+  "slides": {
+    "the_world_revolves_around_slack": "Slackを中心に世界は廻っている",
+    "pwa_that_was_closer_to_me": "もっと身近にやってたPWA",
+    "practical_use_of_transition": "Transitionを実践的に使う",
+    "the_point_of_composition_api": "Composition API 勘所など",
+    "looking_back_in_2019": "2019年を振り返る",
+    "vue_cli_test_tips": "Vue CLI テストtips集"
+  },
+  "contact": "問い合わせ"
+}

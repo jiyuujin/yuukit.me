@@ -1,24 +1,24 @@
-- text: Slackを中心に世界は廻っている
+- text: slides.the_world_revolves_around_slack
   url: https://webneko.dev/posts/recommend-tools-in-vr-study-3
   youtubeUrl: https://www.youtube.com/watch?v=l3BCTi3xSds
   date: 2020/06/21
-- text: もっと身近にやってたPWA
+- text: slides.pwa_that_was_closer_to_me
   url: https://webneko.dev/posts/more-closer-pwa-2020
   youtubeUrl: https://www.youtube.com/watch?v=Phsf7hjQkAI
   date: 2020/05/20
-- text: Transitionを実践的に使う
+- text: slides.practical_use_of_transition
   url: https://webneko.dev/posts/vue-transition-more-pratically
   youtubeUrl:
   date: 2020/01/23
-- text: Composition API 勘所など
+- text: slides.the_point_of_composition_api
   url: https://webneko.dev/posts/notices-of-composition-api-in-vue3-eve
   youtubeUrl:
   date: 2019/12/16
-- text: 2019年を振り返る
+- text: slides.looking_back_in_2019
   url: https://webneko.dev/posts/feedback-2019
   youtubeUrl:
   date: 2019/12/06
-- text: Vue CLI テストTips集
+- text: slides.vue_cli_test_tips
   url: https://slides.com/jiyuujin/20190817
   youtubeUrl:
   date: 2019/08/17

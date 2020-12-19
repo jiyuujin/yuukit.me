@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { useIntl } from 'gatsby-plugin-intl'
 import * as SC from './index.module.scss'
 import { skills } from '../../utils/profile'
 import { SiteMetadataTypes } from '../../types'
@@ -13,11 +14,17 @@ type SkillType = {
 }
 
 const Work: FC<SiteMetadataTypes> = ({ data }) => {
+    const intl = useIntl()
+
     return (
         <div className={SC.basic}>
-            職歴
-            <div className={SC.description}>{data.workExperience}</div>
-            <div className={SC.subtitle}>関連リンク</div>
+            {intl.formatMessage({ id: 'work' })}
+            <div className={SC.description}>
+                {intl.formatMessage({ id: 'work_experience' })}
+            </div>
+            <div className={SC.subtitle}>
+                {intl.formatMessage({ id: 'related_links' })}
+            </div>
             <div className={SC.description}>
                 <ul>
                     <li>
@@ -26,7 +33,9 @@ const Work: FC<SiteMetadataTypes> = ({ data }) => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            職務経歴書
+                            {intl.formatMessage({
+                                id: 'curriculum_vitae',
+                            })}
                         </a>
                     </li>
                     <li>
@@ -35,12 +44,16 @@ const Work: FC<SiteMetadataTypes> = ({ data }) => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            スキルセット (公開予定)
+                            {intl.formatMessage({
+                                id: 'skill_set_coming_soon',
+                            })}
                         </a>
                     </li>
                 </ul>
             </div>
-            <div className={SC.subtitle}>スキル</div>
+            <div className={SC.subtitle}>
+                {intl.formatMessage({ id: 'skill' })}
+            </div>
             <div className={SC.skills}>
                 {skills.map((skill: SkillType, index: number) => {
                     return (

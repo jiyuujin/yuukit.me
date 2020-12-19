@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 // import Img from 'gatsby-image'
+import { useIntl } from 'gatsby-plugin-intl'
 import * as SC from './index.module.scss'
 import {
     Elements,
@@ -35,6 +36,8 @@ type CheckoutFormType = {
 }
 
 const CheckoutForm = ({ isTest }: CheckoutFormType) => {
+    const intl = useIntl()
+
     const stripe = useStripe()
 
     const elements = useElements()
@@ -93,7 +96,7 @@ const CheckoutForm = ({ isTest }: CheckoutFormType) => {
                                 marginRight: '4px',
                             }}
                         />
-                        寄付して
+                        {intl.formatMessage({ id: 'contribute' })}
                     </NekoButton>
                     {open && (
                         <Modal onClose={handleOpen}>
@@ -123,7 +126,9 @@ const CheckoutForm = ({ isTest }: CheckoutFormType) => {
                                     className={SC.checkoutButton}
                                     disabled={!stripe}
                                 >
-                                    {isTest ? '支払う (TEST)' : '支払う'}
+                                    {isTest
+                                        ? intl.formatMessage({ id: 'test_pay' })
+                                        : intl.formatMessage({ id: 'pay' })}
                                 </button>
                             </form>
                         </Modal>

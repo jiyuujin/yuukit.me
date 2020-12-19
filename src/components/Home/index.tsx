@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import * as SC from './index.module.scss'
+import HeaderBar from '../HeaderBar'
 import Header from '../Header'
 import { Payment } from '../Payment'
 import { CardWrapper } from '../CardWrapper'
@@ -57,6 +58,7 @@ const Home: FC = () => {
     return (
         <div className={SC.top}>
             <div className={SC.wrapper}>
+                <HeaderBar />
                 <Header data={data.site?.siteMetadata} />
                 <Payment />
                 <CardWrapper data={data.site?.siteMetadata} />

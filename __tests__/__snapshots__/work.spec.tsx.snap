@@ -2,12 +2,12 @@
 
 exports[`Work render correctly 1`] = `
 <div>
-  職歴
+  work
   <div>
-    自分のキャリアのスタートはiOSネイティブアプリのエンジニアとして。これまでのキャリアの中でiOSネイティブアプリエンジニアとして業務を通じ基礎的なコーディングを取得、Webを扱うサーバサイドで足りていないと言った環境も相まってjQueryを始めとしたCSS設計、フレームワークの使用など徐々にフロントエンドエンジニアという領域にも踏み込んでいきました。
+    work_experience
   </div>
   <div>
-    関連リンク
+    related_links
   </div>
   <div>
     <ul>
@@ -17,7 +17,7 @@ exports[`Work render correctly 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          職務経歴書
+          curriculum_vitae
         </a>
       </li>
       <li>
@@ -26,13 +26,13 @@ exports[`Work render correctly 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          スキルセット (公開予定)
+          skill_set_coming_soon
         </a>
       </li>
     </ul>
   </div>
   <div>
-    スキル
+    skill
   </div>
   <div>
     <div>

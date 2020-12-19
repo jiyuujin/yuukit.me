@@ -1,0 +1,32 @@
+{
+  "title": "Web Developer",
+  "online_business_card": "Online Business Card",
+  "locale_is": "Locale: ",
+  "contribute": "Contribute",
+  "test_pay": "Pay (TEST)",
+  "pay": "Pay",
+  "basic_info": "Basic Information",
+  "biography": "On the net, they live under the name of JIYUUJIN. Birthday is November 04, 1988. Born in Toyonaka City, Osaka Prefecture. Gender is male. Currently, we are active mainly in the Kansai area (Kyoto and Osaka).",
+  "curriculum_vitae": "Curriculum Vitae",
+  "position": "Position",
+  "work": "Work",
+  "work_experience": "Start your career as an iOS native application developer. In my career so far, I acquired basic coding through work as an iOS native application developer, and with the environment that the server side that handles the WEB is not enough, CSS design including JQUERY, use of framework, etc. gradually We have also stepped into the area of front-end developers.",
+  "related_links": "Related Links",
+  "skill": "Skill",
+  "skill_set": "Skill Set",
+  "skill_set_coming_soon": "Skill Set (Coming Soon)",
+  "product": "Product",
+  "technology_used": "Technology Used",
+  "yuukit_me": "This profile site was opened in March 2020 to separate it from the technical blog and introduce itself. The position of the Web cat blog, which was held by the stage / LT as an entrance to introduce oneself, will be changed for this profile site.",
+  "webneko_blog": "A personal blog opened in October 2018 to disseminate knowledge. The name comes from the fact that he loves cats, which is his characteristic, and that he is good at the front end as an individual Web developer, and that he is also very interested in infrastructure. <br /> At that time, Contentful, one of the Headless CMS, was running. There was an urgent need to have a product as an individual that is not affected by any external influences, such as the fact that we could not meet a permanent product even in the work scene and ended up in the middle of the process. Production has started based on Nuxt.js (v1.0.0-beta.13 at that time).",
+  "slide": "Stage Slide",
+  "slides": {
+    "the_world_revolves_around_slack": "The world revolves around Slack",
+    "pwa_that_was_closer_to_me": "PWA, that was closer to me",
+    "practical_use_of_transition": "Practical use of Transition",
+    "the_point_of_composition_api": "The point of Composition API",
+    "looking_back_in_2019": "Looking back in 2019",
+    "vue_cli_test_tips": "Vue CLI test tips"
+  },
+  "contact": "Contact"
+}
