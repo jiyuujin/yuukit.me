@@ -3,10 +3,29 @@ import { useIntl } from 'gatsby-plugin-intl'
 import { NekoButton } from 'nekohack-ui'
 import Modal from '../Modal'
 import Card from '../Card'
-import { SiteMetadataTypes } from '../../types'
+
 import IdCardSvg from '../../static/icons/id-card.svg'
 
-export const CardWrapper: FC<SiteMetadataTypes> = ({ data }) => {
+type CardWrapperProps = {
+    data: GatsbyTypes.Maybe<
+        Pick<
+            GatsbyTypes.SiteSiteMetadata,
+            | 'title'
+            | 'description'
+            | 'biography'
+            | 'position'
+            | 'workExperience'
+            | 'author'
+            | 'locale'
+            | 'lonlat'
+            | 'url'
+            | 'image'
+            | 'blogName'
+        >
+    >
+}
+
+export const CardWrapper: FC<CardWrapperProps> = ({ data }) => {
     const intl = useIntl()
 
     const [open, setOpen] = useState(false)

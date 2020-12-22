@@ -2,7 +2,6 @@ import React, { FC } from 'react'
 import { useIntl } from 'gatsby-plugin-intl'
 import * as SC from './index.module.scss'
 import { skills } from '../../utils/profile'
-import { SiteMetadataTypes } from '../../types'
 
 type SkillType = {
     title: string
@@ -13,7 +12,26 @@ type SkillType = {
     }>
 }
 
-const Work: FC<SiteMetadataTypes> = ({ data }) => {
+type WorkProps = {
+    data: GatsbyTypes.Maybe<
+        Pick<
+            GatsbyTypes.SiteSiteMetadata,
+            | 'title'
+            | 'description'
+            | 'biography'
+            | 'position'
+            | 'workExperience'
+            | 'author'
+            | 'locale'
+            | 'lonlat'
+            | 'url'
+            | 'image'
+            | 'blogName'
+        >
+    >
+}
+
+const Work: FC<WorkProps> = ({ data }) => {
     const intl = useIntl()
 
     return (
