@@ -4,14 +4,12 @@ import dayjs from 'dayjs'
 import * as SC from './index.module.scss'
 
 type SlideProps = {
-    data:
-        | Array<{
-              node: Pick<
-                  GatsbyTypes.ProductsYaml,
-                  'id' | 'title' | 'description' | 'skills'
-              >
-          }>
-        | any
+    data: Array<{
+        node: Pick<
+            GatsbyTypes.ProductsYaml,
+            'id' | 'title' | 'description' | 'skills'
+        >
+    }>
 }
 
 const Slide: FC<SlideProps> = ({ data }) => {
