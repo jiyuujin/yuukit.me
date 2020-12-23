@@ -1,12 +1,30 @@
 import React, { FC } from 'react'
 import { useIntl } from 'gatsby-plugin-intl'
 import * as SC from './index.module.scss'
-import { SiteMetadataTypes } from '../../types'
 
-const Introduction: FC<SiteMetadataTypes> = ({ data }) => {
+type IntroductionProps = {
+    data: GatsbyTypes.Maybe<
+        Pick<
+            GatsbyTypes.SiteSiteMetadata,
+            | 'title'
+            | 'description'
+            | 'biography'
+            | 'position'
+            | 'workExperience'
+            | 'author'
+            | 'locale'
+            | 'lonlat'
+            | 'url'
+            | 'image'
+            | 'blogName'
+        >
+    >
+}
+
+const Introduction: FC<IntroductionProps> = ({ data }) => {
     const intl = useIntl()
 
-    const positionList: string[] = data.position.split(',')
+    const positionList: string[] | undefined = data?.position?.split(',')
 
     return (
         <div className={SC.basic}>
@@ -19,7 +37,7 @@ const Introduction: FC<SiteMetadataTypes> = ({ data }) => {
             </div>
             <div className={SC.description}>
                 <ul>
-                    {positionList.map((p: string) => {
+                    {positionList?.map((p: string) => {
                         return <li key={p}>{p}</li>
                     })}
                 </ul>

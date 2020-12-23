@@ -4,10 +4,10 @@ import * as SC from './index.module.scss'
 
 type ProductProps = {
     data: Array<{
-        id: string
-        title: string
-        description: string
-        skills: string[]
+        node: Pick<
+            GatsbyTypes.ProductsYaml,
+            'id' | 'title' | 'description' | 'skills'
+        >
     }>
 }
 

@@ -5,10 +5,10 @@ import * as SC from './index.module.scss'
 
 type SlideProps = {
     data: Array<{
-        text: string
-        url: string
-        youtubeUrl: string
-        date: string
+        node: Pick<
+            GatsbyTypes.ProductsYaml,
+            'id' | 'title' | 'description' | 'skills'
+        >
     }>
 }
 
