@@ -1,0 +1,22 @@
+.skills {
+  display: flex;
+  justify-content: center;
+  font-size: 0.8rem;
+  line-height: 24px;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+
+  .strong {
+    color: #dd66a1;
+  }
+}
+
+@media (max-width: 481px) {
+  .skills {
+    display: none;
+  }
+}

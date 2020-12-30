@@ -32,57 +32,10 @@
     }
 
     .name {
-      font-size: 1.875rem;
+      font-size: 1.475rem;
       font-weight: bold;
       padding-top: 1.6rem;
     }
-
-    .position {
-      font-size: 1.2rem;
-      font-weight: normal;
-
-      ul {
-        padding: 0;
-
-        li {
-          list-style: none;
-        }
-      }
-    }
-
-    .description {
-      padding-top: 0.4rem;
-      color: #718096;
-      font-size: 0.8rem;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
-
-    .location {
-      padding-top: 0.4rem;
-      color: #718096;
-      font-size: 0.8rem;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
-
-    .work-experience {
-      padding-top: 0.5rem;
-      color: #303030;
-      font-size: 0.75rem;
-    }
-  }
-
-  .social-menu {
-    margin-top: 1.5rem;
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
   }
 }
 
