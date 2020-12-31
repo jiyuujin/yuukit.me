@@ -13,28 +13,24 @@ export const skills: Array<{
     }>
 }> = [
     {
-        title: 'Vue.js & Nuxt.js',
+        title: 'Vue.js',
         rating: 5,
         items: [
             {
-                text: 'v-kansai team member ♥️️',
+                text: 'Vue.js Advocator 😎',
                 strong: true,
             },
             {
-                text: 'Vue.js Advocator 😎',
+                text: 'Nuxt.js',
             },
         ],
     },
     {
-        title: 'Node.js & JavaScript',
+        title: 'Node.js',
         rating: 4,
         items: [
             {
-                text: 'ES6',
-                strong: true,
-            },
-            {
-                text: 'Plugin Creation',
+                text: 'TypeScript 💪',
                 strong: true,
             },
             {
@@ -66,17 +62,11 @@ export const skills: Array<{
         rating: 4,
         items: [
             {
-                text: 'Git',
+                text: 'Github Actions 🐙',
                 strong: true,
             },
             {
-                text: 'Github Actions',
-            },
-            {
-                text: 'Gitlab CI',
-            },
-            {
-                text: 'Travis CI',
+                text: 'Circle CI',
             },
         ],
     },
@@ -85,18 +75,14 @@ export const skills: Array<{
         rating: 4,
         items: [
             {
-                text: 'Serverless ✍️',
+                text: 'Serverless ⚡️️',
                 strong: true,
             },
             {
                 text: 'AWS',
-                strong: true,
             },
             {
                 text: 'GCP / Firebase',
-            },
-            {
-                text: 'Netlify',
             },
         ],
     },
@@ -105,8 +91,11 @@ export const skills: Array<{
         rating: 3,
         items: [
             {
-                text: 'Playframework',
+                text: 'Challenger 😛',
                 strong: true,
+            },
+            {
+                text: 'Playframework',
             },
             {
                 text: 'Akka HTTP',
