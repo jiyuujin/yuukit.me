@@ -71,6 +71,18 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: `https://yuukit.me/`,
+        policy: [
+          {
+            userAgent: `*`,
+            allow: `/`
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-167986295-1`,
