@@ -15,7 +15,7 @@ const siteMetadata = {
     author: 'Yuma Kitamura',
     locale: 'Osaka, Kyoto in Japan',
     lonlat: '35.003238° N, 135.750389° E',
-    url: 'https://yuukit.me/',
+    siteUrl: 'https://yuukit.me/',
     image: 'src/images/bakeneko2.png',
     blogName: 'Web猫ブログ',
     blogUrl: 'https://webneko.dev/',

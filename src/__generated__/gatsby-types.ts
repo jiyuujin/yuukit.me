@@ -26,6 +26,12 @@ type Scalars = {
 
 
 
+type AVIFOptions = {
+  readonly quality: Maybe<Scalars['Int']>;
+  readonly lossless: Maybe<Scalars['Boolean']>;
+  readonly speed: Maybe<Scalars['Int']>;
+};
+
 type BlurredOptions = {
   /** Width of the generated low-res preview. Default is 20px */
   readonly width: Maybe<Scalars['Int']>;
@@ -400,13 +406,22 @@ type File = Node & {
   readonly blocks: Maybe<Scalars['Int']>;
   /** Copy file to static directory and return public url to it */
   readonly publicURL: Maybe<Scalars['String']>;
+  /** Returns all children nodes filtered by type ImageSharp */
+  readonly childrenImageSharp: Maybe<ReadonlyArray<Maybe<ImageSharp>>>;
+  /** Returns the first child node of type ImageSharp or null if there are no children of given type on this node */
   readonly childImageSharp: Maybe<ImageSharp>;
+  /** Returns all children nodes filtered by type TalksYaml */
+  readonly childrenTalksYaml: Maybe<ReadonlyArray<Maybe<TalksYaml>>>;
+  /** Returns the first child node of type TalksYaml or null if there are no children of given type on this node */
+  readonly childTalksYaml: Maybe<TalksYaml>;
+  /** Returns all children nodes filtered by type ProductsYaml */
+  readonly childrenProductsYaml: Maybe<ReadonlyArray<Maybe<ProductsYaml>>>;
+  /** Returns the first child node of type ProductsYaml or null if there are no children of given type on this node */
+  readonly childProductsYaml: Maybe<ProductsYaml>;
   readonly id: Scalars['ID'];
   readonly parent: Maybe<Node>;
   readonly children: ReadonlyArray<Node>;
   readonly internal: Internal;
-  readonly childrenProductsYaml: Maybe<ReadonlyArray<Maybe<ProductsYaml>>>;
-  readonly childrenTalksYaml: Maybe<ReadonlyArray<Maybe<TalksYaml>>>;
 };
 
 
@@ -527,6 +542,99 @@ enum FileFieldsEnum {
   blksize = 'blksize',
   blocks = 'blocks',
   publicURL = 'publicURL',
+  childrenImageSharp = 'childrenImageSharp',
+  childrenImageSharp___fixed___base64 = 'childrenImageSharp.fixed.base64',
+  childrenImageSharp___fixed___tracedSVG = 'childrenImageSharp.fixed.tracedSVG',
+  childrenImageSharp___fixed___aspectRatio = 'childrenImageSharp.fixed.aspectRatio',
+  childrenImageSharp___fixed___width = 'childrenImageSharp.fixed.width',
+  childrenImageSharp___fixed___height = 'childrenImageSharp.fixed.height',
+  childrenImageSharp___fixed___src = 'childrenImageSharp.fixed.src',
+  childrenImageSharp___fixed___srcSet = 'childrenImageSharp.fixed.srcSet',
+  childrenImageSharp___fixed___srcWebp = 'childrenImageSharp.fixed.srcWebp',
+  childrenImageSharp___fixed___srcSetWebp = 'childrenImageSharp.fixed.srcSetWebp',
+  childrenImageSharp___fixed___originalName = 'childrenImageSharp.fixed.originalName',
+  childrenImageSharp___resolutions___base64 = 'childrenImageSharp.resolutions.base64',
+  childrenImageSharp___resolutions___tracedSVG = 'childrenImageSharp.resolutions.tracedSVG',
+  childrenImageSharp___resolutions___aspectRatio = 'childrenImageSharp.resolutions.aspectRatio',
+  childrenImageSharp___resolutions___width = 'childrenImageSharp.resolutions.width',
+  childrenImageSharp___resolutions___height = 'childrenImageSharp.resolutions.height',
+  childrenImageSharp___resolutions___src = 'childrenImageSharp.resolutions.src',
+  childrenImageSharp___resolutions___srcSet = 'childrenImageSharp.resolutions.srcSet',
+  childrenImageSharp___resolutions___srcWebp = 'childrenImageSharp.resolutions.srcWebp',
+  childrenImageSharp___resolutions___srcSetWebp = 'childrenImageSharp.resolutions.srcSetWebp',
+  childrenImageSharp___resolutions___originalName = 'childrenImageSharp.resolutions.originalName',
+  childrenImageSharp___fluid___base64 = 'childrenImageSharp.fluid.base64',
+  childrenImageSharp___fluid___tracedSVG = 'childrenImageSharp.fluid.tracedSVG',
+  childrenImageSharp___fluid___aspectRatio = 'childrenImageSharp.fluid.aspectRatio',
+  childrenImageSharp___fluid___src = 'childrenImageSharp.fluid.src',
+  childrenImageSharp___fluid___srcSet = 'childrenImageSharp.fluid.srcSet',
+  childrenImageSharp___fluid___srcWebp = 'childrenImageSharp.fluid.srcWebp',
+  childrenImageSharp___fluid___srcSetWebp = 'childrenImageSharp.fluid.srcSetWebp',
+  childrenImageSharp___fluid___sizes = 'childrenImageSharp.fluid.sizes',
+  childrenImageSharp___fluid___originalImg = 'childrenImageSharp.fluid.originalImg',
+  childrenImageSharp___fluid___originalName = 'childrenImageSharp.fluid.originalName',
+  childrenImageSharp___fluid___presentationWidth = 'childrenImageSharp.fluid.presentationWidth',
+  childrenImageSharp___fluid___presentationHeight = 'childrenImageSharp.fluid.presentationHeight',
+  childrenImageSharp___sizes___base64 = 'childrenImageSharp.sizes.base64',
+  childrenImageSharp___sizes___tracedSVG = 'childrenImageSharp.sizes.tracedSVG',
+  childrenImageSharp___sizes___aspectRatio = 'childrenImageSharp.sizes.aspectRatio',
+  childrenImageSharp___sizes___src = 'childrenImageSharp.sizes.src',
+  childrenImageSharp___sizes___srcSet = 'childrenImageSharp.sizes.srcSet',
+  childrenImageSharp___sizes___srcWebp = 'childrenImageSharp.sizes.srcWebp',
+  childrenImageSharp___sizes___srcSetWebp = 'childrenImageSharp.sizes.srcSetWebp',
+  childrenImageSharp___sizes___sizes = 'childrenImageSharp.sizes.sizes',
+  childrenImageSharp___sizes___originalImg = 'childrenImageSharp.sizes.originalImg',
+  childrenImageSharp___sizes___originalName = 'childrenImageSharp.sizes.originalName',
+  childrenImageSharp___sizes___presentationWidth = 'childrenImageSharp.sizes.presentationWidth',
+  childrenImageSharp___sizes___presentationHeight = 'childrenImageSharp.sizes.presentationHeight',
+  childrenImageSharp___gatsbyImageData = 'childrenImageSharp.gatsbyImageData',
+  childrenImageSharp___original___width = 'childrenImageSharp.original.width',
+  childrenImageSharp___original___height = 'childrenImageSharp.original.height',
+  childrenImageSharp___original___src = 'childrenImageSharp.original.src',
+  childrenImageSharp___resize___src = 'childrenImageSharp.resize.src',
+  childrenImageSharp___resize___tracedSVG = 'childrenImageSharp.resize.tracedSVG',
+  childrenImageSharp___resize___width = 'childrenImageSharp.resize.width',
+  childrenImageSharp___resize___height = 'childrenImageSharp.resize.height',
+  childrenImageSharp___resize___aspectRatio = 'childrenImageSharp.resize.aspectRatio',
+  childrenImageSharp___resize___originalName = 'childrenImageSharp.resize.originalName',
+  childrenImageSharp___id = 'childrenImageSharp.id',
+  childrenImageSharp___parent___id = 'childrenImageSharp.parent.id',
+  childrenImageSharp___parent___parent___id = 'childrenImageSharp.parent.parent.id',
+  childrenImageSharp___parent___parent___children = 'childrenImageSharp.parent.parent.children',
+  childrenImageSharp___parent___children = 'childrenImageSharp.parent.children',
+  childrenImageSharp___parent___children___id = 'childrenImageSharp.parent.children.id',
+  childrenImageSharp___parent___children___children = 'childrenImageSharp.parent.children.children',
+  childrenImageSharp___parent___internal___content = 'childrenImageSharp.parent.internal.content',
+  childrenImageSharp___parent___internal___contentDigest = 'childrenImageSharp.parent.internal.contentDigest',
+  childrenImageSharp___parent___internal___description = 'childrenImageSharp.parent.internal.description',
+  childrenImageSharp___parent___internal___fieldOwners = 'childrenImageSharp.parent.internal.fieldOwners',
+  childrenImageSharp___parent___internal___ignoreType = 'childrenImageSharp.parent.internal.ignoreType',
+  childrenImageSharp___parent___internal___mediaType = 'childrenImageSharp.parent.internal.mediaType',
+  childrenImageSharp___parent___internal___owner = 'childrenImageSharp.parent.internal.owner',
+  childrenImageSharp___parent___internal___type = 'childrenImageSharp.parent.internal.type',
+  childrenImageSharp___children = 'childrenImageSharp.children',
+  childrenImageSharp___children___id = 'childrenImageSharp.children.id',
+  childrenImageSharp___children___parent___id = 'childrenImageSharp.children.parent.id',
+  childrenImageSharp___children___parent___children = 'childrenImageSharp.children.parent.children',
+  childrenImageSharp___children___children = 'childrenImageSharp.children.children',
+  childrenImageSharp___children___children___id = 'childrenImageSharp.children.children.id',
+  childrenImageSharp___children___children___children = 'childrenImageSharp.children.children.children',
+  childrenImageSharp___children___internal___content = 'childrenImageSharp.children.internal.content',
+  childrenImageSharp___children___internal___contentDigest = 'childrenImageSharp.children.internal.contentDigest',
+  childrenImageSharp___children___internal___description = 'childrenImageSharp.children.internal.description',
+  childrenImageSharp___children___internal___fieldOwners = 'childrenImageSharp.children.internal.fieldOwners',
+  childrenImageSharp___children___internal___ignoreType = 'childrenImageSharp.children.internal.ignoreType',
+  childrenImageSharp___children___internal___mediaType = 'childrenImageSharp.children.internal.mediaType',
+  childrenImageSharp___children___internal___owner = 'childrenImageSharp.children.internal.owner',
+  childrenImageSharp___children___internal___type = 'childrenImageSharp.children.internal.type',
+  childrenImageSharp___internal___content = 'childrenImageSharp.internal.content',
+  childrenImageSharp___internal___contentDigest = 'childrenImageSharp.internal.contentDigest',
+  childrenImageSharp___internal___description = 'childrenImageSharp.internal.description',
+  childrenImageSharp___internal___fieldOwners = 'childrenImageSharp.internal.fieldOwners',
+  childrenImageSharp___internal___ignoreType = 'childrenImageSharp.internal.ignoreType',
+  childrenImageSharp___internal___mediaType = 'childrenImageSharp.internal.mediaType',
+  childrenImageSharp___internal___owner = 'childrenImageSharp.internal.owner',
+  childrenImageSharp___internal___type = 'childrenImageSharp.internal.type',
   childImageSharp___fixed___base64 = 'childImageSharp.fixed.base64',
   childImageSharp___fixed___tracedSVG = 'childImageSharp.fixed.tracedSVG',
   childImageSharp___fixed___aspectRatio = 'childImageSharp.fixed.aspectRatio',
@@ -619,6 +727,174 @@ enum FileFieldsEnum {
   childImageSharp___internal___mediaType = 'childImageSharp.internal.mediaType',
   childImageSharp___internal___owner = 'childImageSharp.internal.owner',
   childImageSharp___internal___type = 'childImageSharp.internal.type',
+  childrenTalksYaml = 'childrenTalksYaml',
+  childrenTalksYaml___id = 'childrenTalksYaml.id',
+  childrenTalksYaml___parent___id = 'childrenTalksYaml.parent.id',
+  childrenTalksYaml___parent___parent___id = 'childrenTalksYaml.parent.parent.id',
+  childrenTalksYaml___parent___parent___children = 'childrenTalksYaml.parent.parent.children',
+  childrenTalksYaml___parent___children = 'childrenTalksYaml.parent.children',
+  childrenTalksYaml___parent___children___id = 'childrenTalksYaml.parent.children.id',
+  childrenTalksYaml___parent___children___children = 'childrenTalksYaml.parent.children.children',
+  childrenTalksYaml___parent___internal___content = 'childrenTalksYaml.parent.internal.content',
+  childrenTalksYaml___parent___internal___contentDigest = 'childrenTalksYaml.parent.internal.contentDigest',
+  childrenTalksYaml___parent___internal___description = 'childrenTalksYaml.parent.internal.description',
+  childrenTalksYaml___parent___internal___fieldOwners = 'childrenTalksYaml.parent.internal.fieldOwners',
+  childrenTalksYaml___parent___internal___ignoreType = 'childrenTalksYaml.parent.internal.ignoreType',
+  childrenTalksYaml___parent___internal___mediaType = 'childrenTalksYaml.parent.internal.mediaType',
+  childrenTalksYaml___parent___internal___owner = 'childrenTalksYaml.parent.internal.owner',
+  childrenTalksYaml___parent___internal___type = 'childrenTalksYaml.parent.internal.type',
+  childrenTalksYaml___children = 'childrenTalksYaml.children',
+  childrenTalksYaml___children___id = 'childrenTalksYaml.children.id',
+  childrenTalksYaml___children___parent___id = 'childrenTalksYaml.children.parent.id',
+  childrenTalksYaml___children___parent___children = 'childrenTalksYaml.children.parent.children',
+  childrenTalksYaml___children___children = 'childrenTalksYaml.children.children',
+  childrenTalksYaml___children___children___id = 'childrenTalksYaml.children.children.id',
+  childrenTalksYaml___children___children___children = 'childrenTalksYaml.children.children.children',
+  childrenTalksYaml___children___internal___content = 'childrenTalksYaml.children.internal.content',
+  childrenTalksYaml___children___internal___contentDigest = 'childrenTalksYaml.children.internal.contentDigest',
+  childrenTalksYaml___children___internal___description = 'childrenTalksYaml.children.internal.description',
+  childrenTalksYaml___children___internal___fieldOwners = 'childrenTalksYaml.children.internal.fieldOwners',
+  childrenTalksYaml___children___internal___ignoreType = 'childrenTalksYaml.children.internal.ignoreType',
+  childrenTalksYaml___children___internal___mediaType = 'childrenTalksYaml.children.internal.mediaType',
+  childrenTalksYaml___children___internal___owner = 'childrenTalksYaml.children.internal.owner',
+  childrenTalksYaml___children___internal___type = 'childrenTalksYaml.children.internal.type',
+  childrenTalksYaml___internal___content = 'childrenTalksYaml.internal.content',
+  childrenTalksYaml___internal___contentDigest = 'childrenTalksYaml.internal.contentDigest',
+  childrenTalksYaml___internal___description = 'childrenTalksYaml.internal.description',
+  childrenTalksYaml___internal___fieldOwners = 'childrenTalksYaml.internal.fieldOwners',
+  childrenTalksYaml___internal___ignoreType = 'childrenTalksYaml.internal.ignoreType',
+  childrenTalksYaml___internal___mediaType = 'childrenTalksYaml.internal.mediaType',
+  childrenTalksYaml___internal___owner = 'childrenTalksYaml.internal.owner',
+  childrenTalksYaml___internal___type = 'childrenTalksYaml.internal.type',
+  childrenTalksYaml___text = 'childrenTalksYaml.text',
+  childrenTalksYaml___url = 'childrenTalksYaml.url',
+  childrenTalksYaml___youtubeUrl = 'childrenTalksYaml.youtubeUrl',
+  childrenTalksYaml___date = 'childrenTalksYaml.date',
+  childTalksYaml___id = 'childTalksYaml.id',
+  childTalksYaml___parent___id = 'childTalksYaml.parent.id',
+  childTalksYaml___parent___parent___id = 'childTalksYaml.parent.parent.id',
+  childTalksYaml___parent___parent___children = 'childTalksYaml.parent.parent.children',
+  childTalksYaml___parent___children = 'childTalksYaml.parent.children',
+  childTalksYaml___parent___children___id = 'childTalksYaml.parent.children.id',
+  childTalksYaml___parent___children___children = 'childTalksYaml.parent.children.children',
+  childTalksYaml___parent___internal___content = 'childTalksYaml.parent.internal.content',
+  childTalksYaml___parent___internal___contentDigest = 'childTalksYaml.parent.internal.contentDigest',
+  childTalksYaml___parent___internal___description = 'childTalksYaml.parent.internal.description',
+  childTalksYaml___parent___internal___fieldOwners = 'childTalksYaml.parent.internal.fieldOwners',
+  childTalksYaml___parent___internal___ignoreType = 'childTalksYaml.parent.internal.ignoreType',
+  childTalksYaml___parent___internal___mediaType = 'childTalksYaml.parent.internal.mediaType',
+  childTalksYaml___parent___internal___owner = 'childTalksYaml.parent.internal.owner',
+  childTalksYaml___parent___internal___type = 'childTalksYaml.parent.internal.type',
+  childTalksYaml___children = 'childTalksYaml.children',
+  childTalksYaml___children___id = 'childTalksYaml.children.id',
+  childTalksYaml___children___parent___id = 'childTalksYaml.children.parent.id',
+  childTalksYaml___children___parent___children = 'childTalksYaml.children.parent.children',
+  childTalksYaml___children___children = 'childTalksYaml.children.children',
+  childTalksYaml___children___children___id = 'childTalksYaml.children.children.id',
+  childTalksYaml___children___children___children = 'childTalksYaml.children.children.children',
+  childTalksYaml___children___internal___content = 'childTalksYaml.children.internal.content',
+  childTalksYaml___children___internal___contentDigest = 'childTalksYaml.children.internal.contentDigest',
+  childTalksYaml___children___internal___description = 'childTalksYaml.children.internal.description',
+  childTalksYaml___children___internal___fieldOwners = 'childTalksYaml.children.internal.fieldOwners',
+  childTalksYaml___children___internal___ignoreType = 'childTalksYaml.children.internal.ignoreType',
+  childTalksYaml___children___internal___mediaType = 'childTalksYaml.children.internal.mediaType',
+  childTalksYaml___children___internal___owner = 'childTalksYaml.children.internal.owner',
+  childTalksYaml___children___internal___type = 'childTalksYaml.children.internal.type',
+  childTalksYaml___internal___content = 'childTalksYaml.internal.content',
+  childTalksYaml___internal___contentDigest = 'childTalksYaml.internal.contentDigest',
+  childTalksYaml___internal___description = 'childTalksYaml.internal.description',
+  childTalksYaml___internal___fieldOwners = 'childTalksYaml.internal.fieldOwners',
+  childTalksYaml___internal___ignoreType = 'childTalksYaml.internal.ignoreType',
+  childTalksYaml___internal___mediaType = 'childTalksYaml.internal.mediaType',
+  childTalksYaml___internal___owner = 'childTalksYaml.internal.owner',
+  childTalksYaml___internal___type = 'childTalksYaml.internal.type',
+  childTalksYaml___text = 'childTalksYaml.text',
+  childTalksYaml___url = 'childTalksYaml.url',
+  childTalksYaml___youtubeUrl = 'childTalksYaml.youtubeUrl',
+  childTalksYaml___date = 'childTalksYaml.date',
+  childrenProductsYaml = 'childrenProductsYaml',
+  childrenProductsYaml___id = 'childrenProductsYaml.id',
+  childrenProductsYaml___parent___id = 'childrenProductsYaml.parent.id',
+  childrenProductsYaml___parent___parent___id = 'childrenProductsYaml.parent.parent.id',
+  childrenProductsYaml___parent___parent___children = 'childrenProductsYaml.parent.parent.children',
+  childrenProductsYaml___parent___children = 'childrenProductsYaml.parent.children',
+  childrenProductsYaml___parent___children___id = 'childrenProductsYaml.parent.children.id',
+  childrenProductsYaml___parent___children___children = 'childrenProductsYaml.parent.children.children',
+  childrenProductsYaml___parent___internal___content = 'childrenProductsYaml.parent.internal.content',
+  childrenProductsYaml___parent___internal___contentDigest = 'childrenProductsYaml.parent.internal.contentDigest',
+  childrenProductsYaml___parent___internal___description = 'childrenProductsYaml.parent.internal.description',
+  childrenProductsYaml___parent___internal___fieldOwners = 'childrenProductsYaml.parent.internal.fieldOwners',
+  childrenProductsYaml___parent___internal___ignoreType = 'childrenProductsYaml.parent.internal.ignoreType',
+  childrenProductsYaml___parent___internal___mediaType = 'childrenProductsYaml.parent.internal.mediaType',
+  childrenProductsYaml___parent___internal___owner = 'childrenProductsYaml.parent.internal.owner',
+  childrenProductsYaml___parent___internal___type = 'childrenProductsYaml.parent.internal.type',
+  childrenProductsYaml___children = 'childrenProductsYaml.children',
+  childrenProductsYaml___children___id = 'childrenProductsYaml.children.id',
+  childrenProductsYaml___children___parent___id = 'childrenProductsYaml.children.parent.id',
+  childrenProductsYaml___children___parent___children = 'childrenProductsYaml.children.parent.children',
+  childrenProductsYaml___children___children = 'childrenProductsYaml.children.children',
+  childrenProductsYaml___children___children___id = 'childrenProductsYaml.children.children.id',
+  childrenProductsYaml___children___children___children = 'childrenProductsYaml.children.children.children',
+  childrenProductsYaml___children___internal___content = 'childrenProductsYaml.children.internal.content',
+  childrenProductsYaml___children___internal___contentDigest = 'childrenProductsYaml.children.internal.contentDigest',
+  childrenProductsYaml___children___internal___description = 'childrenProductsYaml.children.internal.description',
+  childrenProductsYaml___children___internal___fieldOwners = 'childrenProductsYaml.children.internal.fieldOwners',
+  childrenProductsYaml___children___internal___ignoreType = 'childrenProductsYaml.children.internal.ignoreType',
+  childrenProductsYaml___children___internal___mediaType = 'childrenProductsYaml.children.internal.mediaType',
+  childrenProductsYaml___children___internal___owner = 'childrenProductsYaml.children.internal.owner',
+  childrenProductsYaml___children___internal___type = 'childrenProductsYaml.children.internal.type',
+  childrenProductsYaml___internal___content = 'childrenProductsYaml.internal.content',
+  childrenProductsYaml___internal___contentDigest = 'childrenProductsYaml.internal.contentDigest',
+  childrenProductsYaml___internal___description = 'childrenProductsYaml.internal.description',
+  childrenProductsYaml___internal___fieldOwners = 'childrenProductsYaml.internal.fieldOwners',
+  childrenProductsYaml___internal___ignoreType = 'childrenProductsYaml.internal.ignoreType',
+  childrenProductsYaml___internal___mediaType = 'childrenProductsYaml.internal.mediaType',
+  childrenProductsYaml___internal___owner = 'childrenProductsYaml.internal.owner',
+  childrenProductsYaml___internal___type = 'childrenProductsYaml.internal.type',
+  childrenProductsYaml___title = 'childrenProductsYaml.title',
+  childrenProductsYaml___description = 'childrenProductsYaml.description',
+  childrenProductsYaml___skills = 'childrenProductsYaml.skills',
+  childProductsYaml___id = 'childProductsYaml.id',
+  childProductsYaml___parent___id = 'childProductsYaml.parent.id',
+  childProductsYaml___parent___parent___id = 'childProductsYaml.parent.parent.id',
+  childProductsYaml___parent___parent___children = 'childProductsYaml.parent.parent.children',
+  childProductsYaml___parent___children = 'childProductsYaml.parent.children',
+  childProductsYaml___parent___children___id = 'childProductsYaml.parent.children.id',
+  childProductsYaml___parent___children___children = 'childProductsYaml.parent.children.children',
+  childProductsYaml___parent___internal___content = 'childProductsYaml.parent.internal.content',
+  childProductsYaml___parent___internal___contentDigest = 'childProductsYaml.parent.internal.contentDigest',
+  childProductsYaml___parent___internal___description = 'childProductsYaml.parent.internal.description',
+  childProductsYaml___parent___internal___fieldOwners = 'childProductsYaml.parent.internal.fieldOwners',
+  childProductsYaml___parent___internal___ignoreType = 'childProductsYaml.parent.internal.ignoreType',
+  childProductsYaml___parent___internal___mediaType = 'childProductsYaml.parent.internal.mediaType',
+  childProductsYaml___parent___internal___owner = 'childProductsYaml.parent.internal.owner',
+  childProductsYaml___parent___internal___type = 'childProductsYaml.parent.internal.type',
+  childProductsYaml___children = 'childProductsYaml.children',
+  childProductsYaml___children___id = 'childProductsYaml.children.id',
+  childProductsYaml___children___parent___id = 'childProductsYaml.children.parent.id',
+  childProductsYaml___children___parent___children = 'childProductsYaml.children.parent.children',
+  childProductsYaml___children___children = 'childProductsYaml.children.children',
+  childProductsYaml___children___children___id = 'childProductsYaml.children.children.id',
+  childProductsYaml___children___children___children = 'childProductsYaml.children.children.children',
+  childProductsYaml___children___internal___content = 'childProductsYaml.children.internal.content',
+  childProductsYaml___children___internal___contentDigest = 'childProductsYaml.children.internal.contentDigest',
+  childProductsYaml___children___internal___description = 'childProductsYaml.children.internal.description',
+  childProductsYaml___children___internal___fieldOwners = 'childProductsYaml.children.internal.fieldOwners',
+  childProductsYaml___children___internal___ignoreType = 'childProductsYaml.children.internal.ignoreType',
+  childProductsYaml___children___internal___mediaType = 'childProductsYaml.children.internal.mediaType',
+  childProductsYaml___children___internal___owner = 'childProductsYaml.children.internal.owner',
+  childProductsYaml___children___internal___type = 'childProductsYaml.children.internal.type',
+  childProductsYaml___internal___content = 'childProductsYaml.internal.content',
+  childProductsYaml___internal___contentDigest = 'childProductsYaml.internal.contentDigest',
+  childProductsYaml___internal___description = 'childProductsYaml.internal.description',
+  childProductsYaml___internal___fieldOwners = 'childProductsYaml.internal.fieldOwners',
+  childProductsYaml___internal___ignoreType = 'childProductsYaml.internal.ignoreType',
+  childProductsYaml___internal___mediaType = 'childProductsYaml.internal.mediaType',
+  childProductsYaml___internal___owner = 'childProductsYaml.internal.owner',
+  childProductsYaml___internal___type = 'childProductsYaml.internal.type',
+  childProductsYaml___title = 'childProductsYaml.title',
+  childProductsYaml___description = 'childProductsYaml.description',
+  childProductsYaml___skills = 'childProductsYaml.skills',
   id = 'id',
   parent___id = 'parent.id',
   parent___parent___id = 'parent.parent.id',
@@ -704,92 +980,7 @@ enum FileFieldsEnum {
   internal___ignoreType = 'internal.ignoreType',
   internal___mediaType = 'internal.mediaType',
   internal___owner = 'internal.owner',
-  internal___type = 'internal.type',
-  childrenProductsYaml = 'childrenProductsYaml',
-  childrenProductsYaml___id = 'childrenProductsYaml.id',
-  childrenProductsYaml___parent___id = 'childrenProductsYaml.parent.id',
-  childrenProductsYaml___parent___parent___id = 'childrenProductsYaml.parent.parent.id',
-  childrenProductsYaml___parent___parent___children = 'childrenProductsYaml.parent.parent.children',
-  childrenProductsYaml___parent___children = 'childrenProductsYaml.parent.children',
-  childrenProductsYaml___parent___children___id = 'childrenProductsYaml.parent.children.id',
-  childrenProductsYaml___parent___children___children = 'childrenProductsYaml.parent.children.children',
-  childrenProductsYaml___parent___internal___content = 'childrenProductsYaml.parent.internal.content',
-  childrenProductsYaml___parent___internal___contentDigest = 'childrenProductsYaml.parent.internal.contentDigest',
-  childrenProductsYaml___parent___internal___description = 'childrenProductsYaml.parent.internal.description',
-  childrenProductsYaml___parent___internal___fieldOwners = 'childrenProductsYaml.parent.internal.fieldOwners',
-  childrenProductsYaml___parent___internal___ignoreType = 'childrenProductsYaml.parent.internal.ignoreType',
-  childrenProductsYaml___parent___internal___mediaType = 'childrenProductsYaml.parent.internal.mediaType',
-  childrenProductsYaml___parent___internal___owner = 'childrenProductsYaml.parent.internal.owner',
-  childrenProductsYaml___parent___internal___type = 'childrenProductsYaml.parent.internal.type',
-  childrenProductsYaml___children = 'childrenProductsYaml.children',
-  childrenProductsYaml___children___id = 'childrenProductsYaml.children.id',
-  childrenProductsYaml___children___parent___id = 'childrenProductsYaml.children.parent.id',
-  childrenProductsYaml___children___parent___children = 'childrenProductsYaml.children.parent.children',
-  childrenProductsYaml___children___children = 'childrenProductsYaml.children.children',
-  childrenProductsYaml___children___children___id = 'childrenProductsYaml.children.children.id',
-  childrenProductsYaml___children___children___children = 'childrenProductsYaml.children.children.children',
-  childrenProductsYaml___children___internal___content = 'childrenProductsYaml.children.internal.content',
-  childrenProductsYaml___children___internal___contentDigest = 'childrenProductsYaml.children.internal.contentDigest',
-  childrenProductsYaml___children___internal___description = 'childrenProductsYaml.children.internal.description',
-  childrenProductsYaml___children___internal___fieldOwners = 'childrenProductsYaml.children.internal.fieldOwners',
-  childrenProductsYaml___children___internal___ignoreType = 'childrenProductsYaml.children.internal.ignoreType',
-  childrenProductsYaml___children___internal___mediaType = 'childrenProductsYaml.children.internal.mediaType',
-  childrenProductsYaml___children___internal___owner = 'childrenProductsYaml.children.internal.owner',
-  childrenProductsYaml___children___internal___type = 'childrenProductsYaml.children.internal.type',
-  childrenProductsYaml___internal___content = 'childrenProductsYaml.internal.content',
-  childrenProductsYaml___internal___contentDigest = 'childrenProductsYaml.internal.contentDigest',
-  childrenProductsYaml___internal___description = 'childrenProductsYaml.internal.description',
-  childrenProductsYaml___internal___fieldOwners = 'childrenProductsYaml.internal.fieldOwners',
-  childrenProductsYaml___internal___ignoreType = 'childrenProductsYaml.internal.ignoreType',
-  childrenProductsYaml___internal___mediaType = 'childrenProductsYaml.internal.mediaType',
-  childrenProductsYaml___internal___owner = 'childrenProductsYaml.internal.owner',
-  childrenProductsYaml___internal___type = 'childrenProductsYaml.internal.type',
-  childrenProductsYaml___title = 'childrenProductsYaml.title',
-  childrenProductsYaml___description = 'childrenProductsYaml.description',
-  childrenProductsYaml___skills = 'childrenProductsYaml.skills',
-  childrenTalksYaml = 'childrenTalksYaml',
-  childrenTalksYaml___id = 'childrenTalksYaml.id',
-  childrenTalksYaml___parent___id = 'childrenTalksYaml.parent.id',
-  childrenTalksYaml___parent___parent___id = 'childrenTalksYaml.parent.parent.id',
-  childrenTalksYaml___parent___parent___children = 'childrenTalksYaml.parent.parent.children',
-  childrenTalksYaml___parent___children = 'childrenTalksYaml.parent.children',
-  childrenTalksYaml___parent___children___id = 'childrenTalksYaml.parent.children.id',
-  childrenTalksYaml___parent___children___children = 'childrenTalksYaml.parent.children.children',
-  childrenTalksYaml___parent___internal___content = 'childrenTalksYaml.parent.internal.content',
-  childrenTalksYaml___parent___internal___contentDigest = 'childrenTalksYaml.parent.internal.contentDigest',
-  childrenTalksYaml___parent___internal___description = 'childrenTalksYaml.parent.internal.description',
-  childrenTalksYaml___parent___internal___fieldOwners = 'childrenTalksYaml.parent.internal.fieldOwners',
-  childrenTalksYaml___parent___internal___ignoreType = 'childrenTalksYaml.parent.internal.ignoreType',
-  childrenTalksYaml___parent___internal___mediaType = 'childrenTalksYaml.parent.internal.mediaType',
-  childrenTalksYaml___parent___internal___owner = 'childrenTalksYaml.parent.internal.owner',
-  childrenTalksYaml___parent___internal___type = 'childrenTalksYaml.parent.internal.type',
-  childrenTalksYaml___children = 'childrenTalksYaml.children',
-  childrenTalksYaml___children___id = 'childrenTalksYaml.children.id',
-  childrenTalksYaml___children___parent___id = 'childrenTalksYaml.children.parent.id',
-  childrenTalksYaml___children___parent___children = 'childrenTalksYaml.children.parent.children',
-  childrenTalksYaml___children___children = 'childrenTalksYaml.children.children',
-  childrenTalksYaml___children___children___id = 'childrenTalksYaml.children.children.id',
-  childrenTalksYaml___children___children___children = 'childrenTalksYaml.children.children.children',
-  childrenTalksYaml___children___internal___content = 'childrenTalksYaml.children.internal.content',
-  childrenTalksYaml___children___internal___contentDigest = 'childrenTalksYaml.children.internal.contentDigest',
-  childrenTalksYaml___children___internal___description = 'childrenTalksYaml.children.internal.description',
-  childrenTalksYaml___children___internal___fieldOwners = 'childrenTalksYaml.children.internal.fieldOwners',
-  childrenTalksYaml___children___internal___ignoreType = 'childrenTalksYaml.children.internal.ignoreType',
-  childrenTalksYaml___children___internal___mediaType = 'childrenTalksYaml.children.internal.mediaType',
-  childrenTalksYaml___children___internal___owner = 'childrenTalksYaml.children.internal.owner',
-  childrenTalksYaml___children___internal___type = 'childrenTalksYaml.children.internal.type',
-  childrenTalksYaml___internal___content = 'childrenTalksYaml.internal.content',
-  childrenTalksYaml___internal___contentDigest = 'childrenTalksYaml.internal.contentDigest',
-  childrenTalksYaml___internal___description = 'childrenTalksYaml.internal.description',
-  childrenTalksYaml___internal___fieldOwners = 'childrenTalksYaml.internal.fieldOwners',
-  childrenTalksYaml___internal___ignoreType = 'childrenTalksYaml.internal.ignoreType',
-  childrenTalksYaml___internal___mediaType = 'childrenTalksYaml.internal.mediaType',
-  childrenTalksYaml___internal___owner = 'childrenTalksYaml.internal.owner',
-  childrenTalksYaml___internal___type = 'childrenTalksYaml.internal.type',
-  childrenTalksYaml___text = 'childrenTalksYaml.text',
-  childrenTalksYaml___url = 'childrenTalksYaml.url',
-  childrenTalksYaml___youtubeUrl = 'childrenTalksYaml.youtubeUrl',
-  childrenTalksYaml___date = 'childrenTalksYaml.date'
+  internal___type = 'internal.type'
 }
 
 type FileFilterInput = {
@@ -827,13 +1018,16 @@ type FileFilterInput = {
   readonly blksize: Maybe<IntQueryOperatorInput>;
   readonly blocks: Maybe<IntQueryOperatorInput>;
   readonly publicURL: Maybe<StringQueryOperatorInput>;
+  readonly childrenImageSharp: Maybe<ImageSharpFilterListInput>;
   readonly childImageSharp: Maybe<ImageSharpFilterInput>;
+  readonly childrenTalksYaml: Maybe<TalksYamlFilterListInput>;
+  readonly childTalksYaml: Maybe<TalksYamlFilterInput>;
+  readonly childrenProductsYaml: Maybe<ProductsYamlFilterListInput>;
+  readonly childProductsYaml: Maybe<ProductsYamlFilterInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
   readonly internal: Maybe<InternalFilterInput>;
-  readonly childrenProductsYaml: Maybe<ProductsYamlFilterListInput>;
-  readonly childrenTalksYaml: Maybe<TalksYamlFilterListInput>;
 };
 
 type FileGroupConnection = {
@@ -888,7 +1082,8 @@ enum ImageFormat {
   AUTO = '',
   JPG = 'jpg',
   PNG = 'png',
-  WEBP = 'webp'
+  WEBP = 'webp',
+  AVIF = 'avif'
 }
 
 enum ImageLayout {
@@ -1033,6 +1228,7 @@ type ImageSharp_gatsbyImageDataArgs = {
   jpgOptions: Maybe<JPGOptions>;
   pngOptions: Maybe<PNGOptions>;
   webpOptions: Maybe<WebPOptions>;
+  avifOptions: Maybe<AVIFOptions>;
   transformOptions: Maybe<TransformOptions>;
   background?: Maybe<Scalars['String']>;
 };
@@ -1242,6 +1438,10 @@ type ImageSharpFilterInput = {
   readonly parent: Maybe<NodeFilterInput>;
   readonly children: Maybe<NodeFilterListInput>;
   readonly internal: Maybe<InternalFilterInput>;
+};
+
+type ImageSharpFilterListInput = {
+  readonly elemMatch: Maybe<ImageSharpFilterInput>;
 };
 
 type ImageSharpFixed = {
@@ -1717,13 +1917,16 @@ type Query_fileArgs = {
   blksize: Maybe<IntQueryOperatorInput>;
   blocks: Maybe<IntQueryOperatorInput>;
   publicURL: Maybe<StringQueryOperatorInput>;
+  childrenImageSharp: Maybe<ImageSharpFilterListInput>;
   childImageSharp: Maybe<ImageSharpFilterInput>;
+  childrenTalksYaml: Maybe<TalksYamlFilterListInput>;
+  childTalksYaml: Maybe<TalksYamlFilterInput>;
+  childrenProductsYaml: Maybe<ProductsYamlFilterListInput>;
+  childProductsYaml: Maybe<ProductsYamlFilterInput>;
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
   children: Maybe<NodeFilterListInput>;
   internal: Maybe<InternalFilterInput>;
-  childrenProductsYaml: Maybe<ProductsYamlFilterListInput>;
-  childrenTalksYaml: Maybe<TalksYamlFilterListInput>;
 };
 
 
@@ -1787,8 +1990,6 @@ type Query_allDirectoryArgs = {
 type Query_siteArgs = {
   buildTime: Maybe<DateQueryOperatorInput>;
   siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
-  port: Maybe<IntQueryOperatorInput>;
-  host: Maybe<StringQueryOperatorInput>;
   polyfill: Maybe<BooleanQueryOperatorInput>;
   pathPrefix: Maybe<StringQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -1938,8 +2139,6 @@ type Query_allSitePluginArgs = {
 type Site = Node & {
   readonly buildTime: Maybe<Scalars['Date']>;
   readonly siteMetadata: Maybe<SiteSiteMetadata>;
-  readonly port: Maybe<Scalars['Int']>;
-  readonly host: Maybe<Scalars['String']>;
   readonly polyfill: Maybe<Scalars['Boolean']>;
   readonly pathPrefix: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
@@ -2149,14 +2348,12 @@ enum SiteFieldsEnum {
   siteMetadata___author = 'siteMetadata.author',
   siteMetadata___locale = 'siteMetadata.locale',
   siteMetadata___lonlat = 'siteMetadata.lonlat',
-  siteMetadata___url = 'siteMetadata.url',
+  siteMetadata___siteUrl = 'siteMetadata.siteUrl',
   siteMetadata___image = 'siteMetadata.image',
   siteMetadata___blogName = 'siteMetadata.blogName',
   siteMetadata___blogUrl = 'siteMetadata.blogUrl',
   siteMetadata___twitterUsername = 'siteMetadata.twitterUsername',
   siteMetadata___twitterUrl = 'siteMetadata.twitterUrl',
-  port = 'port',
-  host = 'host',
   polyfill = 'polyfill',
   pathPrefix = 'pathPrefix',
   id = 'id',
@@ -2250,8 +2447,6 @@ enum SiteFieldsEnum {
 type SiteFilterInput = {
   readonly buildTime: Maybe<DateQueryOperatorInput>;
   readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
-  readonly port: Maybe<IntQueryOperatorInput>;
-  readonly host: Maybe<StringQueryOperatorInput>;
   readonly polyfill: Maybe<BooleanQueryOperatorInput>;
   readonly pathPrefix: Maybe<StringQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
@@ -2359,6 +2554,7 @@ type SitePageContextIntlMessages = {
   readonly yuukit_me: Maybe<Scalars['String']>;
   readonly webneko_blog: Maybe<Scalars['String']>;
   readonly slide: Maybe<Scalars['String']>;
+  readonly slides_personal_sponsor_in_jaws_days_2021: Maybe<Scalars['String']>;
   readonly slides_the_world_revolves_around_slack: Maybe<Scalars['String']>;
   readonly slides_pwa_that_was_closer_to_me: Maybe<Scalars['String']>;
   readonly slides_practical_use_of_transition: Maybe<Scalars['String']>;
@@ -2390,6 +2586,7 @@ type SitePageContextIntlMessagesFilterInput = {
   readonly yuukit_me: Maybe<StringQueryOperatorInput>;
   readonly webneko_blog: Maybe<StringQueryOperatorInput>;
   readonly slide: Maybe<StringQueryOperatorInput>;
+  readonly slides_personal_sponsor_in_jaws_days_2021: Maybe<StringQueryOperatorInput>;
   readonly slides_the_world_revolves_around_slack: Maybe<StringQueryOperatorInput>;
   readonly slides_pwa_that_was_closer_to_me: Maybe<StringQueryOperatorInput>;
   readonly slides_practical_use_of_transition: Maybe<StringQueryOperatorInput>;
@@ -2522,6 +2719,7 @@ enum SitePageFieldsEnum {
   context___intl___messages___yuukit_me = 'context.intl.messages.yuukit_me',
   context___intl___messages___webneko_blog = 'context.intl.messages.webneko_blog',
   context___intl___messages___slide = 'context.intl.messages.slide',
+  context___intl___messages___slides_personal_sponsor_in_jaws_days_2021 = 'context.intl.messages.slides_personal_sponsor_in_jaws_days_2021',
   context___intl___messages___slides_the_world_revolves_around_slack = 'context.intl.messages.slides_the_world_revolves_around_slack',
   context___intl___messages___slides_pwa_that_was_closer_to_me = 'context.intl.messages.slides_pwa_that_was_closer_to_me',
   context___intl___messages___slides_practical_use_of_transition = 'context.intl.messages.slides_practical_use_of_transition',
@@ -2597,6 +2795,11 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___stripMetadata = 'pluginCreator.pluginOptions.stripMetadata',
   pluginCreator___pluginOptions___defaultQuality = 'pluginCreator.pluginOptions.defaultQuality',
   pluginCreator___pluginOptions___failOnError = 'pluginCreator.pluginOptions.failOnError',
+  pluginCreator___pluginOptions___host = 'pluginCreator.pluginOptions.host',
+  pluginCreator___pluginOptions___sitemap = 'pluginCreator.pluginOptions.sitemap',
+  pluginCreator___pluginOptions___policy = 'pluginCreator.pluginOptions.policy',
+  pluginCreator___pluginOptions___policy___userAgent = 'pluginCreator.pluginOptions.policy.userAgent',
+  pluginCreator___pluginOptions___policy___allow = 'pluginCreator.pluginOptions.policy.allow',
   pluginCreator___pluginOptions___trackingId = 'pluginCreator.pluginOptions.trackingId',
   pluginCreator___pluginOptions___head = 'pluginCreator.pluginOptions.head',
   pluginCreator___pluginOptions___anonymize = 'pluginCreator.pluginOptions.anonymize',
@@ -2830,6 +3033,11 @@ enum SitePluginFieldsEnum {
   pluginOptions___stripMetadata = 'pluginOptions.stripMetadata',
   pluginOptions___defaultQuality = 'pluginOptions.defaultQuality',
   pluginOptions___failOnError = 'pluginOptions.failOnError',
+  pluginOptions___host = 'pluginOptions.host',
+  pluginOptions___sitemap = 'pluginOptions.sitemap',
+  pluginOptions___policy = 'pluginOptions.policy',
+  pluginOptions___policy___userAgent = 'pluginOptions.policy.userAgent',
+  pluginOptions___policy___allow = 'pluginOptions.policy.allow',
   pluginOptions___trackingId = 'pluginOptions.trackingId',
   pluginOptions___head = 'pluginOptions.head',
   pluginOptions___anonymize = 'pluginOptions.anonymize',
@@ -2989,6 +3197,9 @@ type SitePluginPluginOptions = {
   readonly stripMetadata: Maybe<Scalars['Boolean']>;
   readonly defaultQuality: Maybe<Scalars['Int']>;
   readonly failOnError: Maybe<Scalars['Boolean']>;
+  readonly host: Maybe<Scalars['String']>;
+  readonly sitemap: Maybe<Scalars['String']>;
+  readonly policy: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsPolicy>>>;
   readonly trackingId: Maybe<Scalars['String']>;
   readonly head: Maybe<Scalars['Boolean']>;
   readonly anonymize: Maybe<Scalars['Boolean']>;
@@ -3035,6 +3246,9 @@ type SitePluginPluginOptionsFilterInput = {
   readonly stripMetadata: Maybe<BooleanQueryOperatorInput>;
   readonly defaultQuality: Maybe<IntQueryOperatorInput>;
   readonly failOnError: Maybe<BooleanQueryOperatorInput>;
+  readonly host: Maybe<StringQueryOperatorInput>;
+  readonly sitemap: Maybe<StringQueryOperatorInput>;
+  readonly policy: Maybe<SitePluginPluginOptionsPolicyFilterListInput>;
   readonly trackingId: Maybe<StringQueryOperatorInput>;
   readonly head: Maybe<BooleanQueryOperatorInput>;
   readonly anonymize: Maybe<BooleanQueryOperatorInput>;
@@ -3081,6 +3295,20 @@ type SitePluginPluginOptionsImplementationFilterInput = {
   readonly info: Maybe<StringQueryOperatorInput>;
 };
 
+type SitePluginPluginOptionsPolicy = {
+  readonly userAgent: Maybe<Scalars['String']>;
+  readonly allow: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsPolicyFilterInput = {
+  readonly userAgent: Maybe<StringQueryOperatorInput>;
+  readonly allow: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsPolicyFilterListInput = {
+  readonly elemMatch: Maybe<SitePluginPluginOptionsPolicyFilterInput>;
+};
+
 type SitePluginSortInput = {
   readonly fields: Maybe<ReadonlyArray<Maybe<SitePluginFieldsEnum>>>;
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
@@ -3096,7 +3324,7 @@ type SiteSiteMetadata = {
   readonly author: Maybe<Scalars['String']>;
   readonly locale: Maybe<Scalars['String']>;
   readonly lonlat: Maybe<Scalars['String']>;
-  readonly url: Maybe<Scalars['String']>;
+  readonly siteUrl: Maybe<Scalars['String']>;
   readonly image: Maybe<Scalars['String']>;
   readonly blogName: Maybe<Scalars['String']>;
   readonly blogUrl: Maybe<Scalars['String']>;
@@ -3114,7 +3342,7 @@ type SiteSiteMetadataFilterInput = {
   readonly author: Maybe<StringQueryOperatorInput>;
   readonly locale: Maybe<StringQueryOperatorInput>;
   readonly lonlat: Maybe<StringQueryOperatorInput>;
-  readonly url: Maybe<StringQueryOperatorInput>;
+  readonly siteUrl: Maybe<StringQueryOperatorInput>;
   readonly image: Maybe<StringQueryOperatorInput>;
   readonly blogName: Maybe<StringQueryOperatorInput>;
   readonly blogUrl: Maybe<StringQueryOperatorInput>;
@@ -3314,16 +3542,6 @@ type WebPOptions = {
   readonly quality: Maybe<Scalars['Int']>;
 };
 
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
-
-type SiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SiteTitleQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'biography' | 'position' | 'workExperience' | 'author' | 'locale' | 'lonlat' | 'url' | 'image' | 'blogName' | 'blogUrl' | 'twitterUsername' | 'twitterUrl'>> }>, readonly allProductsYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<ProductsYaml, 'id' | 'title' | 'description' | 'skills'> }> }, readonly allTalksYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<TalksYaml, 'id' | 'text' | 'url' | 'youtubeUrl' | 'date'> }> } };
-
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3332,7 +3550,12 @@ type Unnamed_1_Query = { readonly contribute: Maybe<{ readonly childImageSharp: 
 type SEOQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'titleTemplate' | 'description' | 'url' | 'image' | 'twitterUsername'>> }> };
+type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'titleTemplate' | 'description' | 'siteUrl' | 'image' | 'twitterUsername'>> }> };
+
+type SiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SiteTitleQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'biography' | 'position' | 'workExperience' | 'author' | 'locale' | 'lonlat' | 'siteUrl' | 'image' | 'blogName' | 'blogUrl' | 'twitterUsername' | 'twitterUrl'>> }>, readonly allProductsYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<ProductsYaml, 'id' | 'title' | 'description' | 'skills'> }> }, readonly allTalksYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<TalksYaml, 'id' | 'text' | 'url' | 'youtubeUrl' | 'date'> }> } };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

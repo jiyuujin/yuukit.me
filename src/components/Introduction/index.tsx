@@ -14,7 +14,7 @@ type IntroductionProps = {
             | 'author'
             | 'locale'
             | 'lonlat'
-            | 'url'
+            | 'siteUrl'
             | 'image'
             | 'blogName'
         >
