@@ -63,7 +63,6 @@ const CheckoutForm = ({ isTest }: CheckoutFormType) => {
         const secret = jsonData.charge.client_secret
 
         const card = elements?.getElement(CardElement)
-        console.log('card', card)
 
         const result = await stripe?.confirmCardPayment(secret, {
             payment_method: {
@@ -75,7 +74,7 @@ const CheckoutForm = ({ isTest }: CheckoutFormType) => {
         })
 
         if (result?.error) {
-            console.log(result.error.message)
+            // console.log(result?.error.message)
         } else {
             if (result?.paymentIntent?.status === 'succeeded') {
                 alert('Charged successful!')
