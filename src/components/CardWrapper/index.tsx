@@ -18,7 +18,7 @@ type CardWrapperProps = {
             | 'author'
             | 'locale'
             | 'lonlat'
-            | 'url'
+            | 'siteUrl'
             | 'image'
             | 'blogName'
         >

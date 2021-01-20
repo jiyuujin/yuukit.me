@@ -15,7 +15,7 @@ type HeaderProps = {
             | 'author'
             | 'locale'
             | 'lonlat'
-            | 'url'
+            | 'siteUrl'
             | 'image'
             | 'blogName'
         >

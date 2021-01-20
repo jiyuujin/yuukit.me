@@ -14,7 +14,7 @@ type WorkProps = {
             | 'author'
             | 'locale'
             | 'lonlat'
-            | 'url'
+            | 'siteUrl'
             | 'image'
             | 'blogName'
         >

@@ -25,7 +25,7 @@ const SEO = ({
                     title,
                     titleTemplate,
                     description,
-                    url,
+                    siteUrl,
                     image,
                     twitterUsername,
                 },
@@ -35,7 +35,7 @@ const SEO = ({
                 title: title,
                 description: description,
                 image: image,
-                url: `${url}${pathname || '/'}`,
+                url: `${siteUrl}${pathname || '/'}`,
             }
             return (
                 <Helmet
@@ -81,7 +81,7 @@ const query = graphql`
                 title
                 titleTemplate
                 description
-                url
+                siteUrl
                 image
                 twitterUsername
             }
