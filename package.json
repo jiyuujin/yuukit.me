@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@babel/core": "7.12.10",
-    "@nekohack/tiny-components": "1.0.2",
+    "@nekohack/footer-ui": "1.0.0",
     "@stripe/react-stripe-js": "1.2.0",
     "@stripe/stripe-js": "1.11.0",
     "dayjs": "1.10.3",
