@@ -25,10 +25,6 @@ const HeaderBar: FC = () => {
                             key={language}
                             onClick={() => changeLocale(language)}
                             style={{
-                                color:
-                                    currentLocale === language
-                                        ? 'yellow'
-                                        : 'white',
                                 margin: 10,
                                 textDecoration: 'underline',
                                 cursor: 'pointer',
