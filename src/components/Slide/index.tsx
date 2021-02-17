@@ -31,13 +31,25 @@ const Slide: FC<SlideProps> = ({ data }) => {
                             <li key={node.id}>
                                 <div>{dateFormat(node.date)}</div>
                                 <div className={SC.link}>
-                                    <a href={node.url}>
+                                    <a
+                                        href={node.url}
+                                        role="button"
+                                        aria-pressed="true"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         {intl.formatMessage({ id: node.text })}
                                     </a>
                                 </div>
                                 {node.youtubeUrl && (
                                     <div className={SC.link}>
-                                        <a href={node.youtubeUrl}>
+                                        <a
+                                            href={node.youtubeUrl}
+                                            role="button"
+                                            aria-pressed="true"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
                                             {node.youtubeUrl}
                                         </a>
                                     </div>

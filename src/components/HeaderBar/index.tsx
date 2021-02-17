@@ -23,6 +23,8 @@ const HeaderBar: FC = () => {
                     languages.map((language) => (
                         <a
                             key={language}
+                            role="button"
+                            aria-pressed="true"
                             onClick={() => changeLocale(language)}
                             style={{
                                 margin: 10,
