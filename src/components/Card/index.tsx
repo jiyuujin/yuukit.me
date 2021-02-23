@@ -1,6 +1,7 @@
 import React, { FC, Fragment } from 'react'
 import { useIntl } from 'gatsby-plugin-intl'
 import * as SC from './index.module.scss'
+import LazyImage from '../LazyImage'
 import Skills from '../Skills'
 import { SiteMetadataTypes } from '../../types'
 import { NekoButton } from 'nekohack-ui'
@@ -17,7 +18,7 @@ const Card: FC<any> = ({ data }: SiteMetadataTypes) => {
         <Fragment>
             <div className={SC.content}>
                 <div className={SC.info}>
-                    <div className={SC.me} />
+                    <LazyImage assetUrl={'me.png'} alt={'me'} />
                     <h1 className={SC.name}>
                         {data.author + ' (' + position + ')'}
                     </h1>
