@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { graphql, StaticQuery } from 'gatsby'
-// import Img from 'gatsby-image'
 import { useIntl } from 'gatsby-plugin-intl'
 import * as SC from './index.module.scss'
 import {
@@ -12,6 +11,7 @@ import {
 import { loadStripe } from '@stripe/stripe-js'
 import ContributeSvg from '../../static/icons/contribute.svg'
 import Modal from '../Modal'
+import LazyImage from '../LazyImage'
 import { NekoButton } from 'nekohack-ui'
 
 export const Payment = () => {
@@ -103,12 +103,10 @@ const CheckoutForm = ({ isTest }: CheckoutFormType) => {
                                 className={SC.checkoutForm}
                                 onSubmit={handleSubmit}
                             >
-                                {/*<Img
-                                    fixed={
-                                        data.contribute.childImageSharp.fixed
-                                    }
-                                    alt="contribute"
-                                />*/}
+                                <LazyImage
+                                    assetUrl={'contribute.png'}
+                                    alt={'contribute'}
+                                />
                                 <label
                                     style={{
                                         width: '100%',
