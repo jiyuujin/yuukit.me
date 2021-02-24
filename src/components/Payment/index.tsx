@@ -103,10 +103,12 @@ const CheckoutForm = ({ isTest }: CheckoutFormType) => {
                                 className={SC.checkoutForm}
                                 onSubmit={handleSubmit}
                             >
-                                <LazyImage
-                                    assetUrl={'contribute.png'}
-                                    alt={'contribute'}
-                                />
+                                <div className={SC.me}>
+                                    <LazyImage
+                                        assetUrl={'contribute.png'}
+                                        alt={'contribute'}
+                                    />
+                                </div>
                                 <label
                                     style={{
                                         width: '100%',
