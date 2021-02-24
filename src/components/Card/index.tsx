@@ -18,7 +18,9 @@ const Card: FC<any> = ({ data }: SiteMetadataTypes) => {
         <Fragment>
             <div className={SC.content}>
                 <div className={SC.info}>
-                    <LazyImage assetUrl={'me.png'} alt={'me'} />
+                    <div className={SC.me}>
+                        <LazyImage assetUrl={'me.png'} alt={'me'} />
+                    </div>
                     <h1 className={SC.name}>
                         {data.author + ' (' + position + ')'}
                     </h1>
