@@ -7,7 +7,7 @@ const LazyImage = ({ assetUrl, alt }: { assetUrl: string; alt: string }) => {
         query {
             allImageSharp {
                 nodes {
-                    fixed(width: 300) {
+                    fixed(width: 200) {
                         originalName
                         ...GatsbyImageSharpFixed
                     }
