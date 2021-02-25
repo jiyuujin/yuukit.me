@@ -38,6 +38,7 @@ const Home: FC = () => {
                         title
                         description
                         skills
+                        image
                     }
                 }
             }

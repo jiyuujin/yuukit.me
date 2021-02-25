@@ -1,6 +1,7 @@
 - title: Web Developer - Yuma Kitamura
-  description: yuukit_me
+  description: profile
   skills:
+    - normalize.css
     - nekohack-ui
     - Gatsby.js
     - Gatsby.js PWA
@@ -9,8 +10,20 @@
     - AWS CloudFront
     - Circle CI
     - Github Actions
+  image: https://i.imgur.com/sN5nHoS.jpg
+- title: nekohack Tech Hub
+  description: tech_hub
+  skills:
+    - normalize.css
+    - Gatsby.js
+    - Gatsby.js PWA
+    - RSS parser
+    - AWS S3
+    - AWS Cloudfront
+    - Github Actions
+  image: https://i.imgur.com/8uP2RdS.jpg
 - title: Web猫ブログ
-  description: webneko_blog
+  description: blog
   skills:
     - j-stylebook
     - Nuxt.js
@@ -21,3 +34,13 @@
     - AWS CloudFront
     - Circle CI
     - Github Actions
+  image: https://i.imgur.com/xuj6KVU.jpg
+- title: Web Performance
+  description: insight
+  skills:
+    - Next.js
+    - PageSpeed Insights v5
+    - Google Apps Script
+    - Cloud Run
+    - Github Actions
+  image: https://i.imgur.com/NiwKYI8.jpg
