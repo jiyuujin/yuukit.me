@@ -6,7 +6,7 @@ type ProductProps = {
     data: Array<{
         node: Pick<
             GatsbyTypes.ProductsYaml,
-            'id' | 'title' | 'description' | 'skills'
+            'id' | 'title' | 'description' | 'skills' | 'image'
         >
     }>
 }
@@ -23,6 +23,13 @@ const Product: FC<ProductProps> = ({ data }) => {
                 return (
                     <div key={node.id}>
                         <div className={SC.subtitle}>{node.title}</div>
+                        {node.image && (
+                            <img
+                                src={node.image}
+                                alt={node.title}
+                                decoding="async"
+                            />
+                        )}
                         <div
                             className={SC.description}
                             dangerouslySetInnerHTML={{

@@ -854,6 +854,7 @@ enum FileFieldsEnum {
   childrenProductsYaml___title = 'childrenProductsYaml.title',
   childrenProductsYaml___description = 'childrenProductsYaml.description',
   childrenProductsYaml___skills = 'childrenProductsYaml.skills',
+  childrenProductsYaml___image = 'childrenProductsYaml.image',
   childProductsYaml___id = 'childProductsYaml.id',
   childProductsYaml___parent___id = 'childProductsYaml.parent.id',
   childProductsYaml___parent___parent___id = 'childProductsYaml.parent.parent.id',
@@ -895,6 +896,7 @@ enum FileFieldsEnum {
   childProductsYaml___title = 'childProductsYaml.title',
   childProductsYaml___description = 'childProductsYaml.description',
   childProductsYaml___skills = 'childProductsYaml.skills',
+  childProductsYaml___image = 'childProductsYaml.image',
   id = 'id',
   parent___id = 'parent.id',
   parent___parent___id = 'parent.parent.id',
@@ -1711,6 +1713,7 @@ type ProductsYaml = Node & {
   readonly title: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
   readonly skills: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly image: Maybe<Scalars['String']>;
 };
 
 type ProductsYamlConnection = {
@@ -1829,7 +1832,8 @@ enum ProductsYamlFieldsEnum {
   internal___type = 'internal.type',
   title = 'title',
   description = 'description',
-  skills = 'skills'
+  skills = 'skills',
+  image = 'image'
 }
 
 type ProductsYamlFilterInput = {
@@ -1840,6 +1844,7 @@ type ProductsYamlFilterInput = {
   readonly title: Maybe<StringQueryOperatorInput>;
   readonly description: Maybe<StringQueryOperatorInput>;
   readonly skills: Maybe<StringQueryOperatorInput>;
+  readonly image: Maybe<StringQueryOperatorInput>;
 };
 
 type ProductsYamlFilterListInput = {
@@ -1990,6 +1995,8 @@ type Query_allDirectoryArgs = {
 type Query_siteArgs = {
   buildTime: Maybe<DateQueryOperatorInput>;
   siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
+  port: Maybe<IntQueryOperatorInput>;
+  host: Maybe<StringQueryOperatorInput>;
   polyfill: Maybe<BooleanQueryOperatorInput>;
   pathPrefix: Maybe<StringQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -2084,6 +2091,7 @@ type Query_productsYamlArgs = {
   title: Maybe<StringQueryOperatorInput>;
   description: Maybe<StringQueryOperatorInput>;
   skills: Maybe<StringQueryOperatorInput>;
+  image: Maybe<StringQueryOperatorInput>;
 };
 
 
@@ -2139,6 +2147,8 @@ type Query_allSitePluginArgs = {
 type Site = Node & {
   readonly buildTime: Maybe<Scalars['Date']>;
   readonly siteMetadata: Maybe<SiteSiteMetadata>;
+  readonly port: Maybe<Scalars['Int']>;
+  readonly host: Maybe<Scalars['String']>;
   readonly polyfill: Maybe<Scalars['Boolean']>;
   readonly pathPrefix: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
@@ -2354,6 +2364,8 @@ enum SiteFieldsEnum {
   siteMetadata___blogUrl = 'siteMetadata.blogUrl',
   siteMetadata___twitterUsername = 'siteMetadata.twitterUsername',
   siteMetadata___twitterUrl = 'siteMetadata.twitterUrl',
+  port = 'port',
+  host = 'host',
   polyfill = 'polyfill',
   pathPrefix = 'pathPrefix',
   id = 'id',
@@ -2447,6 +2459,8 @@ enum SiteFieldsEnum {
 type SiteFilterInput = {
   readonly buildTime: Maybe<DateQueryOperatorInput>;
   readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
+  readonly port: Maybe<IntQueryOperatorInput>;
+  readonly host: Maybe<StringQueryOperatorInput>;
   readonly polyfill: Maybe<BooleanQueryOperatorInput>;
   readonly pathPrefix: Maybe<StringQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
@@ -2552,7 +2566,9 @@ type SitePageContextIntlMessages = {
   readonly product: Maybe<Scalars['String']>;
   readonly technology_used: Maybe<Scalars['String']>;
   readonly yuukit_me: Maybe<Scalars['String']>;
+  readonly techhub: Maybe<Scalars['String']>;
   readonly webneko_blog: Maybe<Scalars['String']>;
+  readonly insight: Maybe<Scalars['String']>;
   readonly slide: Maybe<Scalars['String']>;
   readonly slides_personal_sponsor_in_jaws_days_2021: Maybe<Scalars['String']>;
   readonly slides_the_world_revolves_around_slack: Maybe<Scalars['String']>;
@@ -2584,7 +2600,9 @@ type SitePageContextIntlMessagesFilterInput = {
   readonly product: Maybe<StringQueryOperatorInput>;
   readonly technology_used: Maybe<StringQueryOperatorInput>;
   readonly yuukit_me: Maybe<StringQueryOperatorInput>;
+  readonly techhub: Maybe<StringQueryOperatorInput>;
   readonly webneko_blog: Maybe<StringQueryOperatorInput>;
+  readonly insight: Maybe<StringQueryOperatorInput>;
   readonly slide: Maybe<StringQueryOperatorInput>;
   readonly slides_personal_sponsor_in_jaws_days_2021: Maybe<StringQueryOperatorInput>;
   readonly slides_the_world_revolves_around_slack: Maybe<StringQueryOperatorInput>;
@@ -2717,7 +2735,9 @@ enum SitePageFieldsEnum {
   context___intl___messages___product = 'context.intl.messages.product',
   context___intl___messages___technology_used = 'context.intl.messages.technology_used',
   context___intl___messages___yuukit_me = 'context.intl.messages.yuukit_me',
+  context___intl___messages___techhub = 'context.intl.messages.techhub',
   context___intl___messages___webneko_blog = 'context.intl.messages.webneko_blog',
+  context___intl___messages___insight = 'context.intl.messages.insight',
   context___intl___messages___slide = 'context.intl.messages.slide',
   context___intl___messages___slides_personal_sponsor_in_jaws_days_2021 = 'context.intl.messages.slides_personal_sponsor_in_jaws_days_2021',
   context___intl___messages___slides_the_world_revolves_around_slack = 'context.intl.messages.slides_the_world_revolves_around_slack',
@@ -2796,7 +2816,6 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___defaultQuality = 'pluginCreator.pluginOptions.defaultQuality',
   pluginCreator___pluginOptions___failOnError = 'pluginCreator.pluginOptions.failOnError',
   pluginCreator___pluginOptions___host = 'pluginCreator.pluginOptions.host',
-  pluginCreator___pluginOptions___sitemap = 'pluginCreator.pluginOptions.sitemap',
   pluginCreator___pluginOptions___policy = 'pluginCreator.pluginOptions.policy',
   pluginCreator___pluginOptions___policy___userAgent = 'pluginCreator.pluginOptions.policy.userAgent',
   pluginCreator___pluginOptions___policy___allow = 'pluginCreator.pluginOptions.policy.allow',
@@ -3034,7 +3053,6 @@ enum SitePluginFieldsEnum {
   pluginOptions___defaultQuality = 'pluginOptions.defaultQuality',
   pluginOptions___failOnError = 'pluginOptions.failOnError',
   pluginOptions___host = 'pluginOptions.host',
-  pluginOptions___sitemap = 'pluginOptions.sitemap',
   pluginOptions___policy = 'pluginOptions.policy',
   pluginOptions___policy___userAgent = 'pluginOptions.policy.userAgent',
   pluginOptions___policy___allow = 'pluginOptions.policy.allow',
@@ -3198,7 +3216,6 @@ type SitePluginPluginOptions = {
   readonly defaultQuality: Maybe<Scalars['Int']>;
   readonly failOnError: Maybe<Scalars['Boolean']>;
   readonly host: Maybe<Scalars['String']>;
-  readonly sitemap: Maybe<Scalars['String']>;
   readonly policy: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsPolicy>>>;
   readonly trackingId: Maybe<Scalars['String']>;
   readonly head: Maybe<Scalars['Boolean']>;
@@ -3247,7 +3264,6 @@ type SitePluginPluginOptionsFilterInput = {
   readonly defaultQuality: Maybe<IntQueryOperatorInput>;
   readonly failOnError: Maybe<BooleanQueryOperatorInput>;
   readonly host: Maybe<StringQueryOperatorInput>;
-  readonly sitemap: Maybe<StringQueryOperatorInput>;
   readonly policy: Maybe<SitePluginPluginOptionsPolicyFilterListInput>;
   readonly trackingId: Maybe<StringQueryOperatorInput>;
   readonly head: Maybe<BooleanQueryOperatorInput>;
@@ -3542,20 +3558,33 @@ type WebPOptions = {
   readonly quality: Maybe<Scalars['Int']>;
 };
 
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+
+type SiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SiteTitleQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'biography' | 'position' | 'workExperience' | 'author' | 'locale' | 'lonlat' | 'siteUrl' | 'image' | 'blogName' | 'blogUrl' | 'twitterUsername' | 'twitterUrl'>> }>, readonly allProductsYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<ProductsYaml, 'id' | 'title' | 'description' | 'skills' | 'image'> }> }, readonly allTalksYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<TalksYaml, 'id' | 'text' | 'url' | 'youtubeUrl' | 'date'> }> } };
+
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_1_Query = { readonly contribute: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+type Unnamed_1_Query = { readonly allImageSharp: { readonly nodes: ReadonlyArray<{ readonly fixed: Maybe<(
+        Pick<ImageSharpFixed, 'originalName'>
+        & GatsbyImageSharpFixedFragment
+      )> }> } };
 
 type SEOQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'titleTemplate' | 'description' | 'siteUrl' | 'image' | 'twitterUsername'>> }> };
 
-type SiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type SiteTitleQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'biography' | 'position' | 'workExperience' | 'author' | 'locale' | 'lonlat' | 'siteUrl' | 'image' | 'blogName' | 'blogUrl' | 'twitterUsername' | 'twitterUrl'>> }>, readonly allProductsYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<ProductsYaml, 'id' | 'title' | 'description' | 'skills'> }> }, readonly allTalksYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<TalksYaml, 'id' | 'text' | 'url' | 'youtubeUrl' | 'date'> }> } };
+type Unnamed_2_Query = { readonly contribute: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

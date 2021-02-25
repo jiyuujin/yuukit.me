@@ -17,8 +17,10 @@
   "skill_set_coming_soon": "Skill Set (Coming Soon)",
   "product": "Product",
   "technology_used": "Technology Used",
-  "yuukit_me": "This profile site was opened in March 2020 to separate it from the technical blog and introduce itself. The position of the Web cat blog, which was held by the stage / LT as an entrance to introduce oneself, will be changed for this profile site.",
-  "webneko_blog": "A personal blog opened in October 2018 to disseminate knowledge. The name comes from the fact that he loves cats, which is his characteristic, and that he is good at the front end as an individual Web developer, and that he is also very interested in infrastructure. <br /> At that time, Contentful, one of the Headless CMS, was running. There was an urgent need to have a product as an individual that is not affected by any external influences, such as the fact that we could not meet a permanent product even in the work scene and ended up in the middle of the process. Production has started based on Nuxt.js (v1.0.0-beta.13 at that time).",
+  "profile": "Production started in Feb 2020, published in Mar 2020. This profile site was opened in March 2020 to separate it from the technical blog and introduce itself. The position of the Web cat blog, which has been held by the stage / LT as an entrance to introduce oneself, will be changed for this profile site.",
+  "tech_hub": "A website created to open a community (i-Company) that revolves around solving Web issues. I put together multiple media such as my blog and note in one feed.",
+  "blog": "Production started in Oct 2018, published in Nov 2018. Nuxt.js, which was `1.0.0rc11` at the time of production, was written in JavaScript, but later rewritten to TypeScript. The TypeScript API was also adopted from the `Decorator API`, but now the way to write `Options API` (Use `Vue.extend`) is progressing (it will be rewritten using the `Composition API` for Vue 3.0 soon)",
+  "insight": "A website established to calculate the performance of each website that it operates as a quantitative numerical value on a daily basis. The numbers here are based on PageSpeed Insights v5.",
   "slide": "Stage Slide",
   "slides": {
     "personal_sponsor_in_jaws_days_2021": "One of personal sponsors in JAWS DAYS 2021",
