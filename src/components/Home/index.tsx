@@ -11,7 +11,7 @@ import Product from '../Product'
 import Slide from '../Slide'
 
 const Home: FC = () => {
-    const data = useStaticQuery<GatsbyTypes.SiteTitleQueryQuery>(graphql`
+    const data = useStaticQuery(graphql`
         query SiteTitleQuery {
             site {
                 siteMetadata {
