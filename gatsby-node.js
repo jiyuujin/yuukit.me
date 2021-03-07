@@ -6,4 +6,10 @@ exports.onCreateWebpackConfig = ({ actions }) => {
             modules: [path.resolve(__dirname, `src`), `node_modules`]
         }
     })
+    actions.setBabelPlugin({
+        name: '@babel/plugin-transform-react-jsx',
+        options: {
+            runtime: 'automatic',
+        },
+    })
 }
