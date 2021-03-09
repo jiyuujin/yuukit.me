@@ -16,7 +16,7 @@
     "@nekohack/normalize.css": "1.2.1",
     "@stripe/react-stripe-js": "1.4.0",
     "@stripe/stripe-js": "1.13.1",
-    "dayjs": "1.10.3",
+    "dayjs": "1.10.4",
     "gatsby": "3.0.3",
     "gatsby-image": "3.0.0",
     "gatsby-plugin-google-analytics": "3.0.0",
