@@ -8,6 +8,7 @@ import { CardWrapper } from '../CardWrapper'
 import Introduction from '../Introduction'
 import Work from '../Work'
 import Product from '../Product'
+import Community from '../Community'
 import Slide from '../Slide'
 
 const Home: FC = () => {
@@ -42,6 +43,15 @@ const Home: FC = () => {
                     }
                 }
             }
+            allCommunitiesYaml {
+                edges {
+                    node {
+                        id
+                        text
+                        url
+                    }
+                }
+            }
             allTalksYaml {
                 edges {
                     node {
@@ -66,6 +76,7 @@ const Home: FC = () => {
                 <Introduction data={data.site?.siteMetadata} />
                 <Work data={data.site?.siteMetadata} />
                 <Product data={data.allProductsYaml?.edges} />
+                <Community data={data.allCommunitiesYaml?.edges} />
                 <Slide data={data.allTalksYaml?.edges} />
             </div>
         </div>
