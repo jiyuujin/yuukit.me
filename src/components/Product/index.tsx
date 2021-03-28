@@ -3,12 +3,7 @@ import { useIntl } from 'gatsby-plugin-intl'
 import * as SC from './index.module.scss'
 
 type ProductProps = {
-    data: Array<{
-        node: Pick<
-            GatsbyTypes.ProductsYaml,
-            'id' | 'title' | 'description' | 'skills' | 'image'
-        >
-    }>
+    data: Array<unknown>
 }
 
 const Product: FC<ProductProps> = ({ data }) => {
