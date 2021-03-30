@@ -11,7 +11,7 @@
     "test:w": "npm run test-cover -- --watch"
   },
   "dependencies": {
-    "@babel/core": "7.13.13",
+    "@babel/core": "7.13.14",
     "@nekohack/footer-ui": "1.0.0",
     "@nekohack/normalize.css": "1.2.1",
     "@stripe/react-stripe-js": "1.4.0",
