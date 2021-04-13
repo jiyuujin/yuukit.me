@@ -25,13 +25,14 @@
   "community_role": "下記コミュニティに一スタッフとして参画中",
   "slide": "登壇スライド",
   "slides": {
+    "recommend_to_devrel_in_community_handson": "コミュニティハンズオンにおける DevRel のすゝめ",
     "personal_sponsor_in_jaws_days_2021": "JAWS DAYS 2021 個人スポンサー",
-    "the_world_revolves_around_slack": "Slackを中心に世界は廻っている",
-    "pwa_that_was_closer_to_me": "もっと身近にやってたPWA",
-    "practical_use_of_transition": "Transitionを実践的に使う",
+    "the_world_revolves_around_slack": "Slack を中心に世界は廻っている",
+    "pwa_that_was_closer_to_me": "もっと身近にやってた PWA",
+    "practical_use_of_transition": "Transition を実践的に使う",
     "the_point_of_composition_api": "Composition API 勘所など",
-    "looking_back_in_2019": "2019年を振り返る",
-    "vue_cli_test_tips": "Vue CLI テストtips集"
+    "looking_back_in_2019": "2019 年を振り返る",
+    "vue_cli_test_tips": "Vue CLI テスト tips 集"
   },
   "contact": "問い合わせ"
 }
