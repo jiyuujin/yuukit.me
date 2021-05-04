@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skills render correctly 1`] = `
+<div>
+  <div>
+    Vue.js
+    <div>
+      Vue.js Advocator 😎
+    </div>
+    <div
+      className=""
+    >
+      Nuxt.js
+    </div>
+  </div>
+  <div>
+    Node.js
+    <div>
+      TypeScript 💪
+    </div>
+    <div
+      className=""
+    >
+      Babel
+    </div>
+    <div
+      className=""
+    >
+      Webpack
+    </div>
+  </div>
+  <div>
+    React
+    <div>
+      React Enthusiast 😀
+    </div>
+    <div
+      className=""
+    >
+      Next.js
+    </div>
+    <div
+      className=""
+    >
+      Gatsby.js
+    </div>
+  </div>
+  <div>
+    VC & CI
+    <div>
+      Github Actions 🐙
+    </div>
+    <div
+      className=""
+    >
+      Circle CI
+    </div>
+  </div>
+  <div>
+    Infrastructure
+    <div>
+      Serverless ⚡️️
+    </div>
+    <div
+      className=""
+    >
+      AWS
+    </div>
+    <div
+      className=""
+    >
+      GCP / Firebase
+    </div>
+  </div>
+  <div>
+    Scala
+    <div>
+      Challenger 😛
+    </div>
+    <div
+      className=""
+    >
+      Playframework
+    </div>
+    <div
+      className=""
+    >
+      Akka HTTP
+    </div>
+  </div>
+</div>
+`;
