@@ -74,14 +74,14 @@ type File = Node & {
   readonly childrenImageSharp: Maybe<ReadonlyArray<Maybe<ImageSharp>>>;
   /** Returns the first child node of type ImageSharp or null if there are no children of given type on this node */
   readonly childImageSharp: Maybe<ImageSharp>;
-  /** Returns all children nodes filtered by type TalksYaml */
-  readonly childrenTalksYaml: Maybe<ReadonlyArray<Maybe<TalksYaml>>>;
-  /** Returns the first child node of type TalksYaml or null if there are no children of given type on this node */
-  readonly childTalksYaml: Maybe<TalksYaml>;
   /** Returns all children nodes filtered by type CommunitiesYaml */
   readonly childrenCommunitiesYaml: Maybe<ReadonlyArray<Maybe<CommunitiesYaml>>>;
   /** Returns the first child node of type CommunitiesYaml or null if there are no children of given type on this node */
   readonly childCommunitiesYaml: Maybe<CommunitiesYaml>;
+  /** Returns all children nodes filtered by type TalksYaml */
+  readonly childrenTalksYaml: Maybe<ReadonlyArray<Maybe<TalksYaml>>>;
+  /** Returns the first child node of type TalksYaml or null if there are no children of given type on this node */
+  readonly childTalksYaml: Maybe<TalksYaml>;
   /** Returns all children nodes filtered by type ProductsYaml */
   readonly childrenProductsYaml: Maybe<ReadonlyArray<Maybe<ProductsYaml>>>;
   /** Returns the first child node of type ProductsYaml or null if there are no children of given type on this node */
@@ -303,6 +303,18 @@ type SiteSiteMetadata = {
   readonly twitterUrl: Maybe<Scalars['String']>;
 };
 
+type SiteFunction = Node & {
+  readonly apiRoute: Scalars['String'];
+  readonly originalFilePath: Scalars['String'];
+  readonly relativeCompiledFilePath: Scalars['String'];
+  readonly absoluteCompiledFilePath: Scalars['String'];
+  readonly matchPath: Maybe<Scalars['String']>;
+  readonly id: Scalars['ID'];
+  readonly parent: Maybe<Node>;
+  readonly children: ReadonlyArray<Node>;
+  readonly internal: Internal;
+};
+
 type SitePage = Node & {
   readonly path: Scalars['String'];
   readonly component: Scalars['String'];
@@ -336,30 +348,31 @@ type SitePageContextIntl = {
 };
 
 type SitePageContextIntlMessages = {
-  readonly title: Maybe<Scalars['String']>;
-  readonly online_business_card: Maybe<Scalars['String']>;
-  readonly locale_is: Maybe<Scalars['String']>;
-  readonly contribute: Maybe<Scalars['String']>;
-  readonly test_pay: Maybe<Scalars['String']>;
-  readonly pay: Maybe<Scalars['String']>;
-  readonly basic_info: Maybe<Scalars['String']>;
-  readonly biography: Maybe<Scalars['String']>;
-  readonly curriculum_vitae: Maybe<Scalars['String']>;
-  readonly position: Maybe<Scalars['String']>;
+  readonly basic_title: Maybe<Scalars['String']>;
+  readonly basic_biography: Maybe<Scalars['String']>;
+  readonly labels_basic_info: Maybe<Scalars['String']>;
+  readonly labels_business_card: Maybe<Scalars['String']>;
+  readonly labels_curriculum_vitae: Maybe<Scalars['String']>;
+  readonly labels_position: Maybe<Scalars['String']>;
+  readonly labels_contribute: Maybe<Scalars['String']>;
+  readonly labels_payment_test: Maybe<Scalars['String']>;
+  readonly labels_payment: Maybe<Scalars['String']>;
+  readonly labels_related_links: Maybe<Scalars['String']>;
   readonly work: Maybe<Scalars['String']>;
   readonly work_experience: Maybe<Scalars['String']>;
-  readonly related_links: Maybe<Scalars['String']>;
   readonly skill: Maybe<Scalars['String']>;
   readonly skill_set: Maybe<Scalars['String']>;
   readonly skill_set_coming_soon: Maybe<Scalars['String']>;
   readonly product: Maybe<Scalars['String']>;
-  readonly technology_used: Maybe<Scalars['String']>;
-  readonly profile: Maybe<Scalars['String']>;
-  readonly tech_hub: Maybe<Scalars['String']>;
-  readonly blog: Maybe<Scalars['String']>;
-  readonly insight: Maybe<Scalars['String']>;
+  readonly product_technology_used: Maybe<Scalars['String']>;
+  readonly products_profile: Maybe<Scalars['String']>;
+  readonly products_tech_hub: Maybe<Scalars['String']>;
+  readonly products_blog: Maybe<Scalars['String']>;
+  readonly products_insight: Maybe<Scalars['String']>;
   readonly community: Maybe<Scalars['String']>;
+  readonly community_role: Maybe<Scalars['String']>;
   readonly slide: Maybe<Scalars['String']>;
+  readonly slides_recommend_to_developers_relations_in_community_hands_on: Maybe<Scalars['String']>;
   readonly slides_personal_sponsor_in_jaws_days_2021: Maybe<Scalars['String']>;
   readonly slides_the_world_revolves_around_slack: Maybe<Scalars['String']>;
   readonly slides_pwa_that_was_closer_to_me: Maybe<Scalars['String']>;
@@ -368,6 +381,7 @@ type SitePageContextIntlMessages = {
   readonly slides_looking_back_in_2019: Maybe<Scalars['String']>;
   readonly slides_vue_cli_test_tips: Maybe<Scalars['String']>;
   readonly contact: Maybe<Scalars['String']>;
+  readonly label: Maybe<Scalars['String']>;
 };
 
 type ImageFormat =
@@ -620,6 +634,15 @@ type ImageSharpResize = {
   readonly originalName: Maybe<Scalars['String']>;
 };
 
+type CommunitiesYaml = Node & {
+  readonly id: Scalars['ID'];
+  readonly parent: Maybe<Node>;
+  readonly children: ReadonlyArray<Node>;
+  readonly internal: Internal;
+  readonly text: Maybe<Scalars['String']>;
+  readonly url: Maybe<Scalars['String']>;
+};
+
 type TalksYaml = Node & {
   readonly id: Scalars['ID'];
   readonly parent: Maybe<Node>;
@@ -629,15 +652,6 @@ type TalksYaml = Node & {
   readonly url: Maybe<Scalars['String']>;
   readonly youtubeUrl: Maybe<Scalars['String']>;
   readonly date: Maybe<Scalars['String']>;
-};
-
-type CommunitiesYaml = Node & {
-  readonly id: Scalars['ID'];
-  readonly parent: Maybe<Node>;
-  readonly children: ReadonlyArray<Node>;
-  readonly internal: Internal;
-  readonly text: Maybe<Scalars['String']>;
-  readonly url: Maybe<Scalars['String']>;
 };
 
 type ProductsYaml = Node & {
@@ -771,14 +785,16 @@ type Query = {
   readonly allDirectory: DirectoryConnection;
   readonly site: Maybe<Site>;
   readonly allSite: SiteConnection;
+  readonly siteFunction: Maybe<SiteFunction>;
+  readonly allSiteFunction: SiteFunctionConnection;
   readonly sitePage: Maybe<SitePage>;
   readonly allSitePage: SitePageConnection;
   readonly imageSharp: Maybe<ImageSharp>;
   readonly allImageSharp: ImageSharpConnection;
-  readonly talksYaml: Maybe<TalksYaml>;
-  readonly allTalksYaml: TalksYamlConnection;
   readonly communitiesYaml: Maybe<CommunitiesYaml>;
   readonly allCommunitiesYaml: CommunitiesYamlConnection;
+  readonly talksYaml: Maybe<TalksYaml>;
+  readonly allTalksYaml: TalksYamlConnection;
   readonly productsYaml: Maybe<ProductsYaml>;
   readonly allProductsYaml: ProductsYamlConnection;
   readonly siteBuildMetadata: Maybe<SiteBuildMetadata>;
@@ -825,10 +841,10 @@ type Query_fileArgs = {
   publicURL: Maybe<StringQueryOperatorInput>;
   childrenImageSharp: Maybe<ImageSharpFilterListInput>;
   childImageSharp: Maybe<ImageSharpFilterInput>;
-  childrenTalksYaml: Maybe<TalksYamlFilterListInput>;
-  childTalksYaml: Maybe<TalksYamlFilterInput>;
   childrenCommunitiesYaml: Maybe<CommunitiesYamlFilterListInput>;
   childCommunitiesYaml: Maybe<CommunitiesYamlFilterInput>;
+  childrenTalksYaml: Maybe<TalksYamlFilterListInput>;
+  childTalksYaml: Maybe<TalksYamlFilterInput>;
   childrenProductsYaml: Maybe<ProductsYamlFilterListInput>;
   childProductsYaml: Maybe<ProductsYamlFilterInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -915,6 +931,27 @@ type Query_allSiteArgs = {
 };
 
 
+type Query_siteFunctionArgs = {
+  apiRoute: Maybe<StringQueryOperatorInput>;
+  originalFilePath: Maybe<StringQueryOperatorInput>;
+  relativeCompiledFilePath: Maybe<StringQueryOperatorInput>;
+  absoluteCompiledFilePath: Maybe<StringQueryOperatorInput>;
+  matchPath: Maybe<StringQueryOperatorInput>;
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+};
+
+
+type Query_allSiteFunctionArgs = {
+  filter: Maybe<SiteFunctionFilterInput>;
+  sort: Maybe<SiteFunctionSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
 type Query_sitePageArgs = {
   path: Maybe<StringQueryOperatorInput>;
   component: Maybe<StringQueryOperatorInput>;
@@ -962,6 +999,24 @@ type Query_allImageSharpArgs = {
 };
 
 
+type Query_communitiesYamlArgs = {
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+  text: Maybe<StringQueryOperatorInput>;
+  url: Maybe<StringQueryOperatorInput>;
+};
+
+
+type Query_allCommunitiesYamlArgs = {
+  filter: Maybe<CommunitiesYamlFilterInput>;
+  sort: Maybe<CommunitiesYamlSortInput>;
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+};
+
+
 type Query_talksYamlArgs = {
   id: Maybe<StringQueryOperatorInput>;
   parent: Maybe<NodeFilterInput>;
@@ -977,24 +1032,6 @@ type Query_talksYamlArgs = {
 type Query_allTalksYamlArgs = {
   filter: Maybe<TalksYamlFilterInput>;
   sort: Maybe<TalksYamlSortInput>;
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-};
-
-
-type Query_communitiesYamlArgs = {
-  id: Maybe<StringQueryOperatorInput>;
-  parent: Maybe<NodeFilterInput>;
-  children: Maybe<NodeFilterListInput>;
-  internal: Maybe<InternalFilterInput>;
-  text: Maybe<StringQueryOperatorInput>;
-  url: Maybe<StringQueryOperatorInput>;
-};
-
-
-type Query_allCommunitiesYamlArgs = {
-  filter: Maybe<CommunitiesYamlFilterInput>;
-  sort: Maybe<CommunitiesYamlSortInput>;
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
 };
@@ -1200,6 +1237,19 @@ type BooleanQueryOperatorInput = {
   readonly nin: Maybe<ReadonlyArray<Maybe<Scalars['Boolean']>>>;
 };
 
+type CommunitiesYamlFilterListInput = {
+  readonly elemMatch: Maybe<CommunitiesYamlFilterInput>;
+};
+
+type CommunitiesYamlFilterInput = {
+  readonly id: Maybe<StringQueryOperatorInput>;
+  readonly parent: Maybe<NodeFilterInput>;
+  readonly children: Maybe<NodeFilterListInput>;
+  readonly internal: Maybe<InternalFilterInput>;
+  readonly text: Maybe<StringQueryOperatorInput>;
+  readonly url: Maybe<StringQueryOperatorInput>;
+};
+
 type TalksYamlFilterListInput = {
   readonly elemMatch: Maybe<TalksYamlFilterInput>;
 };
@@ -1213,19 +1263,6 @@ type TalksYamlFilterInput = {
   readonly url: Maybe<StringQueryOperatorInput>;
   readonly youtubeUrl: Maybe<StringQueryOperatorInput>;
   readonly date: Maybe<StringQueryOperatorInput>;
-};
-
-type CommunitiesYamlFilterListInput = {
-  readonly elemMatch: Maybe<CommunitiesYamlFilterInput>;
-};
-
-type CommunitiesYamlFilterInput = {
-  readonly id: Maybe<StringQueryOperatorInput>;
-  readonly parent: Maybe<NodeFilterInput>;
-  readonly children: Maybe<NodeFilterListInput>;
-  readonly internal: Maybe<InternalFilterInput>;
-  readonly text: Maybe<StringQueryOperatorInput>;
-  readonly url: Maybe<StringQueryOperatorInput>;
 };
 
 type ProductsYamlFilterListInput = {
@@ -1249,11 +1286,29 @@ type FileConnection = {
   readonly nodes: ReadonlyArray<File>;
   readonly pageInfo: PageInfo;
   readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly group: ReadonlyArray<FileGroupConnection>;
 };
 
 
 type FileConnection_distinctArgs = {
+  field: FileFieldsEnum;
+};
+
+
+type FileConnection_maxArgs = {
+  field: FileFieldsEnum;
+};
+
+
+type FileConnection_minArgs = {
+  field: FileFieldsEnum;
+};
+
+
+type FileConnection_sumArgs = {
   field: FileFieldsEnum;
 };
 
@@ -1456,6 +1511,87 @@ type FileFieldsEnum =
   | 'childImageSharp.internal.mediaType'
   | 'childImageSharp.internal.owner'
   | 'childImageSharp.internal.type'
+  | 'childrenCommunitiesYaml'
+  | 'childrenCommunitiesYaml.id'
+  | 'childrenCommunitiesYaml.parent.id'
+  | 'childrenCommunitiesYaml.parent.parent.id'
+  | 'childrenCommunitiesYaml.parent.parent.children'
+  | 'childrenCommunitiesYaml.parent.children'
+  | 'childrenCommunitiesYaml.parent.children.id'
+  | 'childrenCommunitiesYaml.parent.children.children'
+  | 'childrenCommunitiesYaml.parent.internal.content'
+  | 'childrenCommunitiesYaml.parent.internal.contentDigest'
+  | 'childrenCommunitiesYaml.parent.internal.description'
+  | 'childrenCommunitiesYaml.parent.internal.fieldOwners'
+  | 'childrenCommunitiesYaml.parent.internal.ignoreType'
+  | 'childrenCommunitiesYaml.parent.internal.mediaType'
+  | 'childrenCommunitiesYaml.parent.internal.owner'
+  | 'childrenCommunitiesYaml.parent.internal.type'
+  | 'childrenCommunitiesYaml.children'
+  | 'childrenCommunitiesYaml.children.id'
+  | 'childrenCommunitiesYaml.children.parent.id'
+  | 'childrenCommunitiesYaml.children.parent.children'
+  | 'childrenCommunitiesYaml.children.children'
+  | 'childrenCommunitiesYaml.children.children.id'
+  | 'childrenCommunitiesYaml.children.children.children'
+  | 'childrenCommunitiesYaml.children.internal.content'
+  | 'childrenCommunitiesYaml.children.internal.contentDigest'
+  | 'childrenCommunitiesYaml.children.internal.description'
+  | 'childrenCommunitiesYaml.children.internal.fieldOwners'
+  | 'childrenCommunitiesYaml.children.internal.ignoreType'
+  | 'childrenCommunitiesYaml.children.internal.mediaType'
+  | 'childrenCommunitiesYaml.children.internal.owner'
+  | 'childrenCommunitiesYaml.children.internal.type'
+  | 'childrenCommunitiesYaml.internal.content'
+  | 'childrenCommunitiesYaml.internal.contentDigest'
+  | 'childrenCommunitiesYaml.internal.description'
+  | 'childrenCommunitiesYaml.internal.fieldOwners'
+  | 'childrenCommunitiesYaml.internal.ignoreType'
+  | 'childrenCommunitiesYaml.internal.mediaType'
+  | 'childrenCommunitiesYaml.internal.owner'
+  | 'childrenCommunitiesYaml.internal.type'
+  | 'childrenCommunitiesYaml.text'
+  | 'childrenCommunitiesYaml.url'
+  | 'childCommunitiesYaml.id'
+  | 'childCommunitiesYaml.parent.id'
+  | 'childCommunitiesYaml.parent.parent.id'
+  | 'childCommunitiesYaml.parent.parent.children'
+  | 'childCommunitiesYaml.parent.children'
+  | 'childCommunitiesYaml.parent.children.id'
+  | 'childCommunitiesYaml.parent.children.children'
+  | 'childCommunitiesYaml.parent.internal.content'
+  | 'childCommunitiesYaml.parent.internal.contentDigest'
+  | 'childCommunitiesYaml.parent.internal.description'
+  | 'childCommunitiesYaml.parent.internal.fieldOwners'
+  | 'childCommunitiesYaml.parent.internal.ignoreType'
+  | 'childCommunitiesYaml.parent.internal.mediaType'
+  | 'childCommunitiesYaml.parent.internal.owner'
+  | 'childCommunitiesYaml.parent.internal.type'
+  | 'childCommunitiesYaml.children'
+  | 'childCommunitiesYaml.children.id'
+  | 'childCommunitiesYaml.children.parent.id'
+  | 'childCommunitiesYaml.children.parent.children'
+  | 'childCommunitiesYaml.children.children'
+  | 'childCommunitiesYaml.children.children.id'
+  | 'childCommunitiesYaml.children.children.children'
+  | 'childCommunitiesYaml.children.internal.content'
+  | 'childCommunitiesYaml.children.internal.contentDigest'
+  | 'childCommunitiesYaml.children.internal.description'
+  | 'childCommunitiesYaml.children.internal.fieldOwners'
+  | 'childCommunitiesYaml.children.internal.ignoreType'
+  | 'childCommunitiesYaml.children.internal.mediaType'
+  | 'childCommunitiesYaml.children.internal.owner'
+  | 'childCommunitiesYaml.children.internal.type'
+  | 'childCommunitiesYaml.internal.content'
+  | 'childCommunitiesYaml.internal.contentDigest'
+  | 'childCommunitiesYaml.internal.description'
+  | 'childCommunitiesYaml.internal.fieldOwners'
+  | 'childCommunitiesYaml.internal.ignoreType'
+  | 'childCommunitiesYaml.internal.mediaType'
+  | 'childCommunitiesYaml.internal.owner'
+  | 'childCommunitiesYaml.internal.type'
+  | 'childCommunitiesYaml.text'
+  | 'childCommunitiesYaml.url'
   | 'childrenTalksYaml'
   | 'childrenTalksYaml.id'
   | 'childrenTalksYaml.parent.id'
@@ -1541,87 +1677,6 @@ type FileFieldsEnum =
   | 'childTalksYaml.url'
   | 'childTalksYaml.youtubeUrl'
   | 'childTalksYaml.date'
-  | 'childrenCommunitiesYaml'
-  | 'childrenCommunitiesYaml.id'
-  | 'childrenCommunitiesYaml.parent.id'
-  | 'childrenCommunitiesYaml.parent.parent.id'
-  | 'childrenCommunitiesYaml.parent.parent.children'
-  | 'childrenCommunitiesYaml.parent.children'
-  | 'childrenCommunitiesYaml.parent.children.id'
-  | 'childrenCommunitiesYaml.parent.children.children'
-  | 'childrenCommunitiesYaml.parent.internal.content'
-  | 'childrenCommunitiesYaml.parent.internal.contentDigest'
-  | 'childrenCommunitiesYaml.parent.internal.description'
-  | 'childrenCommunitiesYaml.parent.internal.fieldOwners'
-  | 'childrenCommunitiesYaml.parent.internal.ignoreType'
-  | 'childrenCommunitiesYaml.parent.internal.mediaType'
-  | 'childrenCommunitiesYaml.parent.internal.owner'
-  | 'childrenCommunitiesYaml.parent.internal.type'
-  | 'childrenCommunitiesYaml.children'
-  | 'childrenCommunitiesYaml.children.id'
-  | 'childrenCommunitiesYaml.children.parent.id'
-  | 'childrenCommunitiesYaml.children.parent.children'
-  | 'childrenCommunitiesYaml.children.children'
-  | 'childrenCommunitiesYaml.children.children.id'
-  | 'childrenCommunitiesYaml.children.children.children'
-  | 'childrenCommunitiesYaml.children.internal.content'
-  | 'childrenCommunitiesYaml.children.internal.contentDigest'
-  | 'childrenCommunitiesYaml.children.internal.description'
-  | 'childrenCommunitiesYaml.children.internal.fieldOwners'
-  | 'childrenCommunitiesYaml.children.internal.ignoreType'
-  | 'childrenCommunitiesYaml.children.internal.mediaType'
-  | 'childrenCommunitiesYaml.children.internal.owner'
-  | 'childrenCommunitiesYaml.children.internal.type'
-  | 'childrenCommunitiesYaml.internal.content'
-  | 'childrenCommunitiesYaml.internal.contentDigest'
-  | 'childrenCommunitiesYaml.internal.description'
-  | 'childrenCommunitiesYaml.internal.fieldOwners'
-  | 'childrenCommunitiesYaml.internal.ignoreType'
-  | 'childrenCommunitiesYaml.internal.mediaType'
-  | 'childrenCommunitiesYaml.internal.owner'
-  | 'childrenCommunitiesYaml.internal.type'
-  | 'childrenCommunitiesYaml.text'
-  | 'childrenCommunitiesYaml.url'
-  | 'childCommunitiesYaml.id'
-  | 'childCommunitiesYaml.parent.id'
-  | 'childCommunitiesYaml.parent.parent.id'
-  | 'childCommunitiesYaml.parent.parent.children'
-  | 'childCommunitiesYaml.parent.children'
-  | 'childCommunitiesYaml.parent.children.id'
-  | 'childCommunitiesYaml.parent.children.children'
-  | 'childCommunitiesYaml.parent.internal.content'
-  | 'childCommunitiesYaml.parent.internal.contentDigest'
-  | 'childCommunitiesYaml.parent.internal.description'
-  | 'childCommunitiesYaml.parent.internal.fieldOwners'
-  | 'childCommunitiesYaml.parent.internal.ignoreType'
-  | 'childCommunitiesYaml.parent.internal.mediaType'
-  | 'childCommunitiesYaml.parent.internal.owner'
-  | 'childCommunitiesYaml.parent.internal.type'
-  | 'childCommunitiesYaml.children'
-  | 'childCommunitiesYaml.children.id'
-  | 'childCommunitiesYaml.children.parent.id'
-  | 'childCommunitiesYaml.children.parent.children'
-  | 'childCommunitiesYaml.children.children'
-  | 'childCommunitiesYaml.children.children.id'
-  | 'childCommunitiesYaml.children.children.children'
-  | 'childCommunitiesYaml.children.internal.content'
-  | 'childCommunitiesYaml.children.internal.contentDigest'
-  | 'childCommunitiesYaml.children.internal.description'
-  | 'childCommunitiesYaml.children.internal.fieldOwners'
-  | 'childCommunitiesYaml.children.internal.ignoreType'
-  | 'childCommunitiesYaml.children.internal.mediaType'
-  | 'childCommunitiesYaml.children.internal.owner'
-  | 'childCommunitiesYaml.children.internal.type'
-  | 'childCommunitiesYaml.internal.content'
-  | 'childCommunitiesYaml.internal.contentDigest'
-  | 'childCommunitiesYaml.internal.description'
-  | 'childCommunitiesYaml.internal.fieldOwners'
-  | 'childCommunitiesYaml.internal.ignoreType'
-  | 'childCommunitiesYaml.internal.mediaType'
-  | 'childCommunitiesYaml.internal.owner'
-  | 'childCommunitiesYaml.internal.type'
-  | 'childCommunitiesYaml.text'
-  | 'childCommunitiesYaml.url'
   | 'childrenProductsYaml'
   | 'childrenProductsYaml.id'
   | 'childrenProductsYaml.parent.id'
@@ -1840,10 +1895,10 @@ type FileFilterInput = {
   readonly publicURL: Maybe<StringQueryOperatorInput>;
   readonly childrenImageSharp: Maybe<ImageSharpFilterListInput>;
   readonly childImageSharp: Maybe<ImageSharpFilterInput>;
-  readonly childrenTalksYaml: Maybe<TalksYamlFilterListInput>;
-  readonly childTalksYaml: Maybe<TalksYamlFilterInput>;
   readonly childrenCommunitiesYaml: Maybe<CommunitiesYamlFilterListInput>;
   readonly childCommunitiesYaml: Maybe<CommunitiesYamlFilterInput>;
+  readonly childrenTalksYaml: Maybe<TalksYamlFilterListInput>;
+  readonly childTalksYaml: Maybe<TalksYamlFilterInput>;
   readonly childrenProductsYaml: Maybe<ProductsYamlFilterListInput>;
   readonly childProductsYaml: Maybe<ProductsYamlFilterInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
@@ -1867,11 +1922,29 @@ type DirectoryConnection = {
   readonly nodes: ReadonlyArray<Directory>;
   readonly pageInfo: PageInfo;
   readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly group: ReadonlyArray<DirectoryGroupConnection>;
 };
 
 
 type DirectoryConnection_distinctArgs = {
+  field: DirectoryFieldsEnum;
+};
+
+
+type DirectoryConnection_maxArgs = {
+  field: DirectoryFieldsEnum;
+};
+
+
+type DirectoryConnection_minArgs = {
+  field: DirectoryFieldsEnum;
+};
+
+
+type DirectoryConnection_sumArgs = {
   field: DirectoryFieldsEnum;
 };
 
@@ -2087,11 +2160,29 @@ type SiteConnection = {
   readonly nodes: ReadonlyArray<Site>;
   readonly pageInfo: PageInfo;
   readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly group: ReadonlyArray<SiteGroupConnection>;
 };
 
 
 type SiteConnection_distinctArgs = {
+  field: SiteFieldsEnum;
+};
+
+
+type SiteConnection_maxArgs = {
+  field: SiteFieldsEnum;
+};
+
+
+type SiteConnection_minArgs = {
+  field: SiteFieldsEnum;
+};
+
+
+type SiteConnection_sumArgs = {
   field: SiteFieldsEnum;
 };
 
@@ -2239,6 +2330,170 @@ type SiteSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
+type SiteFunctionConnection = {
+  readonly totalCount: Scalars['Int'];
+  readonly edges: ReadonlyArray<SiteFunctionEdge>;
+  readonly nodes: ReadonlyArray<SiteFunction>;
+  readonly pageInfo: PageInfo;
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly group: ReadonlyArray<SiteFunctionGroupConnection>;
+};
+
+
+type SiteFunctionConnection_distinctArgs = {
+  field: SiteFunctionFieldsEnum;
+};
+
+
+type SiteFunctionConnection_maxArgs = {
+  field: SiteFunctionFieldsEnum;
+};
+
+
+type SiteFunctionConnection_minArgs = {
+  field: SiteFunctionFieldsEnum;
+};
+
+
+type SiteFunctionConnection_sumArgs = {
+  field: SiteFunctionFieldsEnum;
+};
+
+
+type SiteFunctionConnection_groupArgs = {
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  field: SiteFunctionFieldsEnum;
+};
+
+type SiteFunctionEdge = {
+  readonly next: Maybe<SiteFunction>;
+  readonly node: SiteFunction;
+  readonly previous: Maybe<SiteFunction>;
+};
+
+type SiteFunctionFieldsEnum =
+  | 'apiRoute'
+  | 'originalFilePath'
+  | 'relativeCompiledFilePath'
+  | 'absoluteCompiledFilePath'
+  | 'matchPath'
+  | 'id'
+  | 'parent.id'
+  | 'parent.parent.id'
+  | 'parent.parent.parent.id'
+  | 'parent.parent.parent.children'
+  | 'parent.parent.children'
+  | 'parent.parent.children.id'
+  | 'parent.parent.children.children'
+  | 'parent.parent.internal.content'
+  | 'parent.parent.internal.contentDigest'
+  | 'parent.parent.internal.description'
+  | 'parent.parent.internal.fieldOwners'
+  | 'parent.parent.internal.ignoreType'
+  | 'parent.parent.internal.mediaType'
+  | 'parent.parent.internal.owner'
+  | 'parent.parent.internal.type'
+  | 'parent.children'
+  | 'parent.children.id'
+  | 'parent.children.parent.id'
+  | 'parent.children.parent.children'
+  | 'parent.children.children'
+  | 'parent.children.children.id'
+  | 'parent.children.children.children'
+  | 'parent.children.internal.content'
+  | 'parent.children.internal.contentDigest'
+  | 'parent.children.internal.description'
+  | 'parent.children.internal.fieldOwners'
+  | 'parent.children.internal.ignoreType'
+  | 'parent.children.internal.mediaType'
+  | 'parent.children.internal.owner'
+  | 'parent.children.internal.type'
+  | 'parent.internal.content'
+  | 'parent.internal.contentDigest'
+  | 'parent.internal.description'
+  | 'parent.internal.fieldOwners'
+  | 'parent.internal.ignoreType'
+  | 'parent.internal.mediaType'
+  | 'parent.internal.owner'
+  | 'parent.internal.type'
+  | 'children'
+  | 'children.id'
+  | 'children.parent.id'
+  | 'children.parent.parent.id'
+  | 'children.parent.parent.children'
+  | 'children.parent.children'
+  | 'children.parent.children.id'
+  | 'children.parent.children.children'
+  | 'children.parent.internal.content'
+  | 'children.parent.internal.contentDigest'
+  | 'children.parent.internal.description'
+  | 'children.parent.internal.fieldOwners'
+  | 'children.parent.internal.ignoreType'
+  | 'children.parent.internal.mediaType'
+  | 'children.parent.internal.owner'
+  | 'children.parent.internal.type'
+  | 'children.children'
+  | 'children.children.id'
+  | 'children.children.parent.id'
+  | 'children.children.parent.children'
+  | 'children.children.children'
+  | 'children.children.children.id'
+  | 'children.children.children.children'
+  | 'children.children.internal.content'
+  | 'children.children.internal.contentDigest'
+  | 'children.children.internal.description'
+  | 'children.children.internal.fieldOwners'
+  | 'children.children.internal.ignoreType'
+  | 'children.children.internal.mediaType'
+  | 'children.children.internal.owner'
+  | 'children.children.internal.type'
+  | 'children.internal.content'
+  | 'children.internal.contentDigest'
+  | 'children.internal.description'
+  | 'children.internal.fieldOwners'
+  | 'children.internal.ignoreType'
+  | 'children.internal.mediaType'
+  | 'children.internal.owner'
+  | 'children.internal.type'
+  | 'internal.content'
+  | 'internal.contentDigest'
+  | 'internal.description'
+  | 'internal.fieldOwners'
+  | 'internal.ignoreType'
+  | 'internal.mediaType'
+  | 'internal.owner'
+  | 'internal.type';
+
+type SiteFunctionGroupConnection = {
+  readonly totalCount: Scalars['Int'];
+  readonly edges: ReadonlyArray<SiteFunctionEdge>;
+  readonly nodes: ReadonlyArray<SiteFunction>;
+  readonly pageInfo: PageInfo;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+};
+
+type SiteFunctionFilterInput = {
+  readonly apiRoute: Maybe<StringQueryOperatorInput>;
+  readonly originalFilePath: Maybe<StringQueryOperatorInput>;
+  readonly relativeCompiledFilePath: Maybe<StringQueryOperatorInput>;
+  readonly absoluteCompiledFilePath: Maybe<StringQueryOperatorInput>;
+  readonly matchPath: Maybe<StringQueryOperatorInput>;
+  readonly id: Maybe<StringQueryOperatorInput>;
+  readonly parent: Maybe<NodeFilterInput>;
+  readonly children: Maybe<NodeFilterListInput>;
+  readonly internal: Maybe<InternalFilterInput>;
+};
+
+type SiteFunctionSortInput = {
+  readonly fields: Maybe<ReadonlyArray<Maybe<SiteFunctionFieldsEnum>>>;
+  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
+};
+
 type SitePageContextFilterInput = {
   readonly language: Maybe<StringQueryOperatorInput>;
   readonly intl: Maybe<SitePageContextIntlFilterInput>;
@@ -2255,30 +2510,31 @@ type SitePageContextIntlFilterInput = {
 };
 
 type SitePageContextIntlMessagesFilterInput = {
-  readonly title: Maybe<StringQueryOperatorInput>;
-  readonly online_business_card: Maybe<StringQueryOperatorInput>;
-  readonly locale_is: Maybe<StringQueryOperatorInput>;
-  readonly contribute: Maybe<StringQueryOperatorInput>;
-  readonly test_pay: Maybe<StringQueryOperatorInput>;
-  readonly pay: Maybe<StringQueryOperatorInput>;
-  readonly basic_info: Maybe<StringQueryOperatorInput>;
-  readonly biography: Maybe<StringQueryOperatorInput>;
-  readonly curriculum_vitae: Maybe<StringQueryOperatorInput>;
-  readonly position: Maybe<StringQueryOperatorInput>;
+  readonly basic_title: Maybe<StringQueryOperatorInput>;
+  readonly basic_biography: Maybe<StringQueryOperatorInput>;
+  readonly labels_basic_info: Maybe<StringQueryOperatorInput>;
+  readonly labels_business_card: Maybe<StringQueryOperatorInput>;
+  readonly labels_curriculum_vitae: Maybe<StringQueryOperatorInput>;
+  readonly labels_position: Maybe<StringQueryOperatorInput>;
+  readonly labels_contribute: Maybe<StringQueryOperatorInput>;
+  readonly labels_payment_test: Maybe<StringQueryOperatorInput>;
+  readonly labels_payment: Maybe<StringQueryOperatorInput>;
+  readonly labels_related_links: Maybe<StringQueryOperatorInput>;
   readonly work: Maybe<StringQueryOperatorInput>;
   readonly work_experience: Maybe<StringQueryOperatorInput>;
-  readonly related_links: Maybe<StringQueryOperatorInput>;
   readonly skill: Maybe<StringQueryOperatorInput>;
   readonly skill_set: Maybe<StringQueryOperatorInput>;
   readonly skill_set_coming_soon: Maybe<StringQueryOperatorInput>;
   readonly product: Maybe<StringQueryOperatorInput>;
-  readonly technology_used: Maybe<StringQueryOperatorInput>;
-  readonly profile: Maybe<StringQueryOperatorInput>;
-  readonly tech_hub: Maybe<StringQueryOperatorInput>;
-  readonly blog: Maybe<StringQueryOperatorInput>;
-  readonly insight: Maybe<StringQueryOperatorInput>;
+  readonly product_technology_used: Maybe<StringQueryOperatorInput>;
+  readonly products_profile: Maybe<StringQueryOperatorInput>;
+  readonly products_tech_hub: Maybe<StringQueryOperatorInput>;
+  readonly products_blog: Maybe<StringQueryOperatorInput>;
+  readonly products_insight: Maybe<StringQueryOperatorInput>;
   readonly community: Maybe<StringQueryOperatorInput>;
+  readonly community_role: Maybe<StringQueryOperatorInput>;
   readonly slide: Maybe<StringQueryOperatorInput>;
+  readonly slides_recommend_to_developers_relations_in_community_hands_on: Maybe<StringQueryOperatorInput>;
   readonly slides_personal_sponsor_in_jaws_days_2021: Maybe<StringQueryOperatorInput>;
   readonly slides_the_world_revolves_around_slack: Maybe<StringQueryOperatorInput>;
   readonly slides_pwa_that_was_closer_to_me: Maybe<StringQueryOperatorInput>;
@@ -2287,6 +2543,7 @@ type SitePageContextIntlMessagesFilterInput = {
   readonly slides_looking_back_in_2019: Maybe<StringQueryOperatorInput>;
   readonly slides_vue_cli_test_tips: Maybe<StringQueryOperatorInput>;
   readonly contact: Maybe<StringQueryOperatorInput>;
+  readonly label: Maybe<StringQueryOperatorInput>;
 };
 
 type SitePluginFilterInput = {
@@ -2412,11 +2669,29 @@ type SitePageConnection = {
   readonly nodes: ReadonlyArray<SitePage>;
   readonly pageInfo: PageInfo;
   readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly group: ReadonlyArray<SitePageGroupConnection>;
 };
 
 
 type SitePageConnection_distinctArgs = {
+  field: SitePageFieldsEnum;
+};
+
+
+type SitePageConnection_maxArgs = {
+  field: SitePageFieldsEnum;
+};
+
+
+type SitePageConnection_minArgs = {
+  field: SitePageFieldsEnum;
+};
+
+
+type SitePageConnection_sumArgs = {
   field: SitePageFieldsEnum;
 };
 
@@ -2529,30 +2804,31 @@ type SitePageFieldsEnum =
   | 'context.language'
   | 'context.intl.language'
   | 'context.intl.languages'
-  | 'context.intl.messages.title'
-  | 'context.intl.messages.online_business_card'
-  | 'context.intl.messages.locale_is'
-  | 'context.intl.messages.contribute'
-  | 'context.intl.messages.test_pay'
-  | 'context.intl.messages.pay'
-  | 'context.intl.messages.basic_info'
-  | 'context.intl.messages.biography'
-  | 'context.intl.messages.curriculum_vitae'
-  | 'context.intl.messages.position'
+  | 'context.intl.messages.basic_title'
+  | 'context.intl.messages.basic_biography'
+  | 'context.intl.messages.labels_basic_info'
+  | 'context.intl.messages.labels_business_card'
+  | 'context.intl.messages.labels_curriculum_vitae'
+  | 'context.intl.messages.labels_position'
+  | 'context.intl.messages.labels_contribute'
+  | 'context.intl.messages.labels_payment_test'
+  | 'context.intl.messages.labels_payment'
+  | 'context.intl.messages.labels_related_links'
   | 'context.intl.messages.work'
   | 'context.intl.messages.work_experience'
-  | 'context.intl.messages.related_links'
   | 'context.intl.messages.skill'
   | 'context.intl.messages.skill_set'
   | 'context.intl.messages.skill_set_coming_soon'
   | 'context.intl.messages.product'
-  | 'context.intl.messages.technology_used'
-  | 'context.intl.messages.profile'
-  | 'context.intl.messages.tech_hub'
-  | 'context.intl.messages.blog'
-  | 'context.intl.messages.insight'
+  | 'context.intl.messages.product_technology_used'
+  | 'context.intl.messages.products_profile'
+  | 'context.intl.messages.products_tech_hub'
+  | 'context.intl.messages.products_blog'
+  | 'context.intl.messages.products_insight'
   | 'context.intl.messages.community'
+  | 'context.intl.messages.community_role'
   | 'context.intl.messages.slide'
+  | 'context.intl.messages.slides_recommend_to_developers_relations_in_community_hands_on'
   | 'context.intl.messages.slides_personal_sponsor_in_jaws_days_2021'
   | 'context.intl.messages.slides_the_world_revolves_around_slack'
   | 'context.intl.messages.slides_pwa_that_was_closer_to_me'
@@ -2561,6 +2837,7 @@ type SitePageFieldsEnum =
   | 'context.intl.messages.slides_looking_back_in_2019'
   | 'context.intl.messages.slides_vue_cli_test_tips'
   | 'context.intl.messages.contact'
+  | 'context.intl.messages.label'
   | 'context.intl.routed'
   | 'context.intl.originalPath'
   | 'context.intl.redirect'
@@ -2706,11 +2983,29 @@ type ImageSharpConnection = {
   readonly nodes: ReadonlyArray<ImageSharp>;
   readonly pageInfo: PageInfo;
   readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly group: ReadonlyArray<ImageSharpGroupConnection>;
 };
 
 
 type ImageSharpConnection_distinctArgs = {
+  field: ImageSharpFieldsEnum;
+};
+
+
+type ImageSharpConnection_maxArgs = {
+  field: ImageSharpFieldsEnum;
+};
+
+
+type ImageSharpConnection_minArgs = {
+  field: ImageSharpFieldsEnum;
+};
+
+
+type ImageSharpConnection_sumArgs = {
   field: ImageSharpFieldsEnum;
 };
 
@@ -2861,17 +3156,184 @@ type ImageSharpSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
+type CommunitiesYamlConnection = {
+  readonly totalCount: Scalars['Int'];
+  readonly edges: ReadonlyArray<CommunitiesYamlEdge>;
+  readonly nodes: ReadonlyArray<CommunitiesYaml>;
+  readonly pageInfo: PageInfo;
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly group: ReadonlyArray<CommunitiesYamlGroupConnection>;
+};
+
+
+type CommunitiesYamlConnection_distinctArgs = {
+  field: CommunitiesYamlFieldsEnum;
+};
+
+
+type CommunitiesYamlConnection_maxArgs = {
+  field: CommunitiesYamlFieldsEnum;
+};
+
+
+type CommunitiesYamlConnection_minArgs = {
+  field: CommunitiesYamlFieldsEnum;
+};
+
+
+type CommunitiesYamlConnection_sumArgs = {
+  field: CommunitiesYamlFieldsEnum;
+};
+
+
+type CommunitiesYamlConnection_groupArgs = {
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  field: CommunitiesYamlFieldsEnum;
+};
+
+type CommunitiesYamlEdge = {
+  readonly next: Maybe<CommunitiesYaml>;
+  readonly node: CommunitiesYaml;
+  readonly previous: Maybe<CommunitiesYaml>;
+};
+
+type CommunitiesYamlFieldsEnum =
+  | 'id'
+  | 'parent.id'
+  | 'parent.parent.id'
+  | 'parent.parent.parent.id'
+  | 'parent.parent.parent.children'
+  | 'parent.parent.children'
+  | 'parent.parent.children.id'
+  | 'parent.parent.children.children'
+  | 'parent.parent.internal.content'
+  | 'parent.parent.internal.contentDigest'
+  | 'parent.parent.internal.description'
+  | 'parent.parent.internal.fieldOwners'
+  | 'parent.parent.internal.ignoreType'
+  | 'parent.parent.internal.mediaType'
+  | 'parent.parent.internal.owner'
+  | 'parent.parent.internal.type'
+  | 'parent.children'
+  | 'parent.children.id'
+  | 'parent.children.parent.id'
+  | 'parent.children.parent.children'
+  | 'parent.children.children'
+  | 'parent.children.children.id'
+  | 'parent.children.children.children'
+  | 'parent.children.internal.content'
+  | 'parent.children.internal.contentDigest'
+  | 'parent.children.internal.description'
+  | 'parent.children.internal.fieldOwners'
+  | 'parent.children.internal.ignoreType'
+  | 'parent.children.internal.mediaType'
+  | 'parent.children.internal.owner'
+  | 'parent.children.internal.type'
+  | 'parent.internal.content'
+  | 'parent.internal.contentDigest'
+  | 'parent.internal.description'
+  | 'parent.internal.fieldOwners'
+  | 'parent.internal.ignoreType'
+  | 'parent.internal.mediaType'
+  | 'parent.internal.owner'
+  | 'parent.internal.type'
+  | 'children'
+  | 'children.id'
+  | 'children.parent.id'
+  | 'children.parent.parent.id'
+  | 'children.parent.parent.children'
+  | 'children.parent.children'
+  | 'children.parent.children.id'
+  | 'children.parent.children.children'
+  | 'children.parent.internal.content'
+  | 'children.parent.internal.contentDigest'
+  | 'children.parent.internal.description'
+  | 'children.parent.internal.fieldOwners'
+  | 'children.parent.internal.ignoreType'
+  | 'children.parent.internal.mediaType'
+  | 'children.parent.internal.owner'
+  | 'children.parent.internal.type'
+  | 'children.children'
+  | 'children.children.id'
+  | 'children.children.parent.id'
+  | 'children.children.parent.children'
+  | 'children.children.children'
+  | 'children.children.children.id'
+  | 'children.children.children.children'
+  | 'children.children.internal.content'
+  | 'children.children.internal.contentDigest'
+  | 'children.children.internal.description'
+  | 'children.children.internal.fieldOwners'
+  | 'children.children.internal.ignoreType'
+  | 'children.children.internal.mediaType'
+  | 'children.children.internal.owner'
+  | 'children.children.internal.type'
+  | 'children.internal.content'
+  | 'children.internal.contentDigest'
+  | 'children.internal.description'
+  | 'children.internal.fieldOwners'
+  | 'children.internal.ignoreType'
+  | 'children.internal.mediaType'
+  | 'children.internal.owner'
+  | 'children.internal.type'
+  | 'internal.content'
+  | 'internal.contentDigest'
+  | 'internal.description'
+  | 'internal.fieldOwners'
+  | 'internal.ignoreType'
+  | 'internal.mediaType'
+  | 'internal.owner'
+  | 'internal.type'
+  | 'text'
+  | 'url';
+
+type CommunitiesYamlGroupConnection = {
+  readonly totalCount: Scalars['Int'];
+  readonly edges: ReadonlyArray<CommunitiesYamlEdge>;
+  readonly nodes: ReadonlyArray<CommunitiesYaml>;
+  readonly pageInfo: PageInfo;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+};
+
+type CommunitiesYamlSortInput = {
+  readonly fields: Maybe<ReadonlyArray<Maybe<CommunitiesYamlFieldsEnum>>>;
+  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
+};
+
 type TalksYamlConnection = {
   readonly totalCount: Scalars['Int'];
   readonly edges: ReadonlyArray<TalksYamlEdge>;
   readonly nodes: ReadonlyArray<TalksYaml>;
   readonly pageInfo: PageInfo;
   readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly group: ReadonlyArray<TalksYamlGroupConnection>;
 };
 
 
 type TalksYamlConnection_distinctArgs = {
+  field: TalksYamlFieldsEnum;
+};
+
+
+type TalksYamlConnection_maxArgs = {
+  field: TalksYamlFieldsEnum;
+};
+
+
+type TalksYamlConnection_minArgs = {
+  field: TalksYamlFieldsEnum;
+};
+
+
+type TalksYamlConnection_sumArgs = {
   field: TalksYamlFieldsEnum;
 };
 
@@ -2994,148 +3456,35 @@ type TalksYamlSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type CommunitiesYamlConnection = {
-  readonly totalCount: Scalars['Int'];
-  readonly edges: ReadonlyArray<CommunitiesYamlEdge>;
-  readonly nodes: ReadonlyArray<CommunitiesYaml>;
-  readonly pageInfo: PageInfo;
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly group: ReadonlyArray<CommunitiesYamlGroupConnection>;
-};
-
-
-type CommunitiesYamlConnection_distinctArgs = {
-  field: CommunitiesYamlFieldsEnum;
-};
-
-
-type CommunitiesYamlConnection_groupArgs = {
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-  field: CommunitiesYamlFieldsEnum;
-};
-
-type CommunitiesYamlEdge = {
-  readonly next: Maybe<CommunitiesYaml>;
-  readonly node: CommunitiesYaml;
-  readonly previous: Maybe<CommunitiesYaml>;
-};
-
-type CommunitiesYamlFieldsEnum =
-  | 'id'
-  | 'parent.id'
-  | 'parent.parent.id'
-  | 'parent.parent.parent.id'
-  | 'parent.parent.parent.children'
-  | 'parent.parent.children'
-  | 'parent.parent.children.id'
-  | 'parent.parent.children.children'
-  | 'parent.parent.internal.content'
-  | 'parent.parent.internal.contentDigest'
-  | 'parent.parent.internal.description'
-  | 'parent.parent.internal.fieldOwners'
-  | 'parent.parent.internal.ignoreType'
-  | 'parent.parent.internal.mediaType'
-  | 'parent.parent.internal.owner'
-  | 'parent.parent.internal.type'
-  | 'parent.children'
-  | 'parent.children.id'
-  | 'parent.children.parent.id'
-  | 'parent.children.parent.children'
-  | 'parent.children.children'
-  | 'parent.children.children.id'
-  | 'parent.children.children.children'
-  | 'parent.children.internal.content'
-  | 'parent.children.internal.contentDigest'
-  | 'parent.children.internal.description'
-  | 'parent.children.internal.fieldOwners'
-  | 'parent.children.internal.ignoreType'
-  | 'parent.children.internal.mediaType'
-  | 'parent.children.internal.owner'
-  | 'parent.children.internal.type'
-  | 'parent.internal.content'
-  | 'parent.internal.contentDigest'
-  | 'parent.internal.description'
-  | 'parent.internal.fieldOwners'
-  | 'parent.internal.ignoreType'
-  | 'parent.internal.mediaType'
-  | 'parent.internal.owner'
-  | 'parent.internal.type'
-  | 'children'
-  | 'children.id'
-  | 'children.parent.id'
-  | 'children.parent.parent.id'
-  | 'children.parent.parent.children'
-  | 'children.parent.children'
-  | 'children.parent.children.id'
-  | 'children.parent.children.children'
-  | 'children.parent.internal.content'
-  | 'children.parent.internal.contentDigest'
-  | 'children.parent.internal.description'
-  | 'children.parent.internal.fieldOwners'
-  | 'children.parent.internal.ignoreType'
-  | 'children.parent.internal.mediaType'
-  | 'children.parent.internal.owner'
-  | 'children.parent.internal.type'
-  | 'children.children'
-  | 'children.children.id'
-  | 'children.children.parent.id'
-  | 'children.children.parent.children'
-  | 'children.children.children'
-  | 'children.children.children.id'
-  | 'children.children.children.children'
-  | 'children.children.internal.content'
-  | 'children.children.internal.contentDigest'
-  | 'children.children.internal.description'
-  | 'children.children.internal.fieldOwners'
-  | 'children.children.internal.ignoreType'
-  | 'children.children.internal.mediaType'
-  | 'children.children.internal.owner'
-  | 'children.children.internal.type'
-  | 'children.internal.content'
-  | 'children.internal.contentDigest'
-  | 'children.internal.description'
-  | 'children.internal.fieldOwners'
-  | 'children.internal.ignoreType'
-  | 'children.internal.mediaType'
-  | 'children.internal.owner'
-  | 'children.internal.type'
-  | 'internal.content'
-  | 'internal.contentDigest'
-  | 'internal.description'
-  | 'internal.fieldOwners'
-  | 'internal.ignoreType'
-  | 'internal.mediaType'
-  | 'internal.owner'
-  | 'internal.type'
-  | 'text'
-  | 'url';
-
-type CommunitiesYamlGroupConnection = {
-  readonly totalCount: Scalars['Int'];
-  readonly edges: ReadonlyArray<CommunitiesYamlEdge>;
-  readonly nodes: ReadonlyArray<CommunitiesYaml>;
-  readonly pageInfo: PageInfo;
-  readonly field: Scalars['String'];
-  readonly fieldValue: Maybe<Scalars['String']>;
-};
-
-type CommunitiesYamlSortInput = {
-  readonly fields: Maybe<ReadonlyArray<Maybe<CommunitiesYamlFieldsEnum>>>;
-  readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
-};
-
 type ProductsYamlConnection = {
   readonly totalCount: Scalars['Int'];
   readonly edges: ReadonlyArray<ProductsYamlEdge>;
   readonly nodes: ReadonlyArray<ProductsYaml>;
   readonly pageInfo: PageInfo;
   readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly group: ReadonlyArray<ProductsYamlGroupConnection>;
 };
 
 
 type ProductsYamlConnection_distinctArgs = {
+  field: ProductsYamlFieldsEnum;
+};
+
+
+type ProductsYamlConnection_maxArgs = {
+  field: ProductsYamlFieldsEnum;
+};
+
+
+type ProductsYamlConnection_minArgs = {
+  field: ProductsYamlFieldsEnum;
+};
+
+
+type ProductsYamlConnection_sumArgs = {
   field: ProductsYamlFieldsEnum;
 };
 
@@ -3264,11 +3613,29 @@ type SiteBuildMetadataConnection = {
   readonly nodes: ReadonlyArray<SiteBuildMetadata>;
   readonly pageInfo: PageInfo;
   readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly group: ReadonlyArray<SiteBuildMetadataGroupConnection>;
 };
 
 
 type SiteBuildMetadataConnection_distinctArgs = {
+  field: SiteBuildMetadataFieldsEnum;
+};
+
+
+type SiteBuildMetadataConnection_maxArgs = {
+  field: SiteBuildMetadataFieldsEnum;
+};
+
+
+type SiteBuildMetadataConnection_minArgs = {
+  field: SiteBuildMetadataFieldsEnum;
+};
+
+
+type SiteBuildMetadataConnection_sumArgs = {
   field: SiteBuildMetadataFieldsEnum;
 };
 
@@ -3402,11 +3769,29 @@ type SitePluginConnection = {
   readonly nodes: ReadonlyArray<SitePlugin>;
   readonly pageInfo: PageInfo;
   readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly sum: Maybe<Scalars['Float']>;
   readonly group: ReadonlyArray<SitePluginGroupConnection>;
 };
 
 
 type SitePluginConnection_distinctArgs = {
+  field: SitePluginFieldsEnum;
+};
+
+
+type SitePluginConnection_maxArgs = {
+  field: SitePluginFieldsEnum;
+};
+
+
+type SitePluginConnection_minArgs = {
+  field: SitePluginFieldsEnum;
+};
+
+
+type SitePluginConnection_sumArgs = {
   field: SitePluginFieldsEnum;
 };
 
@@ -3588,6 +3973,11 @@ type SitePluginSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
+type SiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SiteTitleQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'biography' | 'position' | 'workExperience' | 'author' | 'locale' | 'lonlat' | 'siteUrl' | 'image' | 'blogName' | 'blogUrl' | 'twitterUsername' | 'twitterUrl'>> }>, readonly allProductsYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<ProductsYaml, 'id' | 'title' | 'description' | 'skills' | 'image'> }> }, readonly allCommunitiesYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<CommunitiesYaml, 'id' | 'text' | 'url'> }> }, readonly allTalksYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<TalksYaml, 'id' | 'text' | 'url' | 'youtubeUrl' | 'date'> }> } };
+
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3595,16 +3985,6 @@ type Unnamed_1_Query = { readonly allImageSharp: { readonly nodes: ReadonlyArray
         Pick<ImageSharpFixed, 'originalName'>
         & GatsbyImageSharpFixedFragment
       )> }> } };
-
-type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type Unnamed_2_Query = { readonly contribute: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
-
-type SiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SiteTitleQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'biography' | 'position' | 'workExperience' | 'author' | 'locale' | 'lonlat' | 'siteUrl' | 'image' | 'blogName' | 'blogUrl' | 'twitterUsername' | 'twitterUrl'>> }>, readonly allProductsYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<ProductsYaml, 'id' | 'title' | 'description' | 'skills' | 'image'> }> }, readonly allCommunitiesYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<CommunitiesYaml, 'id' | 'text' | 'url'> }> }, readonly allTalksYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<TalksYaml, 'id' | 'text' | 'url' | 'youtubeUrl' | 'date'> }> } };
 
 type SEOQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3636,5 +4016,10 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type Unnamed_2_Query = { readonly contribute: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
 }

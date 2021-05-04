@@ -31,7 +31,7 @@ const Work: FC<WorkProps> = ({ data }) => {
                 {intl.formatMessage({ id: 'work_experience' })}
             </div>
             <div className={SC.subtitle}>
-                {intl.formatMessage({ id: 'related_links' })}
+                {intl.formatMessage({ id: 'labels.related_links' })}
             </div>
             <div className={SC.description}>
                 <ul>
@@ -42,7 +42,7 @@ const Work: FC<WorkProps> = ({ data }) => {
                             rel="noopener noreferrer"
                         >
                             {intl.formatMessage({
-                                id: 'curriculum_vitae',
+                                id: 'labels.curriculum_vitae',
                             })}
                         </a>
                     </li>

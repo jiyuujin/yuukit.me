@@ -44,7 +44,7 @@ export const CardWrapper: FC<CardWrapperProps> = ({ data }) => {
                         marginRight: '4px',
                     }}
                 />
-                {intl.formatMessage({ id: 'online_business_card' })}
+                {intl.formatMessage({ id: 'labels.business_card' })}
             </NekoButton>
             {open && (
                 <Modal onClose={() => setOpen(!open)}>
