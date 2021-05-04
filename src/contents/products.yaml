@@ -1,5 +1,5 @@
 - title: Web Developer - Yuma Kitamura
-  description: profile
+  description: products.profile
   skills:
     - normalize.css
     - nekohack-ui
@@ -12,7 +12,7 @@
     - Github Actions
   image: https://i.imgur.com/sN5nHoS.jpg
 - title: nekohack Tech Hub
-  description: tech_hub
+  description: products.tech_hub
   skills:
     - normalize.css
     - Gatsby.js
@@ -23,7 +23,7 @@
     - Github Actions
   image: https://i.imgur.com/8uP2RdS.jpg
 - title: Web猫ブログ
-  description: blog
+  description: products.blog
   skills:
     - j-stylebook
     - Nuxt.js
@@ -36,7 +36,7 @@
     - Github Actions
   image: https://i.imgur.com/xuj6KVU.jpg
 - title: Web Performance
-  description: insight
+  description: products.insight
   skills:
     - Next.js
     - PageSpeed Insights v5

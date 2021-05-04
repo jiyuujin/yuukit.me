@@ -43,7 +43,7 @@ const Product: FC<ProductProps> = ({ data }) => {
                         />
                         <div className={SC.subtitle}>
                             {intl.formatMessage({
-                                id: 'technology_used',
+                                id: 'product_technology_used',
                             })}
                         </div>
                         <div className={SC.description}>

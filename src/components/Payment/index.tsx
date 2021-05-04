@@ -95,7 +95,7 @@ const CheckoutForm = ({ isTest }: CheckoutFormType) => {
                                 marginRight: '4px',
                             }}
                         />
-                        {intl.formatMessage({ id: 'contribute' })}
+                        {intl.formatMessage({ id: 'labels.contribute' })}
                     </NekoButton>
                     {open && (
                         <Modal onClose={handleOpen}>
@@ -126,8 +126,8 @@ const CheckoutForm = ({ isTest }: CheckoutFormType) => {
                                     disabled={!stripe}
                                 >
                                     {isTest
-                                        ? intl.formatMessage({ id: 'test_pay' })
-                                        : intl.formatMessage({ id: 'pay' })}
+                                        ? intl.formatMessage({ id: 'labels.payment_test' })
+                                        : intl.formatMessage({ id: 'labels.payment' })}
                                 </button>
                             </form>
                         </Modal>

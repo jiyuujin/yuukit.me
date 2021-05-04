@@ -28,12 +28,12 @@ const Introduction: FC<IntroductionProps> = ({ data }) => {
 
     return (
         <div className={SC.basic}>
-            {intl.formatMessage({ id: 'basic_info' })}
+            {intl.formatMessage({ id: 'labels.basic_info' })}
             <div className={SC.description}>
-                {intl.formatMessage({ id: 'biography' })}
+                {intl.formatMessage({ id: 'basic_biography' })}
             </div>
             <div className={SC.subtitle}>
-                {intl.formatMessage({ id: 'position' })}
+                {intl.formatMessage({ id: 'labels.position' })}
             </div>
             <div className={SC.description}>
                 <ul>

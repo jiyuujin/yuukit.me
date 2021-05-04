@@ -12,7 +12,7 @@ const Community: FC<CommunityProps> = ({ data }) => {
     return (
         <div className={SC.basic}>
             <div className={SC.subtitle}>
-                {intl.formatMessage({ id: 'community_text' })}
+                {intl.formatMessage({ id: 'community' })}
             </div>
             <div className={SC.description}>
                 {intl.formatMessage({ id: 'community_role' })}
