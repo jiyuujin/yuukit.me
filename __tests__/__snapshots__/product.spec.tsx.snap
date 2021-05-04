@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product render correctly 1`] = `
+<div>
+  <div>
+    product
+  </div>
+  <div>
+    <div>
+      title
+    </div>
+    <img
+      alt="title"
+      decoding="async"
+      src="title"
+    />
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "title",
+        }
+      }
+    />
+    <div>
+      technology_used
+    </div>
+    <div>
+      <ul>
+        <li>
+          title
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

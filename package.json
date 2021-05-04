@@ -91,6 +91,7 @@
     "testPathIgnorePatterns": [
       ".cache",
       "node_modules",
+      "__tests__/constants.ts",
       "public"
     ],
     "transformIgnorePatterns": [
