@@ -7,7 +7,7 @@ exports[`Work render correctly 1`] = `
     work_experience
   </div>
   <div>
-    related_links
+    labels.related_links
   </div>
   <div>
     <ul>
@@ -17,7 +17,7 @@ exports[`Work render correctly 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          curriculum_vitae
+          labels.curriculum_vitae
         </a>
       </li>
       <li>

@@ -22,7 +22,7 @@ exports[`Product render correctly 1`] = `
       }
     />
     <div>
-      technology_used
+      product_technology_used
     </div>
     <div>
       <ul>

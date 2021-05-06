@@ -2,12 +2,12 @@
 
 exports[`Introduction render correctly 1`] = `
 <div>
-  basic_info
+  labels.basic_info
   <div>
-    biography
+    basic_biography
   </div>
   <div>
-    position
+    labels.position
   </div>
   <div>
     <ul>
