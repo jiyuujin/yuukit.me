@@ -15,44 +15,46 @@ const Slide: FC<SlideProps> = ({ data }) => {
     }
 
     return (
-        <div className={SC.basic}>
-            <div className={SC.subtitle}>
-                {intl.formatMessage({ id: 'slide' })}
-            </div>
-            <div className={SC.description}>
-                <ul>
-                    {data.map(({ node }: any) => {
-                        return (
-                            <li key={node.id}>
-                                <div>{dateFormat(node.date)}</div>
-                                <div className={SC.link}>
-                                    <a
-                                        href={node.url}
-                                        role="button"
-                                        aria-pressed="true"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        {intl.formatMessage({ id: node.text })}
-                                    </a>
-                                </div>
-                                {node.youtubeUrl && (
+        <div className="wrapper">
+            <div className="section">
+                <div className={SC.subtitle}>
+                    {intl.formatMessage({ id: 'slide' })}
+                </div>
+                <div className={SC.description}>
+                    <ul>
+                        {data.map(({ node }: any) => {
+                            return (
+                                <li key={node.id}>
+                                    <div>{dateFormat(node.date)}</div>
                                     <div className={SC.link}>
                                         <a
-                                            href={node.youtubeUrl}
+                                            href={node.url}
                                             role="button"
                                             aria-pressed="true"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
-                                            {node.youtubeUrl}
+                                            {intl.formatMessage({ id: node.text })}
                                         </a>
                                     </div>
-                                )}
-                            </li>
-                        )
-                    })}
-                </ul>
+                                    {node.youtubeUrl && (
+                                        <div className={SC.link}>
+                                            <a
+                                                href={node.youtubeUrl}
+                                                role="button"
+                                                aria-pressed="true"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                {node.youtubeUrl}
+                                            </a>
+                                        </div>
+                                    )}
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </div>
             </div>
         </div>
     )

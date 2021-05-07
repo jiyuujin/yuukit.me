@@ -3,22 +3,7 @@ import { useIntl } from 'gatsby-plugin-intl'
 import * as SC from './index.module.scss'
 
 type IntroductionProps = {
-    data: GatsbyTypes.Maybe<
-        Pick<
-            GatsbyTypes.SiteSiteMetadata,
-            | 'title'
-            | 'description'
-            | 'biography'
-            | 'position'
-            | 'workExperience'
-            | 'author'
-            | 'locale'
-            | 'lonlat'
-            | 'siteUrl'
-            | 'image'
-            | 'blogName'
-        >
-    >
+    data: any
 }
 
 const Introduction: FC<IntroductionProps> = ({ data }) => {
@@ -27,20 +12,24 @@ const Introduction: FC<IntroductionProps> = ({ data }) => {
     const positionList: string[] | undefined = data?.position?.split(',')
 
     return (
-        <div className={SC.basic}>
-            {intl.formatMessage({ id: 'labels.basic_info' })}
-            <div className={SC.description}>
-                {intl.formatMessage({ id: 'basic_biography' })}
-            </div>
-            <div className={SC.subtitle}>
-                {intl.formatMessage({ id: 'labels.position' })}
-            </div>
-            <div className={SC.description}>
-                <ul>
-                    {positionList?.map((p: string) => {
-                        return <li key={p}>{p}</li>
-                    })}
-                </ul>
+        <div className="wrapper">
+            <div className="section">
+                <div className={SC.subtitle}>
+                    {intl.formatMessage({ id: 'labels.basic_info' })}
+                </div>
+                <div className={SC.description}>
+                    {intl.formatMessage({ id: 'basic_biography' })}
+                </div>
+                <div className={SC.subtitle}>
+                    {intl.formatMessage({ id: 'labels.position' })}
+                </div>
+                <div className={SC.description}>
+                    <ul>
+                        {positionList?.map((p: string) => {
+                            return <li key={p}>{p}</li>
+                        })}
+                    </ul>
+                </div>
             </div>
         </div>
     )

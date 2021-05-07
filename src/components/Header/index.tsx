@@ -4,22 +4,7 @@ import * as SC from './index.module.scss'
 import { positions } from '../../utils/profile'
 
 type HeaderProps = {
-    data: GatsbyTypes.Maybe<
-        Pick<
-            GatsbyTypes.SiteSiteMetadata,
-            | 'title'
-            | 'description'
-            | 'biography'
-            | 'position'
-            | 'workExperience'
-            | 'author'
-            | 'locale'
-            | 'lonlat'
-            | 'siteUrl'
-            | 'image'
-            | 'blogName'
-        >
-    >
+    data: any
 }
 
 const Header: FC<HeaderProps> = ({ data }) => {
