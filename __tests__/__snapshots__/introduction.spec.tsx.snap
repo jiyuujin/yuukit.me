@@ -1,26 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Introduction render correctly 1`] = `
-<div>
-  labels.basic_info
-  <div>
-    basic_biography
-  </div>
-  <div>
-    labels.position
-  </div>
-  <div>
-    <ul>
-      <li>
-        Front-End Engineer
-      </li>
-      <li>
-        Web Developer
-      </li>
-      <li>
-        HR Adviser
-      </li>
-    </ul>
+<div
+  className="wrapper"
+>
+  <div
+    className="section"
+  >
+    <div>
+      labels.basic_info
+    </div>
+    <div>
+      basic_biography
+    </div>
+    <div>
+      labels.position
+    </div>
+    <div>
+      <ul>
+        <li>
+          Front-End Engineer
+        </li>
+        <li>
+          Web Developer
+        </li>
+        <li>
+          HR Adviser
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;

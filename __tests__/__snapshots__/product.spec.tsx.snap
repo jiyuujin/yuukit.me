@@ -1,35 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Product render correctly 1`] = `
-<div>
-  <div>
-    product
-  </div>
-  <div>
+<div
+  className="wrapper"
+>
+  <div
+    className="section"
+  >
     <div>
-      title
+      product
     </div>
-    <img
-      alt="title"
-      decoding="async"
-      src="title"
-    />
-    <div
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "title",
+    <div>
+      <div>
+        title
+      </div>
+      <img
+        alt="title"
+        decoding="async"
+        src="title"
+      />
+      <div
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "title",
+          }
         }
-      }
-    />
-    <div>
-      product_technology_used
-    </div>
-    <div>
-      <ul>
-        <li>
-          title
-        </li>
-      </ul>
+      />
+      <div>
+        product_technology_used
+      </div>
+      <div>
+        <ul>
+          <li>
+            title
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

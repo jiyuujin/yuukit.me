@@ -86,7 +86,7 @@ const CheckoutForm = ({ isTest }: CheckoutFormType) => {
         <StaticQuery
             query={query}
             render={(data) => (
-                <>
+                <div className={`wrapper ${SC.wrapper_payment}`}>
                     <NekoButton onClick={handleOpen}>
                         <ContributeSvg
                             style={{
@@ -132,7 +132,7 @@ const CheckoutForm = ({ isTest }: CheckoutFormType) => {
                             </form>
                         </Modal>
                     )}
-                </>
+                </div>
             )}
         />
     )

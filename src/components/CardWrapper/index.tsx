@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react'
 import { useIntl } from 'gatsby-plugin-intl'
+import * as SC from './index.module.scss'
 import { NekoButton } from 'nekohack-ui'
 import Modal from '../Modal'
 import Card from '../Card'
@@ -7,22 +8,7 @@ import Card from '../Card'
 import IdCardSvg from '../../static/icons/id-card.svg'
 
 type CardWrapperProps = {
-    data: GatsbyTypes.Maybe<
-        Pick<
-            GatsbyTypes.SiteSiteMetadata,
-            | 'title'
-            | 'description'
-            | 'biography'
-            | 'position'
-            | 'workExperience'
-            | 'author'
-            | 'locale'
-            | 'lonlat'
-            | 'siteUrl'
-            | 'image'
-            | 'blogName'
-        >
-    >
+    data: Array<unknown>
 }
 
 export const CardWrapper: FC<CardWrapperProps> = ({ data }) => {
@@ -35,7 +21,7 @@ export const CardWrapper: FC<CardWrapperProps> = ({ data }) => {
     }
 
     return (
-        <>
+        <div className={`wrapper ${SC.wrapper_card}`}>
             <NekoButton onClick={handleOpen}>
                 <IdCardSvg
                     style={{
@@ -51,6 +37,6 @@ export const CardWrapper: FC<CardWrapperProps> = ({ data }) => {
                     <Card data={data} />
                 </Modal>
             )}
-        </>
+        </div>
     )
 }

@@ -1,35 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Work render correctly 1`] = `
-<div>
-  work
-  <div>
-    work_experience
-  </div>
-  <div>
-    labels.related_links
-  </div>
-  <div>
-    <ul>
-      <li>
-        <a
-          href="https://github.com/jiyuujin/Curriculum-Vitae"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          labels.curriculum_vitae
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://scrapbox.io/nekohack/skillset"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          skill_set_coming_soon
-        </a>
-      </li>
-    </ul>
+<div
+  className="wrapper"
+>
+  <div
+    className="section"
+  >
+    <div>
+      work
+    </div>
+    <div>
+      work_experience
+    </div>
+    <div>
+      labels.related_links
+    </div>
+    <div>
+      <ul>
+        <li>
+          <a
+            href="https://github.com/jiyuujin/Curriculum-Vitae"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            labels.curriculum_vitae
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://scrapbox.io/nekohack/skillset"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            skill_set_coming_soon
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;
