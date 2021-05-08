@@ -72,7 +72,7 @@ const Home: FC = () => {
             <Payment />
             <CardWrapper data={data.site?.siteMetadata} />
             <Introduction data={data.site?.siteMetadata} />
-            <Work data={data.site?.siteMetadata} />
+            <Work />
             <Product data={data.allProductsYaml?.edges} />
             <Community data={data.allCommunitiesYaml?.edges} />
             <Slide data={data.allTalksYaml?.edges} />
