@@ -11,9 +11,9 @@ const imageData = [
             title: 'title',
             description: 'title',
             skills: ['title'],
-            image: 'title'
-        }
-    }
+            image: 'title',
+        },
+    },
 ]
 
 const locales = ['en', 'ja']
