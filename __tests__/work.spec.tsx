@@ -1,7 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import Work from '../src/components/Work'
-import { siteMetadata } from './constants'
 
 jest.mock('react-intl', () => {
     const reactIntl = jest.requireActual('react-intl')
@@ -16,7 +15,7 @@ jest.mock('react-intl', () => {
 
 describe('Work', () => {
     it('render correctly', () => {
-        const tree = renderer.create(<Work data={siteMetadata} />).toJSON()
+        const tree = renderer.create(<Work />).toJSON()
         expect(tree).toMatchSnapshot()
     })
 })
