@@ -28,7 +28,9 @@ const Community: FC<CommunityProps> = ({ data }) => {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
-                                            {intl.formatMessage({ id: node.text })}
+                                            {intl.formatMessage({
+                                                id: node.text,
+                                            })}
                                         </a>
                                     </div>
                                 </li>
