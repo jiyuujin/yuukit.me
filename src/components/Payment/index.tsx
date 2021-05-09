@@ -125,9 +125,9 @@ const CheckoutForm = ({ isTest }: CheckoutFormType) => {
                                     className={SC.checkoutButton}
                                     disabled={!stripe}
                                 >
-                                    {isTest
-                                        ? intl.formatMessage({ id: 'labels.payment_test' })
-                                        : intl.formatMessage({ id: 'labels.payment' })}
+                                    {intl.formatMessage({
+                                        id: 'labels.payment',
+                                    })}
                                 </button>
                             </form>
                         </Modal>
