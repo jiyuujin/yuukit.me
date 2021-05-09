@@ -9,7 +9,7 @@ const languageName: {
     ja: '日本語',
 }
 
-const HeaderBar: FC = () => {
+const I18nOperation: FC = () => {
     return (
         <div className={SC.headerBar}>
             <IntlContextConsumer>
@@ -41,4 +41,4 @@ const HeaderBar: FC = () => {
     )
 }
 
-export default HeaderBar
+export default I18nOperation

@@ -1,9 +1,9 @@
 import React, { FC, useState } from 'react'
 import { useIntl } from 'gatsby-plugin-intl'
-import * as SC from './index.module.scss'
+import * as SC from './wrapper.module.scss'
 import { NekoButton } from 'nekohack-ui'
 import Modal from '../Modal'
-import Card from '../Card'
+import Card from './index'
 
 import IdCardSvg from '../../static/icons/id-card.svg'
 

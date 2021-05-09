@@ -2,7 +2,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { IntlContextProvider } from 'gatsby-plugin-intl'
 import messages from '../src/intl/en.json'
-import HeaderBar from '../src/components/HeaderBar'
+import HeaderBar from '../src/components/I18nOperation'
 
 const locales = ['en', 'ja']
 
