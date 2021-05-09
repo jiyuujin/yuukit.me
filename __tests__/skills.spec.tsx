@@ -2,7 +2,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { IntlContextProvider } from 'gatsby-plugin-intl'
 import messages from '../src/intl/en.json'
-import Skills from '../src/components/Skills'
+import Skills from '../src/components/Card/skills'
 
 const locales = ['en', 'ja']
 
