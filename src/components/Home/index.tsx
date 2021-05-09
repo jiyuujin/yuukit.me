@@ -1,9 +1,9 @@
 import React, { FC } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import HeaderBar from '../HeaderBar'
+import I18nOperation from '../I18nOperation'
 import Header from '../Header'
 import { Payment } from '../Payment'
-import { CardWrapper } from '../CardWrapper'
+import { CardWrapper } from '../Card/wrapper'
 import Introduction from '../Introduction'
 import Work from '../Work'
 import Product from '../Product'
@@ -67,7 +67,7 @@ const Home: FC = () => {
 
     return (
         <>
-            <HeaderBar />
+            <I18nOperation />
             <Header data={data.site?.siteMetadata} />
             <Payment />
             <CardWrapper data={data.site?.siteMetadata} />

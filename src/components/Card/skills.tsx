@@ -1,5 +1,5 @@
 import React from 'react'
-import * as SC from './index.module.scss'
+import * as SC from './skills.module.scss'
 import { skills } from '../../utils/profile'
 
 type SkillType = {

@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Home from '../components/Home'
 import Footer from '../components/Footer'
-import { CookieFooterWrapper } from '../components/CookieFooterWrapper'
+import { CookieFooterWrapper } from '../components/Footer/cookie'
 import * as SC from './index.module.scss'
 // import { Helmet } from 'react-helmet'
 
