@@ -1,5 +1,5 @@
 .content {
-  max-width: 56rem;
+  min-width: 20rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -10,7 +10,7 @@
   background-color: #fff;
   opacity: 0.92;
 
-  .info {
+  .card-info {
     position: relative;
     background-color: #fff;
     padding: 0 0.8rem;
@@ -21,15 +21,30 @@
     .me {
       text-align: center;
       display: block;
-      margin-top: 1em;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 1em 0 auto;
     }
 
     .name {
+      text-align: center;
       font-size: 1.475rem;
       font-weight: bold;
       padding-top: 1.6rem;
+      margin: 0;
+    }
+
+    .position {
+      list-style: none;
+      text-align: center;
+      font-size: 1.12rem;
+      font-weight: bold;
+      padding: 1.2rem 0 0;
+      margin: 0;
+    }
+
+    .contact {
+      text-align: center;
+      padding: 0.8rem 0;
+      margin: 0;
     }
   }
 }
@@ -52,7 +67,7 @@
 }
 
 @media (min-width: 481px) {
-  .info {
+  .card-info {
     width: 96%;
     margin-left: auto;
     margin-right: auto;

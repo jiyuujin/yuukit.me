@@ -17,13 +17,11 @@
   background-color: #fff;
   color: #000;
   height: auto;
-  min-height: 330px;
-  min-width: 0px;
   display: flex;
 }
 
 @media (min-width: 481px) {
   .modal-container {
-    min-width: 546px;
+    //min-width: 546px;
   }
 }

@@ -99,37 +99,39 @@ const CheckoutForm = ({ isTest }: CheckoutFormType) => {
                     </NekoButton>
                     {open && (
                         <Modal onClose={handleOpen}>
-                            <form
-                                className={SC.checkoutForm}
-                                onSubmit={handleSubmit}
-                            >
-                                <div className={SC.me}>
-                                    <LazyImage
-                                        assetUrl={'contribute.png'}
-                                        alt={'contribute'}
-                                    />
-                                </div>
-                                <label
-                                    style={{
-                                        width: '100%',
-                                        padding: '12px 0',
-                                    }}
+                            <div className={SC.content}>
+                                <form
+                                    className={SC.checkoutForm}
+                                    onSubmit={handleSubmit}
                                 >
-                                    <CardElement
-                                        options={{
-                                            hidePostalCode: true,
+                                    <div className={SC.me}>
+                                        <LazyImage
+                                            assetUrl={'contribute.png'}
+                                            alt={'contribute'}
+                                        />
+                                    </div>
+                                    <label
+                                        style={{
+                                            width: '100%',
+                                            padding: '12px 0',
                                         }}
-                                    />
-                                </label>
-                                <button
-                                    className={SC.checkoutButton}
-                                    disabled={!stripe}
-                                >
-                                    {intl.formatMessage({
-                                        id: 'labels.payment',
-                                    })}
-                                </button>
-                            </form>
+                                    >
+                                        <CardElement
+                                            options={{
+                                                hidePostalCode: true,
+                                            }}
+                                        />
+                                    </label>
+                                    <button
+                                        className={SC.checkoutButton}
+                                        disabled={!stripe}
+                                    >
+                                        {intl.formatMessage({
+                                            id: 'labels.payment',
+                                        })}
+                                    </button>
+                                </form>
+                            </div>
                         </Modal>
                     )}
                 </div>
