@@ -48,7 +48,7 @@ const Slide: FC<SlideProps> = ({ data }) => {
                                                 rel="noopener noreferrer"
                                             >
                                                 {intl.formatMessage({
-                                                    id: 'labels.youtube_live'
+                                                    id: 'labels.youtube_live',
                                                 })}
                                             </a>
                                         </>
