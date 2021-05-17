@@ -66,7 +66,7 @@ const Home: FC = () => {
     `)
 
     return (
-        <>
+        <main>
             <I18nOperation />
             <Header data={data.site?.siteMetadata} />
             <Payment />
@@ -76,7 +76,7 @@ const Home: FC = () => {
             <Product data={data.allProductsYaml?.edges} />
             <Community data={data.allCommunitiesYaml?.edges} />
             <Slide data={data.allTalksYaml?.edges} />
-        </>
+        </main>
     )
 }
 
