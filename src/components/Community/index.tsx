@@ -20,19 +20,17 @@ const Community: FC<CommunityProps> = ({ data }) => {
                         {data.map(({ node }: any) => {
                             return (
                                 <li key={node.id}>
-                                    <div className={SC.link}>
-                                        <a
-                                            href={node.url}
-                                            role="button"
-                                            aria-pressed="true"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            {intl.formatMessage({
-                                                id: node.text,
-                                            })}
-                                        </a>
-                                    </div>
+                                    <a
+                                        href={node.url}
+                                        role="button"
+                                        aria-pressed="true"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {intl.formatMessage({
+                                            id: node.text,
+                                        })}
+                                    </a>
                                 </li>
                             )
                         })}

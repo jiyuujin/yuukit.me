@@ -26,21 +26,20 @@ const Slide: FC<SlideProps> = ({ data }) => {
                             return (
                                 <li key={node.id}>
                                     <div>{dateFormat(node.date)}</div>
-                                    <div className={SC.link}>
-                                        <a
-                                            href={node.url}
-                                            role="button"
-                                            aria-pressed="true"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            {intl.formatMessage({
-                                                id: node.text,
-                                            })}
-                                        </a>
-                                    </div>
+                                    <a
+                                        href={node.url}
+                                        role="button"
+                                        aria-pressed="true"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {intl.formatMessage({
+                                            id: node.text,
+                                        })}
+                                    </a>
                                     {node.youtubeUrl && (
-                                        <div className={SC.link}>
+                                        <>
+                                            {' / '}
                                             <a
                                                 href={node.youtubeUrl}
                                                 role="button"
@@ -48,9 +47,11 @@ const Slide: FC<SlideProps> = ({ data }) => {
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                             >
-                                                {node.youtubeUrl}
+                                                {intl.formatMessage({
+                                                    id: 'labels.youtube_live'
+                                                })}
                                             </a>
-                                        </div>
+                                        </>
                                     )}
                                 </li>
                             )
