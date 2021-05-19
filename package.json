@@ -14,7 +14,7 @@
     "@babel/core": "7.14.3",
     "@nekohack/footer-ui": "1.0.0",
     "@nekohack/normalize.css": "2.1.1",
-    "@stripe/react-stripe-js": "1.4.0",
+    "@stripe/react-stripe-js": "1.4.1",
     "@stripe/stripe-js": "1.15.0",
     "dayjs": "1.10.4",
     "gatsby": "3.5.0",
