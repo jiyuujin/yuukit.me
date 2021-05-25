@@ -41,7 +41,7 @@ jobs:
           GATSBY_LIVE_LAMBDA_ENDPOINT: ${{ secrets.GATSBY_LIVE_LAMBDA_ENDPOINT }}
 
       - name: Deploy to S3
-        run: aws s3 sync ./public/ s3://yuukit-me-profile/ --delete --acl public-read
+        run: aws s3 sync ./public/ s3://yuma-kitamura.nekohack.me/ --delete --acl public-read
 
 #      - name: Clear cache in CloudFront
 #        uses: chetan/invalidate-cloudfront-action@v1.2
