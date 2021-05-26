@@ -11,7 +11,7 @@ export const siteMetadata = {
     author: 'Yuma Kitamura',
     locale: 'Osaka, Kyoto in Japan',
     lonlat: '35.003238° N, 135.750389° E',
-    siteUrl: 'https://yuukit.me/',
+    siteUrl: 'https://yuma-kitamura.nekohack.me/',
     image: 'src/images/bakeneko2.png',
     blogName: 'Web猫ブログ',
     blogUrl: 'https://webneko.dev/',

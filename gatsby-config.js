@@ -11,7 +11,7 @@ module.exports = {
     author: `Yuma Kitamura`,
     locale: `Osaka, Kyoto in Japan`,
     lonlat: `35.003238° N, 135.750389° E`,
-    siteUrl: `https://yuukit.me/`,
+    siteUrl: `https://yuma-kitamura.nekohack.me/`,
     image: `src/images/bakeneko2.png`,
     blogName: `Web猫ブログ`,
     blogUrl: `https://webneko.dev/`,
@@ -74,7 +74,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
-        host: `https://yuukit.me/`,
+        host: `https://yuma-kitamura.nekohack.me/`,
         policy: [
           {
             userAgent: `*`,
