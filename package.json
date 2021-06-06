@@ -33,7 +33,7 @@
     "gatsby-source-filesystem": "3.6.0",
     "gatsby-transformer-sharp": "3.6.0",
     "gatsby-transformer-yaml": "3.6.0",
-    "nekohack-ui": "2.6.0",
+    "nekohack-ui": "2.7.0",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-helmet": "6.1.0",
