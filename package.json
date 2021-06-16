@@ -17,7 +17,7 @@
     "@stripe/react-stripe-js": "1.4.1",
     "@stripe/stripe-js": "1.15.0",
     "dayjs": "1.10.5",
-    "gatsby": "3.7.1",
+    "gatsby": "3.7.2",
     "gatsby-image": "3.7.1",
     "gatsby-plugin-google-analytics": "3.7.1",
     "gatsby-plugin-image": "1.7.1",
