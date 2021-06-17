@@ -62,6 +62,15 @@ const Home: FC = () => {
                     }
                 }
             }
+            allLinksYaml {
+                edges {
+                    node {
+                        id
+                        text
+                        url
+                    }
+                }
+            }
         }
     `)
 
@@ -72,7 +81,7 @@ const Home: FC = () => {
             <Payment />
             <CardWrapper data={data.site?.siteMetadata} />
             <Introduction data={data.site?.siteMetadata} />
-            <Work />
+            <Work data={data.allLinksYaml?.edges} />
             <Product data={data.allProductsYaml?.edges} />
             <Community data={data.allCommunitiesYaml?.edges} />
             <Slide data={data.allTalksYaml?.edges} />
