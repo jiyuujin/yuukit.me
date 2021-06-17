@@ -3,10 +3,10 @@ import { useIntl } from 'gatsby-plugin-intl'
 import * as SC from './index.module.scss'
 
 type WorkProps = {
-    //
+    data: Array<unknown>
 }
 
-const Work: FC<WorkProps> = () => {
+const Work: FC<WorkProps> = ({ data }) => {
     const intl = useIntl()
 
     return (
@@ -23,28 +23,23 @@ const Work: FC<WorkProps> = () => {
                 </div>
                 <div className={SC.description}>
                     <ul>
-                        <li>
-                            <a
-                                href="https://github.com/jiyuujin/Curriculum-Vitae"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                {intl.formatMessage({
-                                    id: 'labels.curriculum_vitae',
-                                })}
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://scrapbox.io/nekohack/skillset"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                {intl.formatMessage({
-                                    id: 'skill_set_coming_soon',
-                                })}
-                            </a>
-                        </li>
+                        {data.map(({ node }: any) => {
+                            return (
+                                <li key={node.id}>
+                                    <a
+                                        href={node.url}
+                                        role="button"
+                                        aria-pressed="true"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {intl.formatMessage({
+                                            id: node.text,
+                                        })}
+                                    </a>
+                                </li>
+                            )
+                        })}
                     </ul>
                 </div>
             </div>
