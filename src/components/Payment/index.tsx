@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import { useIntl } from 'gatsby-plugin-intl'
+import { NekoButton } from 'nekohack-ui'
 import * as SC from './index.module.scss'
+
 import {
     Elements,
     CardElement,
@@ -9,10 +11,15 @@ import {
     useElements,
 } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
+
 import ContributeSvg from '../../static/icons/contribute.svg'
+
 import Modal from '../Modal'
 import { Timeline } from './Timeline'
-import { NekoButton } from 'nekohack-ui'
+
+type CheckoutFormType = {
+    isTest: boolean
+}
 
 export const Payment = () => {
     const isTest = false
@@ -31,11 +38,7 @@ export const Payment = () => {
     )
 }
 
-type CheckoutFormType = {
-    isTest: boolean
-}
-
-const CheckoutForm = ({ isTest }: CheckoutFormType) => {
+export const CheckoutForm = ({ isTest }: CheckoutFormType) => {
     const intl = useIntl()
 
     const stripe = useStripe()
