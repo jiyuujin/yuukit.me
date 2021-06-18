@@ -11,7 +11,7 @@ import {
 import { loadStripe } from '@stripe/stripe-js'
 import ContributeSvg from '../../static/icons/contribute.svg'
 import Modal from '../Modal'
-import LazyImage from '../LazyImage'
+import { Timeline } from './Timeline'
 import { NekoButton } from 'nekohack-ui'
 
 export const Payment = () => {
@@ -104,11 +104,8 @@ const CheckoutForm = ({ isTest }: CheckoutFormType) => {
                                     className={SC.checkoutForm}
                                     onSubmit={handleSubmit}
                                 >
-                                    <div className={SC.me}>
-                                        <LazyImage
-                                            assetUrl={'contribute.png'}
-                                            alt={'contribute'}
-                                        />
+                                    <div className={SC.order}>
+                                        <Timeline />
                                     </div>
                                     <label
                                         style={{
@@ -130,6 +127,17 @@ const CheckoutForm = ({ isTest }: CheckoutFormType) => {
                                             id: 'labels.payment',
                                         })}
                                     </button>
+                                    <div className={SC.manual}>
+                                        <a
+                                            href="https://github.com/nekohack/Code-of-Conduct"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            {intl.formatMessage({
+                                                id: 'confirm_manual',
+                                            })}
+                                        </a>
+                                    </div>
                                 </form>
                             </div>
                         </Modal>

@@ -11,7 +11,6 @@
   padding: 0 0.8rem;
   border-radius: 0.5rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  opacity: 0.75;
 
   .checkout-form {
     display: flex;
@@ -21,12 +20,16 @@
     margin-left: auto;
     margin-right: auto;
 
-    .me {
+    .order {
       text-align: center;
       display: block;
-      margin-top: 1em;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 1em auto 0;
+    }
+
+    .manual {
+      text-align: center;
+      display: block;
+      margin: 0 auto 1em;
     }
   }
 }
