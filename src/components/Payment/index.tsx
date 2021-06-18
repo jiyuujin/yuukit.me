@@ -137,7 +137,7 @@ export const CheckoutForm = ({ isTest }: CheckoutFormType) => {
                                             rel="noopener noreferrer"
                                         >
                                             {intl.formatMessage({
-                                                id: 'confirm_manual',
+                                                id: 'confirm_policy',
                                             })}
                                         </a>
                                     </div>
