@@ -15,7 +15,7 @@
     "@nekohack/footer-ui": "1.0.0",
     "@nekohack/normalize.css": "2.1.1",
     "@stripe/react-stripe-js": "1.4.1",
-    "@stripe/stripe-js": "1.15.0",
+    "@stripe/stripe-js": "1.15.1",
     "dayjs": "1.10.5",
     "gatsby": "3.7.2",
     "gatsby-image": "3.7.1",
