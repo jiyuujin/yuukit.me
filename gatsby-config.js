@@ -13,7 +13,7 @@ module.exports = {
     lonlat: `35.003238° N, 135.750389° E`,
     url: `https://yuma-kitamura.nekohack.me/`,
     iconImage: `/images/bakeneko2.png`,
-    ogImage: `/images/vuefes.jpg`,
+    ogImage: `https://nekohack-inc.s3.ap-northeast-3.amazonaws.com/me-at-vuefes.jpg`,
     blogName: `Web猫ブログ`,
     blogUrl: `https://webneko.dev/`,
     twitterUsername: `@jiyuujinlab`,
