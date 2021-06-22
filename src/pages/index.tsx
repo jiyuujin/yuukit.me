@@ -10,7 +10,7 @@ export default class IndexPage extends React.Component<{}> {
     public render() {
         return (
             <Layout>
-                <SEO title="Web Developer - Yuma Kitamura" />
+                <SEO />
                 <Home />
                 <Footer />
                 <CookieFooterWrapper />

@@ -9,8 +9,9 @@ export type SiteMetadataTypes = {
         author: string
         locale: string
         lonlat: string
-        siteUrl: string
-        image: string
+        url: string
+        iconImage: string
+        ogImage: string
         blogName: string
         blogUrl: string
         twitterUsername: string
