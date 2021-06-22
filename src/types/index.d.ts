@@ -12,8 +12,6 @@ export type SiteMetadataTypes = {
         url: string
         iconImage: string
         ogImage: string
-        blogName: string
-        blogUrl: string
         twitterUsername: string
         twitterUrl: string
     }

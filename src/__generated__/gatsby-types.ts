@@ -302,8 +302,6 @@ type SiteSiteMetadata = {
   readonly url: Maybe<Scalars['String']>;
   readonly iconImage: Maybe<Scalars['String']>;
   readonly ogImage: Maybe<Scalars['String']>;
-  readonly blogName: Maybe<Scalars['String']>;
-  readonly blogUrl: Maybe<Scalars['String']>;
   readonly twitterUsername: Maybe<Scalars['String']>;
   readonly twitterUrl: Maybe<Scalars['String']>;
 };
@@ -2287,8 +2285,6 @@ type SiteSiteMetadataFilterInput = {
   readonly url: Maybe<StringQueryOperatorInput>;
   readonly iconImage: Maybe<StringQueryOperatorInput>;
   readonly ogImage: Maybe<StringQueryOperatorInput>;
-  readonly blogName: Maybe<StringQueryOperatorInput>;
-  readonly blogUrl: Maybe<StringQueryOperatorInput>;
   readonly twitterUsername: Maybe<StringQueryOperatorInput>;
   readonly twitterUrl: Maybe<StringQueryOperatorInput>;
 };
@@ -2352,8 +2348,6 @@ type SiteFieldsEnum =
   | 'siteMetadata.url'
   | 'siteMetadata.iconImage'
   | 'siteMetadata.ogImage'
-  | 'siteMetadata.blogName'
-  | 'siteMetadata.blogUrl'
   | 'siteMetadata.twitterUsername'
   | 'siteMetadata.twitterUrl'
   | 'polyfill'
@@ -4272,23 +4266,28 @@ type CommunitiesYamlSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type Unnamed_1_Query = { readonly allImageSharp: { readonly nodes: ReadonlyArray<{ readonly fixed: Maybe<(
-        Pick<ImageSharpFixed, 'originalName'>
-        & GatsbyImageSharpFixedFragment
-      )> }> } };
-
 type SiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type SiteTitleQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'biography' | 'position' | 'workExperience' | 'author' | 'locale' | 'lonlat' | 'url' | 'iconImage' | 'ogImage' | 'blogName' | 'blogUrl' | 'twitterUsername' | 'twitterUrl'>> }>, readonly allProductsYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<ProductsYaml, 'id' | 'title' | 'description' | 'skills' | 'image'> }> }, readonly allCommunitiesYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<CommunitiesYaml, 'id' | 'text' | 'url'> }> }, readonly allTalksYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<TalksYaml, 'id' | 'text' | 'url' | 'youtubeUrl' | 'date'> }> }, readonly allLinksYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<LinksYaml, 'id' | 'text' | 'url'> }> } };
+type SiteTitleQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'biography' | 'position' | 'workExperience' | 'author' | 'locale' | 'lonlat' | 'url' | 'iconImage' | 'ogImage' | 'twitterUsername' | 'twitterUrl'>> }>, readonly allProductsYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<ProductsYaml, 'id' | 'title' | 'description' | 'skills' | 'image'> }> }, readonly allCommunitiesYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<CommunitiesYaml, 'id' | 'text' | 'url'> }> }, readonly allTalksYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<TalksYaml, 'id' | 'text' | 'url' | 'youtubeUrl' | 'date'> }> }, readonly allLinksYaml: { readonly edges: ReadonlyArray<{ readonly node: Pick<LinksYaml, 'id' | 'text' | 'url'> }> } };
+
+type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type Unnamed_1_Query = { readonly contribute: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
 type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_2_Query = { readonly contribute: Maybe<{ readonly childImageSharp: Maybe<{ readonly fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
+type Unnamed_2_Query = { readonly allImageSharp: { readonly nodes: ReadonlyArray<{ readonly fixed: Maybe<(
+        Pick<ImageSharpFixed, 'originalName'>
+        & GatsbyImageSharpFixedFragment
+      )> }> } };
+
+type SEOQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'titleTemplate' | 'description' | 'url' | 'ogImage' | 'twitterUsername'>> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -4315,10 +4314,5 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
-
-type SEOQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'titleTemplate' | 'description' | 'url' | 'ogImage' | 'twitterUsername'>> }> };
 
 }

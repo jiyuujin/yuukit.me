@@ -26,8 +26,6 @@ const Home: FC = () => {
                     url
                     iconImage
                     ogImage
-                    blogName
-                    blogUrl
                     twitterUsername
                     twitterUrl
                 }

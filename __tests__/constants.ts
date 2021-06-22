@@ -14,8 +14,6 @@ export const siteMetadata = {
     url: 'https://yuma-kitamura.nekohack.me/',
     iconImage: 'src/images/bakeneko2.png',
     ogImage: `src/images/vuefes.jpg`,
-    blogName: 'Web猫ブログ',
-    blogUrl: 'https://webneko.dev/',
     twitterUsername: '@jiyuujin',
     twitterUrl: 'https://twitter.com/jiyuujinlab',
 }
