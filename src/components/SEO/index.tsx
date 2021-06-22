@@ -2,21 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
-type SEOPropTypes = {
-    title: string
-    description: string
-    image: string
-    pathname: string
-    article: boolean
-}
-
-const SEO = ({
-    title,
-    description,
-    image,
-    pathname,
-    article,
-}: SEOPropTypes) => (
+const SEO = () => (
     <StaticQuery
         query={query}
         render={({
@@ -25,39 +11,36 @@ const SEO = ({
                     title,
                     titleTemplate,
                     description,
-                    siteUrl,
-                    image,
+                    url,
+                    ogImage,
                     twitterUsername,
                 },
             },
         }) => {
-            const seo = {
-                title: title,
-                description: description,
-                image: image,
-                url: `${siteUrl}${pathname || '/'}`,
-            }
             return (
                 <Helmet
-                    title={seo.title}
+                    title={title}
                     titleTemplate={titleTemplate}
                     htmlAttributes={{ lang: 'ja' }}
                 >
-                    <meta name="image" content={seo.image} />
-                    <meta name="description" content={seo.description} />
-                    <meta property="og:url" content={seo.url} />
-                    <meta property="og:image" content={seo.image} />
-                    <meta property="og:title" content={seo.title} />
-                    <meta property="og:description" content={seo.description} />
+                    <meta name="description" content={description} />
+                    <meta property="og:site_name" content={title} />
                     <meta property="og:type" content="website" />
-                    <meta name="twitter:card" content="summary" />
-                    <meta name="twitter:image" content={seo.image} />
-                    <meta name="twitter:creator" content={twitterUsername} />
-                    <meta name="twitter:title" content={seo.title} />
+                    <meta property="og:description" content={description} />
+                    <meta property="og:title" content={title} />
+                    <meta property="og:image" content={ogImage} />
+                    <meta property="og:url" content={url} />
+                    <meta name="twitter:description" content={description} />
+                    <meta name="twitter:title" content={title} />
                     <meta
-                        name="twitter:description"
-                        content={seo.description}
-                    />
+                        name="twitter:card"
+                        content="summary_large_image"
+                    />{' '}
+                    {/*ex: summary, summary_large_image*/}
+                    <meta name="twitter:site" content={twitterUsername} />
+                    <meta name="twitter:creator" content={twitterUsername} />
+                    <meta name="twitter:site" content={twitterUsername} />
+                    <meta name="twitter:image" content={ogImage} />
                 </Helmet>
             )
         }}
@@ -66,14 +49,6 @@ const SEO = ({
 
 export default SEO
 
-SEO.defaultProps = {
-    title: null,
-    description: null,
-    image: null,
-    pathname: null,
-    article: false,
-}
-
 const query = graphql`
     query SEO {
         site {
@@ -81,8 +56,8 @@ const query = graphql`
                 title
                 titleTemplate
                 description
-                siteUrl
-                image
+                url
+                ogImage
                 twitterUsername
             }
         }

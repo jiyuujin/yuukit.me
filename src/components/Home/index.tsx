@@ -23,8 +23,9 @@ const Home: FC = () => {
                     author
                     locale
                     lonlat
-                    siteUrl
-                    image
+                    url
+                    iconImage
+                    ogImage
                     blogName
                     blogUrl
                     twitterUsername
