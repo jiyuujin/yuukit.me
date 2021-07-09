@@ -26,7 +26,9 @@ const Product: FC<ProductProps> = ({ data }) => {
                 {data.map(({ node }: any) => {
                     return (
                         <div key={node.id}>
-                            <div className={SC.subtitle}>{node.title}</div>
+                            <div className={SC.subtitle}>
+                                {intl.formatMessage({ id: node.title })}
+                            </div>
                             {node.image && (
                                 <img
                                     src={node.image}
