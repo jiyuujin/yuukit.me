@@ -1,5 +1,5 @@
-- title: Web Developer - Yuma Kitamura
-  description: products.profile
+- title: products.profile
+  description: products.profile_description
   skills:
     - normalize.css
     - nekohack-ui
@@ -11,8 +11,8 @@
     - Circle CI
     - Github Actions
   image: https://i.imgur.com/sN5nHoS.jpg
-- title: Web猫ブログ
-  description: products.blog
+- title: products.tech_blog
+  description: products.tech_blog_description
   skills:
     - j-stylebook
     - Nuxt.js
