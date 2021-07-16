@@ -13,7 +13,7 @@ export const siteMetadata = {
     lonlat: '35.003238° N, 135.750389° E',
     url: 'https://yuma-kitamura.nekohack.me/',
     iconImage: 'src/images/bakeneko2.png',
-    ogImage: `src/images/vuefes.jpg`,
+    ogImage: 'src/images/vuefes.jpg',
     twitterUsername: '@jiyuujin',
     twitterUrl: 'https://twitter.com/jiyuujinlab',
 }
