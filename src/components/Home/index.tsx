@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
 import I18nOperation from '../I18nOperation'
 import Header from '../Header'
 import { Payment } from '../Payment'
@@ -10,69 +9,7 @@ import Product from '../Product'
 import Community from '../Community'
 import Slide from '../Slide'
 
-const Home: FC = () => {
-    const data = useStaticQuery(graphql`
-        query SiteTitleQuery {
-            site {
-                siteMetadata {
-                    title
-                    description
-                    biography
-                    position
-                    workExperience
-                    author
-                    locale
-                    lonlat
-                    url
-                    iconImage
-                    ogImage
-                    twitterUsername
-                    twitterUrl
-                }
-            }
-            allProductsYaml {
-                edges {
-                    node {
-                        id
-                        title
-                        description
-                        skills
-                        image
-                    }
-                }
-            }
-            allCommunitiesYaml {
-                edges {
-                    node {
-                        id
-                        text
-                        url
-                    }
-                }
-            }
-            allTalksYaml {
-                edges {
-                    node {
-                        id
-                        text
-                        url
-                        youtubeUrl
-                        date
-                    }
-                }
-            }
-            allLinksYaml {
-                edges {
-                    node {
-                        id
-                        text
-                        url
-                    }
-                }
-            }
-        }
-    `)
-
+const Home: FC<any> = ({ data }) => {
     return (
         <main>
             <I18nOperation />
